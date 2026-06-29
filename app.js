@@ -1099,7 +1099,32 @@ window.placeOrder = async function() {
   const pincode = document.querySelectorAll('#checkoutModal input[type=text]')[2]?.value || '';
   const payment = document.querySelector('#checkoutModal input[name=payment]:checked')?.value || 'UPI';
 
-  if (!name || !phone) { showToast('⚠️ Naam aur phone number zaroor bharen'); return; }
+  // ── STRICT VALIDATION ──────────────────────────────
+  const errors = [];
+  if (!name.trim())                          errors.push('👤 Naam zaroor bharen');
+  if (!phone.trim())                         errors.push('📞 Phone number zaroor bharen');
+  else if (!/^[0-9]{10}$/.test(phone.trim().replace(/^\+91/,''))) errors.push('📞 Phone number 10 digits ka hona chahiye');
+  if (!address.trim())                       errors.push('📍 Address zaroor bharen');
+  if (!city.trim())                          errors.push('🏙️ City zaroor bharen');
+  if (!pincode.trim())                       errors.push('📮 Pincode zaroor bharen');
+  else if (!/^[0-9]{6}$/.test(pincode.trim())) errors.push('📮 Pincode 6 digits ka hona chahiye');
+  if (cart.length === 0)                     errors.push('🛒 Cart mein koi item nahi hai');
+
+  if (errors.length > 0) {
+    showToast('⚠️ ' + errors[0]);
+    // Highlight empty fields in red
+    const nameInput    = document.querySelector('#checkoutModal input[type=text]');
+    const phoneInput   = document.querySelector('#checkoutModal input[type=tel]');
+    const addressInput = document.querySelector('#checkoutModal textarea');
+    const cityInput    = document.querySelectorAll('#checkoutModal input[type=text]')[1];
+    const pinInput     = document.querySelectorAll('#checkoutModal input[type=text]')[2];
+    if (!name.trim()    && nameInput)    nameInput.style.border    = '2px solid red';
+    if (!phone.trim()   && phoneInput)   phoneInput.style.border   = '2px solid red';
+    if (!address.trim() && addressInput) addressInput.style.border = '2px solid red';
+    if (!city.trim()    && cityInput)    cityInput.style.border    = '2px solid red';
+    if (!pincode.trim() && pinInput)     pinInput.style.border     = '2px solid red';
+    return;
+  }
 
   const subtotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
   const gst      = Math.round(subtotal * 0.18);
