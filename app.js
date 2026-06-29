@@ -731,7 +731,7 @@ async function placeOrder() {
     closeModal('checkoutModal');
     // Show success screen
     setTimeout(() => {
-      showToast('📱 Aapko WhatsApp aur Email par confirmation milega!');
+      showToast('📧 Aapko Email par confirmation milega!');
     }, 3000);
   } else {
     showToast('✅ Order received! Hum aapse contact karenge.');
@@ -1096,8 +1096,7 @@ window.placeOrder = async function() {
     timestamp: new Date().toISOString()
   };
 
-  // Send WhatsApp notification to Admin
-  sendAdminWhatsApp(window._lastOrderData);
+  // Email notification sent via EmailJS inside sendAdminWhatsApp
 
   showOrderSuccess(lastOrderId, total, name, result.invoice_url);
 };
@@ -1115,7 +1114,7 @@ function showOrderSuccess(orderId, total, name, invoiceUrl) {
       <p style="color:var(--text-muted);margin-bottom:24px;">Dhanyawad ${name} ji! Hum aapse jaldi contact karenge. 🙏</p>
 
       <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:16px;margin-bottom:24px;">
-        <p style="font-size:14px;color:#16a34a;font-weight:600;">✅ Aapko WhatsApp + Email notification bheja ja raha hai</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;">✅ Aapko Email par confirmation bheja ja raha hai</p>
         <p style="font-size:13px;color:#6b7280;margin-top:4px;">Total Amount: <strong>₹${total}</strong></p>
       </div>
 
