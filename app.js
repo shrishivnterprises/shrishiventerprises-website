@@ -833,19 +833,6 @@ function sendAdminWhatsApp(orderData) {
     });
   }
 
-  // 2. WHATSAPP
-  const waMsg = `🛒 *NEW ORDER - ${orderData.order_id}*
-
-👤 Customer: ${orderData.name}
-📞 Phone: ${orderData.phone}
-📍 Address: ${orderData.address || ''}${orderData.city ? ', ' + orderData.city : ''}${orderData.pincode ? ', ' + orderData.pincode : ''}
-📦 Items:
-${itemsList}
-💰 Total: ₹${orderData.total}
-💳 Payment: ${orderData.payment || 'UPI'}
-⏰ ${dateStr}, ${timeStr}`;
-
-  window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(waMsg)}`, '_blank');
 }
 
 // ============================================================
