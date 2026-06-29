@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Sensitive data — DO NOT upload
+users.json
+orders_log.json
+
+# Generated invoices (regenerated on demand)
+invoices/
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "USR0001",
+    "name": "Ramesh Kumar",
+    "email": "ramesh@test.com",
+    "phone": "+919876543210",
+    "password": "937e8d5fbb48bd4949536cd65b8d35c426b80d2f830c5c308e2cdec422ae2244",
+    "token": "23a8ca18637f8d5589b1322f82a23c466d2707f34c749eb19f11bbfe1cbdfa7a",
+    "created": "2026-06-29T12:20:04.708299",
+    "addresses": []
+  },
+  {
+    "id": "USR0002",
+    "name": "Sainesh Kumar",
+    "email": "saineshkumar2023@gmail.com",
+    "phone": "9214534779",
+    "password": "be94df7587f6ac9b81b32f60dcf4676c931ce61467e5fe6222f76834d83da049",
+    "token": "a9e70112237bc004941e43f221db1aeb64c12722df01d9179c9f48c701876b12",
+    "created": "2026-06-29T12:33:19.298913",
+    "addresses": []
+  }
+]
