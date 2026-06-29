@@ -27,7 +27,7 @@ COMPANY = {
     "address": "41/1 Bajrang Vihar, Khadepur, Kanpur, Uttar Pradesh - 208021",
     "phone":   "+91 6393539533 | +91 9839930333",
     "email":   "shrishiventerprises2025@gmail.com",
-    "gstin":   "09XXXXX1234X1ZX",   # Replace with actual GSTIN
+    "gstin":   "09BYUPP5969E2ZF",   # Shri Shiv Enterprises GSTIN
     "state":   "Uttar Pradesh (09)",
     "bank":    "State Bank of India",
     "acc":     "XXXX XXXX XXXX",
