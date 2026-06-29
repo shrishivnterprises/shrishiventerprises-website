@@ -796,37 +796,56 @@ async function submitBulkForm(e) {
 }
 
 // ============================================================
-// ADMIN WHATSAPP NOTIFICATION
+// ADMIN NOTIFICATIONS — Gmail (EmailJS) + WhatsApp
 // ============================================================
+const EMAILJS_SERVICE_ID  = 'service_t4w5ke6';
+const EMAILJS_TEMPLATE_ID = 'template_6l2w57s';
+const EMAILJS_PUBLIC_KEY  = 'QzwlIy0VFBieA11zz';
+const ADMIN_EMAIL         = 'shrishiventerprises2025@gmail.com';
+const ADMIN_WHATSAPP      = '916393539533';
+
 function sendAdminWhatsApp(orderData) {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-IN', {day:'2-digit',month:'numeric',year:'numeric'});
   const timeStr = now.toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
 
-  // Build items list
-  const itemsList = (orderData.items || []).map(item =>
-    `• ${item.name} x${item.qty} = ₹${item.qty * item.price}`
+  const itemsList = (orderData.items || []).map(i =>
+    `• ${i.name} x${i.qty} = ₹${i.qty * i.price}`
   ).join('\n');
 
-  const msg = `🛒 *NEW ORDER - ${orderData.order_id}*
+  // 1. GMAIL via EmailJS
+  if (window.emailjs) {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      order_id:      orderData.order_id || 'SSE001',
+      customer_name: orderData.name     || '',
+      phone:         orderData.phone    || '',
+      address:       (orderData.address || '') + (orderData.city ? ', ' + orderData.city : '') + (orderData.pincode ? ' - ' + orderData.pincode : ''),
+      items:         itemsList,
+      total:         '₹' + (orderData.total || 0),
+      payment:       orderData.payment  || 'UPI',
+      time:          dateStr + ', ' + timeStr,
+      to_email:      ADMIN_EMAIL
+    }).then(() => {
+      console.log('✅ Email sent to admin!');
+    }).catch(err => {
+      console.error('❌ Email failed:', err);
+    });
+  }
+
+  // 2. WHATSAPP
+  const waMsg = `🛒 *NEW ORDER - ${orderData.order_id}*
 
 👤 Customer: ${orderData.name}
 📞 Phone: ${orderData.phone}
-📍 Address: ${orderData.address}${orderData.city ? ', ' + orderData.city : ''}${orderData.pincode ? ', ' + orderData.pincode : ''}
+📍 Address: ${orderData.address || ''}${orderData.city ? ', ' + orderData.city : ''}${orderData.pincode ? ', ' + orderData.pincode : ''}
 📦 Items:
 ${itemsList}
 💰 Total: ₹${orderData.total}
 💳 Payment: ${orderData.payment || 'UPI'}
-⏰ ${dateStr}, ${timeStr}
+⏰ ${dateStr}, ${timeStr}`;
 
----`;
-
-  const encodedMsg = encodeURIComponent(msg);
-  const adminNumber = '916393539533';
-  const waUrl = `https://wa.me/${adminNumber}?text=${encodedMsg}`;
-
-  // Open WhatsApp in new tab — auto-sends to admin number
-  window.open(waUrl, '_blank');
+  window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(waMsg)}`, '_blank');
 }
 
 // ============================================================
