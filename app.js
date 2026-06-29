@@ -1350,22 +1350,19 @@ window.toggleCart = function() {
   _origToggleCart();
 };
 
-// Override showModal for checkout — require login
+// showModal — NO login required, anyone can checkout directly
 const _origShowModal = showModal;
 window.showModal = function(id) {
-  if (id === 'checkoutModal' && !currentUser) {
-    showToast('⚠️ Order place karne ke liye pehle login karein');
-    setTimeout(() => _origShowModal('loginModal'), 400);
-    return;
-  }
   _origShowModal(id);
-  if (id === 'checkoutModal' && currentUser) {
-    // Pre-fill customer details from account
+  if (id === 'checkoutModal') {
+    // Pre-fill if logged in
     setTimeout(() => {
-      const nameInput = document.querySelector('#checkoutModal input[type=text]');
-      const phoneInput = document.querySelector('#checkoutModal input[type=tel]');
-      if (nameInput && !nameInput.value) nameInput.value = currentUser.name || '';
-      if (phoneInput && !phoneInput.value) phoneInput.value = currentUser.phone || '';
+      if (currentUser) {
+        const nameInput  = document.querySelector('#checkoutModal input[type=text]');
+        const phoneInput = document.querySelector('#checkoutModal input[type=tel]');
+        if (nameInput  && !nameInput.value)  nameInput.value  = currentUser.name  || '';
+        if (phoneInput && !phoneInput.value) phoneInput.value = currentUser.phone || '';
+      }
     }, 100);
   }
 };
