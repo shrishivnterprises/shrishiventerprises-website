@@ -796,9 +796,219 @@ async function submitBulkForm(e) {
 }
 
 // ============================================================
-// INVOICE DOWNLOAD SUPPORT
+// INVOICE DOWNLOAD SUPPORT — Browser-side PDF (no backend needed)
 // ============================================================
 let lastOrderId = null;
+let lastOrderData = null;
+
+// Company Details
+const COMPANY_INFO = {
+  name:    'Shri Shiv Enterprises',
+  tagline: 'Manufacturer & Wholesaler of Premium Notebooks & Stationery',
+  address: '41/1 Bajrang Vihar, Khadepur, Kanpur, UP - 208021',
+  phone:   '+91 6393539533',
+  email:   'shrishiventerprises2025@gmail.com',
+  gstin:   '09BYUPP5969E2ZF',
+  state:   'Uttar Pradesh (09)'
+};
+
+function generateInvoicePDF(orderData) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const W = 210, H = 297;
+
+  // ── HEADER BACKGROUND ──────────────────────────────
+  doc.setFillColor(36, 59, 107); // Navy
+  doc.rect(0, 0, W, 55, 'F');
+
+  // Company Name
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(20);
+  doc.text('Shri Shiv Enterprises', 15, 16);
+
+  // Tagline
+  doc.setTextColor(244, 197, 66); // Gold
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.text('Manufacturer & Wholesaler of Premium Notebooks & Stationery', 15, 23);
+
+  // Address & Contact
+  doc.setTextColor(200, 220, 255);
+  doc.setFontSize(8.5);
+  doc.text('41/1 Bajrang Vihar, Khadepur, Kanpur, UP - 208021', 15, 30);
+  doc.text('Ph: +91 6393539533  |  Email: shrishiventerprises2025@gmail.com', 15, 36);
+
+  // GSTIN BOX — Gold highlight
+  doc.setFillColor(244, 197, 66);
+  doc.roundedRect(14, 39, 85, 9, 2, 2, 'F');
+  doc.setTextColor(36, 59, 107);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  doc.text('GSTIN: 09BYUPP5969E2ZF', 17, 45);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8.5);
+  doc.setTextColor(200, 220, 255);
+  doc.text('State: Uttar Pradesh (09)', 105, 45);
+
+  // TAX INVOICE label
+  doc.setTextColor(244, 197, 66);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(16);
+  doc.text('TAX INVOICE', W - 15, 16, { align: 'right' });
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  doc.text('Invoice No: ' + orderData.order_id, W - 15, 24, { align: 'right' });
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8.5);
+  const now = new Date();
+  doc.text('Date: ' + now.toLocaleDateString('en-IN', {day:'2-digit',month:'long',year:'numeric'}), W - 15, 31, { align: 'right' });
+  doc.text('Time: ' + now.toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit'}), W - 15, 37, { align: 'right' });
+  doc.text('Payment: ' + (orderData.payment || 'UPI'), W - 15, 43, { align: 'right' });
+
+  // Gold divider
+  doc.setFillColor(244, 197, 66);
+  doc.rect(0, 56, W, 2, 'F');
+
+  // ── BILL TO ─────────────────────────────────────────
+  doc.setTextColor(244, 197, 66);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.text('BILL TO:', 15, 67);
+
+  doc.setTextColor(26, 26, 46);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.text(orderData.name || 'Customer', 15, 75);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(100, 100, 120);
+  doc.text('Ph: ' + (orderData.phone || ''), 15, 82);
+  if (orderData.address) doc.text(orderData.address + (orderData.city ? ', ' + orderData.city : '') + (orderData.pincode ? ' - ' + orderData.pincode : ''), 15, 88);
+
+  // ── PRODUCT TABLE ────────────────────────────────────
+  const tableY = 98;
+  doc.setFillColor(36, 59, 107);
+  doc.rect(15, tableY, W - 30, 9, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8.5);
+  doc.text('PRODUCT NAME', 18, tableY + 6);
+  doc.text('SPEC', 95, tableY + 6);
+  doc.text('QTY', 128, tableY + 6);
+  doc.text('RATE (Rs)', 143, tableY + 6);
+  doc.text('AMOUNT (Rs)', 165, tableY + 6);
+
+  let rowY = tableY + 9;
+  const items = orderData.items || [];
+  items.forEach((item, idx) => {
+    doc.setFillColor(idx % 2 === 0 ? 248 : 255, idx % 2 === 0 ? 249 : 255, idx % 2 === 0 ? 252 : 255);
+    doc.rect(15, rowY, W - 30, 9, 'F');
+    doc.setTextColor(26, 26, 46);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8.5);
+    doc.text((item.name || '').substring(0, 38), 18, rowY + 6);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100, 100, 120);
+    doc.text((item.spec || 'Standard').substring(0, 18), 95, rowY + 6);
+    doc.setTextColor(26, 26, 46);
+    doc.text(String(item.qty || 1), 130, rowY + 6);
+    doc.text('Rs ' + (item.price || 0), 143, rowY + 6);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Rs ' + ((item.qty || 1) * (item.price || 0)), 165, rowY + 6);
+    rowY += 9;
+  });
+
+  // Table border
+  doc.setDrawColor(220, 220, 220);
+  doc.rect(15, tableY, W - 30, rowY - tableY, 'S');
+
+  // ── TOTALS ──────────────────────────────────────────
+  let totY = rowY + 8;
+  const subtotal = orderData.subtotal || 0;
+  const gst      = orderData.gst || 0;
+  const shipping = orderData.shipping || 0;
+  const total    = orderData.total || 0;
+
+  doc.setFillColor(248, 249, 252);
+  doc.rect(120, totY - 4, W - 135, 46, 'F');
+
+  const totRow = (label, val, bold) => {
+    doc.setFont('helvetica', bold ? 'bold' : 'normal');
+    doc.setFontSize(bold ? 10 : 9);
+    doc.setTextColor(bold ? 36 : 80, bold ? 59 : 80, bold ? 107 : 100);
+    doc.text(label, 122, totY);
+    doc.text(val, W - 17, totY, { align: 'right' });
+    totY += 8;
+  };
+
+  totRow('Subtotal:', 'Rs ' + subtotal);
+  totRow('CGST (9%):', 'Rs ' + Math.floor(gst/2));
+  totRow('SGST (9%):', 'Rs ' + (gst - Math.floor(gst/2)));
+  totRow('Shipping:', shipping === 0 ? 'FREE' : 'Rs ' + shipping);
+
+  // Grand Total highlight
+  doc.setFillColor(36, 59, 107);
+  doc.rect(120, totY - 5, W - 135, 10, 'F');
+  doc.setTextColor(244, 197, 66);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.text('GRAND TOTAL:', 122, totY + 2);
+  doc.text('Rs ' + total, W - 17, totY + 2, { align: 'right' });
+  totY += 14;
+
+  // Amount in words
+  doc.setFillColor(248, 249, 252);
+  doc.rect(15, totY, W - 30, 10, 'F');
+  doc.setTextColor(36, 59, 107);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8.5);
+  doc.text('Amount in Words:', 18, totY + 7);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(26, 26, 46);
+  doc.text(amountInWords(total) + ' Only', 58, totY + 7);
+
+  // ── FOOTER ──────────────────────────────────────────
+  doc.setFillColor(36, 59, 107);
+  doc.rect(0, H - 22, W, 22, 'F');
+
+  // GSTIN in footer — BOLD GOLD
+  doc.setTextColor(244, 197, 66);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  doc.text('GSTIN: 09BYUPP5969E2ZF', W / 2, H - 15, { align: 'center' });
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8.5);
+  doc.text('For Shri Shiv Enterprises  |  Authorised Signatory', W / 2, H - 9, { align: 'center' });
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7.5);
+  doc.setTextColor(180, 200, 230);
+  doc.text('This is a computer-generated invoice.  |  shrishiventerprises2025@gmail.com  |  +91 6393539533', W / 2, H - 4, { align: 'center' });
+
+  // Save PDF
+  doc.save('Invoice_' + orderData.order_id + '_ShriShivEnterprises.pdf');
+}
+
+function amountInWords(n) {
+  if (!n || n === 0) return 'Zero Rupees';
+  const ones = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+  const tens = ['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+  function say(num) {
+    if (num < 20) return ones[num];
+    if (num < 100) return tens[Math.floor(num/10)] + (num%10 ? ' '+ones[num%10] : '');
+    if (num < 1000) return ones[Math.floor(num/100)]+' Hundred'+(num%100?' and '+say(num%100):'');
+    if (num < 100000) return say(Math.floor(num/1000))+' Thousand'+(num%1000?' '+say(num%1000):'');
+    if (num < 10000000) return say(Math.floor(num/100000))+' Lakh'+(num%100000?' '+say(num%100000):'');
+    return say(Math.floor(num/10000000))+' Crore'+(num%10000000?' '+say(num%10000000):'');
+  }
+  return 'Rupees ' + say(Math.round(n));
+}
 
 // Override placeOrder to handle invoice
 const _origPlaceOrder = placeOrder;
@@ -837,6 +1047,14 @@ window.placeOrder = async function() {
 
   // Show success modal with invoice download
   lastOrderId = result.order_id || 'SSE0001';
+  window._lastOrderData = {
+    order_id: lastOrderId,
+    name, phone, address, city, pincode,
+    payment,
+    items: cart.map(i => ({ name: i.name, qty: i.qty, price: i.price, spec: (i.size||'') + ', ' + (i.pages||'') + 'pp' })),
+    subtotal, gst, shipping, total,
+    timestamp: new Date().toISOString()
+  };
   showOrderSuccess(lastOrderId, total, name, result.invoice_url);
 };
 
@@ -858,10 +1076,10 @@ function showOrderSuccess(orderId, total, name, invoiceUrl) {
       </div>
 
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="${BACKEND}/api/invoice/${orderId}" target="_blank"
-           style="background:#243B6B;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+        <button onclick="generateInvoicePDF(window._lastOrderData || {order_id:'${orderId}',name:'${name}',total:${total},items:[],subtotal:${total},gst:Math.round(${total}*0.18/1.18),shipping:0,payment:'UPI'})"
+           style="background:#243B6B;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;">
           🧾 Bill Download Karein (PDF)
-        </a>
+        </button>
         <a href="https://wa.me/916393539533?text=Mera order ${orderId} place ho gaya hai. Total: ₹${total}. Please confirm karein." target="_blank"
            style="background:#25D366;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
           💬 WhatsApp Confirm
