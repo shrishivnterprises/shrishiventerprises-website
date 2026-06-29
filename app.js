@@ -1124,10 +1124,7 @@ function showOrderSuccess(orderId, total, name, invoiceUrl) {
            style="background:#243B6B;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;">
           🧾 Bill Download Karein (PDF)
         </button>
-        <a href="https://wa.me/916393539533?text=Mera order ${orderId} place ho gaya hai. Total: ₹${total}. Please confirm karein." target="_blank"
-           style="background:#25D366;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
-          💬 WhatsApp Confirm
-        </a>
+
       </div>
 
       <button onclick="this.closest('.modal-overlay').remove()" style="margin-top:20px;color:var(--text-muted);background:none;font-size:14px;cursor:pointer;">
