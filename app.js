@@ -731,7 +731,7 @@ async function placeOrder() {
     closeModal('checkoutModal');
     // Show success screen
     setTimeout(() => {
-      showToast('📧 Aapko Email par confirmation milega!');
+      showToast('📧 Order confirm! Email notification bheja ja raha hai.');
     }, 3000);
   } else {
     showToast('✅ Order received! Hum aapse contact karenge.');
@@ -796,7 +796,46 @@ async function submitBulkForm(e) {
 }
 
 // ============================================================
-// ADMIN NOTIFICATIONS — Gmail (EmailJS) + WhatsApp
+// ============================================================
+// ADMIN EMAIL NOTIFICATION via EmailJS
+// ============================================================
+const EMAILJS_SERVICE_ID  = 'service_t4w5ke6';
+const EMAILJS_TEMPLATE_ID = 'template_6l2w57s';
+const EMAILJS_PUBLIC_KEY  = 'QzwlIy0VFBieA11zz';
+const ADMIN_EMAIL         = 'shrishiventerprises2025@gmail.com';
+
+function sendAdminWhatsApp(orderData) {
+  // Build items list with full detail
+  const itemsList = (orderData.items || []).map(i =>
+    i.name + ' x' + i.qty + ' = Rs.' + (i.qty * i.price)
+  ).join('\n');
+
+  const now     = new Date();
+  const dateStr = now.toLocaleDateString('en-IN', {day:'2-digit',month:'numeric',year:'numeric'});
+  const timeStr = now.toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit',hour12:true});
+
+  // Send Gmail via EmailJS only
+  if (window.emailjs) {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      order_id:      orderData.order_id  || 'SSE001',
+      customer_name: orderData.name      || '',
+      phone:         orderData.phone     || '',
+      address:       (orderData.address  || '') + (orderData.city ? ', ' + orderData.city : '') + (orderData.pincode ? ' - ' + orderData.pincode : ''),
+      items:         itemsList           || 'No items',
+      total:         'Rs.' + (orderData.total || 0),
+      payment:       orderData.payment   || 'UPI',
+      time:          dateStr + ', ' + timeStr,
+      to_email:      ADMIN_EMAIL
+    }).then(() => {
+      console.log('Email sent to admin!');
+    }).catch(err => {
+      console.error('Email failed:', err);
+    });
+  }
+}
+
+
 // ============================================================
 const EMAILJS_SERVICE_ID  = 'service_t4w5ke6';
 const EMAILJS_TEMPLATE_ID = 'template_6l2w57s';
@@ -1087,16 +1126,23 @@ window.placeOrder = async function() {
 
   // Show success modal with invoice download
   lastOrderId = result.order_id || 'SSE0001';
+  // Store full order data including items
+  const orderItems = cart.map(i => ({
+    name:  i.name  || 'Product',
+    qty:   i.qty   || 1,
+    price: i.price || 0,
+    spec:  (i.size || '') + (i.pages ? ', ' + i.pages + 'pp' : '')
+  }));
   window._lastOrderData = {
     order_id: lastOrderId,
     name, phone, address, city, pincode,
     payment,
-    items: cart.map(i => ({ name: i.name, qty: i.qty, price: i.price, spec: (i.size||'') + ', ' + (i.pages||'') + 'pp' })),
+    items: orderItems,
     subtotal, gst, shipping, total,
     timestamp: new Date().toISOString()
   };
 
-  // Email notification sent via EmailJS inside sendAdminWhatsApp
+
 
   showOrderSuccess(lastOrderId, total, name, result.invoice_url);
 };
@@ -1114,7 +1160,7 @@ function showOrderSuccess(orderId, total, name, invoiceUrl) {
       <p style="color:var(--text-muted);margin-bottom:24px;">Dhanyawad ${name} ji! Hum aapse jaldi contact karenge. 🙏</p>
 
       <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:16px;margin-bottom:24px;">
-        <p style="font-size:14px;color:#16a34a;font-weight:600;">✅ Aapko Email par confirmation bheja ja raha hai</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;">✅ Aapko Email par order confirmation bheja ja raha hai</p>
         <p style="font-size:13px;color:#6b7280;margin-top:4px;">Total Amount: <strong>₹${total}</strong></p>
       </div>
 
@@ -1123,7 +1169,6 @@ function showOrderSuccess(orderId, total, name, invoiceUrl) {
            style="background:#243B6B;color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;">
           🧾 Bill Download Karein (PDF)
         </button>
-
       </div>
 
       <button onclick="this.closest('.modal-overlay').remove()" style="margin-top:20px;color:var(--text-muted);background:none;font-size:14px;cursor:pointer;">
