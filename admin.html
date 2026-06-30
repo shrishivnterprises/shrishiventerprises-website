@@ -320,8 +320,23 @@ let allOrders = [...DEMO_ORDERS];
 // Merge real orders from website localStorage if any
 try{
   const real = JSON.parse(localStorage.getItem('sse_all_orders')||'[]');
-  allOrders = [...real, ...DEMO_ORDERS];
-} catch(e){}
+  // Normalize real order fields to match admin expected fields
+  const normalized = real.map(o=>({
+    id: o.id || o.orderId || ('SSE'+Date.now()),
+    name: o.name || 'N/A',
+    phone: o.phone || 'N/A',
+    email: o.email || '',
+    city: o.city || 'N/A',
+    state: o.state || 'N/A',
+    address: o.address || o.addr || 'N/A',
+    products: o.products || o.items || 'N/A',
+    total: o.total || 0,
+    payment: o.payment || 'N/A',
+    status: o.status || 'Pending',
+    date: o.date || new Date().toLocaleString('en-IN')
+  }));
+  allOrders = [...normalized, ...DEMO_ORDERS];
+} catch(e){ console.error('Order load error:',e); }
 
 // ===== TABS =====
 function switchTab(name, el){
@@ -394,7 +409,7 @@ function renderOrdersTable(){
       <td style="max-width:180px"><div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px">${o.products}</div></td>
       <td><strong>₹${o.total}</strong></td>
       <td style="font-size:12px">${o.payment}</td>
-      <td><span class="status-badge ${o.status==='Paid'?'status-paid':o.status==='Pending'?'status-pending':'status-cod'}">${o.status}</span></td>
+      <td><span class="status-badge ${(o.status.includes('Paid')||o.status==='Paid')?'status-paid':(o.status.includes('Pending')||o.status==='Pending')?'status-pending':'status-cod'}">${o.status}</span></td>
       <td><button class="view-btn" onclick="viewOrder('${o.id}')">View</button></td>
     </tr>`).join('');
 }
@@ -425,7 +440,7 @@ function viewOrder(id){
       <div class="detail-item"><div class="detail-label">City / State</div><div class="detail-value">${o.city}, ${o.state}</div></div>
       <div class="detail-item" style="grid-column:1/-1"><div class="detail-label">Shipping Address</div><div class="detail-value">${o.address}</div></div>
       <div class="detail-item"><div class="detail-label">Payment</div><div class="detail-value">${o.payment}</div></div>
-      <div class="detail-item"><div class="detail-label">Status</div><div class="detail-value"><span class="status-badge ${o.status==='Paid'?'status-paid':'status-pending'}">${o.status}</span></div></div>
+      <div class="detail-item"><div class="detail-label">Status</div><div class="detail-value"><span class="status-badge ${o.status.includes('Paid')?'status-paid':'status-pending'}">${o.status}</span></div></div>
       <div class="detail-item"><div class="detail-label">Order Total</div><div class="detail-value" style="font-size:20px;color:var(--gold)">₹${o.total}</div></div>
       <div class="detail-item"><div class="detail-label">Date & Time</div><div class="detail-value">${o.date}</div></div>
     </div>
