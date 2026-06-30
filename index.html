@@ -510,7 +510,7 @@ const PRODUCTS = [
   {id:6,name:"Practical Notebook with Margin 200 Pages",cat:"Practical Books",img:"images/lifestyle-harsh.jpg",price:85,mrp:125,rating:4.7,reviews:88,badge:"New",type:"new"},
   {id:7,name:"Office Register 384 Pages",cat:"Office Registers",img:"images/shivangi-warehouse.jpg",price:220,mrp:320,rating:4.8,reviews:64,badge:"",type:""},
   {id:8,name:"Cash Memo Register Bound",cat:"Registers",img:"images/notebook-siya-summer.jpg",price:165,mrp:240,rating:4.6,reviews:51,badge:"",type:""},
-  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"images/lifestyle-anshika.jpg",price:110,mrp:160,rating:4.5,reviews:73,badge:"",type:""},
+  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"images/long-register-lake.png",price:110,mrp:160,rating:4.5,reviews:73,badge:"",type:""},
   {id:10,name:"Double Line Exercise Book 144 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg",price:38,mrp:55,rating:4.6,reviews:220,badge:"",type:""},
   {id:11,name:"A4 Spiral Notebook 100 Pages",cat:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg",price:95,mrp:140,rating:4.7,reviews:115,badge:"",type:""},
   {id:12,name:"Drawing Book A3 Staple Bound",cat:"Drawing Books",img:"images/lifestyle-piyus.jpg",price:60,mrp:88,rating:4.5,reviews:99,badge:"",type:""},
@@ -522,9 +522,9 @@ const CATEGORIES = [
   {name:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg",icon:"📋"},
   {name:"Practical Books",img:"images/lifestyle-anshika2.jpg",icon:"🔬"},
   {name:"Drawing Books",img:"images/lifestyle-piyus.jpg",icon:"🎨"},
-  {name:"Registers",img:"images/shivangi-warehouse.jpg",icon:"📒"},
+  {name:"Registers",img:"images/long-register-flowers.png",icon:"📒"},
   {name:"Office Registers",img:"images/notebook-siya-summer.jpg",icon:"🗂️"},
-  {name:"Long Books",img:"images/promo-bulk-offer.jpg",icon:"📔"},
+  {name:"Long Books",img:"images/long-register-flowers.png",icon:"📔"},
 ];
 
 // ===== STATE =====
@@ -1173,19 +1173,20 @@ function placeOrder(){
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({
-      _subject: '🛒 New Order #'+orderId+' - Rs.'+total+' - '+name,
-      'Order ID': orderId,
-      'Customer Name': name,
+      _subject: 'New Order #'+orderId+' - Rs.'+total+' - '+name,
+      _replyto: email||'shrishiventerprises2025@gmail.com',
+      'Order_ID': orderId,
+      'Customer_Name': name,
       'Phone': phone,
       'Email': email||'N/A',
       'Address': addr+', '+city+', '+state+' - '+pin,
-      'Items Ordered': items,
-      'Total Amount': 'Rs.'+total,
-      'Payment Method': selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
-      'Order Status': selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
-      'Order Time': new Date().toLocaleString('en-IN')
+      'Items_Ordered': items,
+      'Total_Amount': 'Rs.'+total,
+      'Payment_Method': selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
+      'Order_Status': selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
+      'Order_Time': new Date().toLocaleString('en-IN')
     })
-  }).catch(function(){});
+  }).then(function(r){return r.json();}).then(function(d){console.log('Order notification sent',d);}).catch(function(e){console.log('Notification error',e);});
 
   cart=[];saveCart();
   buildSuccess();
