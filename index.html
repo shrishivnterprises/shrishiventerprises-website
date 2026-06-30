@@ -1153,42 +1153,39 @@ function placeOrder(){
     status:selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
     gst,sub,ship,addr,city,state,pin};
 
-  // Save order to localStorage so Admin panel can read it
+  // Save to localStorage for admin panel (same device)
   try{
     const savedOrders = JSON.parse(localStorage.getItem('sse_all_orders')||'[]');
-    const newOrder = {
-      id: orderId,
-      name: name,
-      phone: phone,
-      email: email||'',
-      city: city,
-      state: state,
-      address: addr+', '+city+', '+state+' - '+pin,
-      products: items,
-      items: items,
-      total: total,
-      payment: selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
-      status: selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
-      date: new Date().toLocaleString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
-    };
-    savedOrders.unshift(newOrder);
+    savedOrders.unshift({
+      id:orderId, name:name, phone:phone, email:email||'',
+      city:city, state:state,
+      address:addr+', '+city+', '+state+' - '+pin,
+      products:items, items:items, total:total,
+      payment:selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
+      status:selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
+      date:new Date().toLocaleString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+    });
     localStorage.setItem('sse_all_orders', JSON.stringify(savedOrders));
   } catch(e){}
 
-  // Send WhatsApp notification to shop owner
-  const msg=encodeURIComponent(
-    '🛒 *NEW ORDER*\n' +
-    '━━━━━━━━━━━━━━━\n' +
-    '📦 Order: #'+orderId+'\n'+
-    '👤 Name: '+name+'\n'+
-    '📱 Phone: '+phone+'\n'+
-    '📍 '+addr+', '+city+', '+state+' - '+pin+'\n'+
-    '🛍️ Items: '+items+'\n'+
-    '💰 Total: ₹'+total+'\n'+
-    '💳 Payment: '+(selectedPayment==='upi'?'UPI':'COD')+'\n'+
-    '━━━━━━━━━━━━━━━'
-  );
-  setTimeout(()=>{window.open('https://wa.me/916393539533?text='+msg,'_blank');},1000);
+  // Send email notification via Formspree
+  fetch('https://formspree.io/f/mkolvqvb', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      _subject: '🛒 New Order #'+orderId+' - Rs.'+total+' - '+name,
+      'Order ID': orderId,
+      'Customer Name': name,
+      'Phone': phone,
+      'Email': email||'N/A',
+      'Address': addr+', '+city+', '+state+' - '+pin,
+      'Items Ordered': items,
+      'Total Amount': 'Rs.'+total,
+      'Payment Method': selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
+      'Order Status': selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
+      'Order Time': new Date().toLocaleString('en-IN')
+    })
+  }).catch(function(){});
 
   cart=[];saveCart();
   buildSuccess();
