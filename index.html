@@ -353,6 +353,16 @@ footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
 .cart-checkout-btn{width:100%;padding:14px;background:var(--navy);color:white;border-radius:10px;font-size:15px;font-weight:700;margin-bottom:10px}
 .cart-checkout-btn:hover{background:#0d2448}
 
+
+/* STICKY CART BAR */
+.sticky-cart-bar{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--navy);padding:14px 20px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
+.sticky-cart-bar.show{display:flex}
+.sticky-cart-info{color:white;font-size:14px;font-weight:600}
+.sticky-cart-info span{color:var(--gold)}
+.sticky-cart-btns{display:flex;gap:10px}
+.sticky-view-cart{background:rgba(255,255,255,.15);color:white;padding:10px 18px;border-radius:8px;font-size:14px;font-weight:600;border:1.5px solid rgba(255,255,255,.3)}
+.sticky-checkout{background:linear-gradient(135deg,var(--gold),#e7c768);color:var(--navy);padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700}
+
 /* TOAST */
 .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--navy);color:white;padding:12px 22px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:all .3s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -476,6 +486,16 @@ footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
 </a>
 
+
+<!-- STICKY CART BAR -->
+<div class="sticky-cart-bar" id="stickyCart">
+  <div class="sticky-cart-info">🛒 <span id="stickyCount">0</span> items · <span id="stickyTotal">₹0</span></div>
+  <div class="sticky-cart-btns">
+    <button class="sticky-view-cart" onclick="openCart()">View Cart</button>
+    <button class="sticky-checkout" onclick="goCheckout()">Checkout →</button>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
@@ -519,7 +539,17 @@ let orderData = null;
 // ===== UTILS =====
 function disc(p,m){return Math.round((1-p/m)*100)}
 function fmt(n){return '₹'+n.toFixed(0)}
-function saveCart(){localStorage.setItem('sse_cart',JSON.stringify(cart));updateCartBadge()}
+function saveCart(){localStorage.setItem('sse_cart',JSON.stringify(cart));updateCartBadge();updateStickyBar()}
+function updateStickyBar(){
+  const n=cart.reduce((a,b)=>a+b.qty,0);
+  const t=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const bar=document.getElementById('stickyCart');
+  const sc=document.getElementById('stickyCount');
+  const st=document.getElementById('stickyTotal');
+  if(bar){bar.classList.toggle('show',n>0)}
+  if(sc)sc.textContent=n;
+  if(st)st.textContent='₹'+t;
+}
 function saveWish(){localStorage.setItem('sse_wish',JSON.stringify(wishlist))}
 function updateCartBadge(){const n=cart.reduce((a,b)=>a+b.qty,0);const b=document.getElementById('cartBadge');if(b){b.textContent=n;n>0?b.classList.add('show'):b.classList.remove('show')}}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
@@ -564,6 +594,7 @@ function addToCart(id){
   const ex=cart.find(x=>x.id===id);
   if(ex)ex.qty++;else cart.push({...p,qty:1});
   saveCart();showToast('✅ Added to cart!');
+  setTimeout(()=>openCart(),400);
 }
 function changeQty(id,d){
   const i=cart.findIndex(x=>x.id===id);if(i<0)return;
@@ -1161,6 +1192,7 @@ function subNewsletter(e){e.preventDefault();showToast('🎉 Subscribed successf
 
 // ===== INIT =====
 updateCartBadge();
+updateStickyBar();
 buildHome();
 </script>
 </body>
