@@ -533,7 +533,7 @@ let wishlist = JSON.parse(localStorage.getItem('sse_wish') || '[]');
 let currentPage = 'home';
 let shopFilter = 'All';
 let shopSearch = '';
-let selectedPayment = 'online';
+let selectedPayment = 'upi';
 let orderData = null;
 
 // ===== UTILS =====
@@ -1057,15 +1057,32 @@ function buildCheckout(){
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
         Payment Method
       </div>
-      <div class="payment-option selected" id="payOnline" onclick="selectPayment('online')">
+
+      <div class="payment-option selected" id="payOnline" onclick="selectPayment('upi')">
         <div class="payment-radio">
           <div class="radio-circle"></div>
-          <div>
-            <div class="payment-label-title">Online Payment (Razorpay - Demo) <span class="recommended-badge">Recommended</span></div>
-            <div class="payment-label-sub">UPI / Card / Net Banking / Wallets – Currently in demo mode</div>
+          <div style="flex:1">
+            <div class="payment-label-title">UPI Payment <span class="recommended-badge">Recommended</span></div>
+            <div class="payment-label-sub">Pay via any UPI app — PhonePe, GPay, Paytm, BHIM</div>
           </div>
         </div>
+        <div id="upiDetails" style="margin-top:16px;background:var(--bg);border-radius:12px;padding:16px;text-align:center">
+          <img src="upi-qr.jpg" alt="UPI QR Code" style="width:180px;height:180px;object-fit:contain;border-radius:8px;margin:0 auto 12px;display:block;border:2px solid var(--border)"/>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:6px">Scan QR or pay to UPI ID</div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;background:white;border:1.5px solid var(--border);border-radius:8px;padding:10px 16px">
+            <span style="font-size:15px;font-weight:700;color:var(--navy);letter-spacing:.3px">shrishiventerprises2@idfcbank</span>
+            <button onclick="event.stopPropagation();copyUPI()" style="background:var(--navy);color:white;border:none;border-radius:6px;padding:5px 10px;font-size:11px;font-weight:700;cursor:pointer">COPY</button>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+            <a href="upi://pay?pa=shrishiventerprises2@idfcbank&pn=ShriShivEnterprises&cu=INR" style="background:#5f259f;color:white;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">PhonePe</a>
+            <a href="upi://pay?pa=shrishiventerprises2@idfcbank&pn=ShriShivEnterprises&cu=INR" style="background:#1a73e8;color:white;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">GPay</a>
+            <a href="upi://pay?pa=shrishiventerprises2@idfcbank&pn=ShriShivEnterprises&cu=INR" style="background:#00baf2;color:white;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">Paytm</a>
+            <a href="upi://pay?pa=shrishiventerprises2@idfcbank&pn=ShriShivEnterprises&cu=INR" style="background:#ff6600;color:white;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">BHIM</a>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:var(--muted)">⚠️ After payment, take a screenshot and WhatsApp it to <strong>+91 6393539533</strong></div>
+        </div>
       </div>
+
       <div class="payment-option" id="payCod" onclick="selectPayment('cod')">
         <div class="payment-radio">
           <div class="radio-circle"></div>
@@ -1102,8 +1119,13 @@ function buildCheckout(){
 
 function selectPayment(type){
   selectedPayment=type;
-  document.getElementById('payOnline').classList.toggle('selected',type==='online');
+  document.getElementById('payOnline').classList.toggle('selected',type==='upi');
   document.getElementById('payCod').classList.toggle('selected',type==='cod');
+  const upiDetails=document.getElementById('upiDetails');
+  if(upiDetails) upiDetails.style.display=type==='upi'?'block':'none';
+}
+function copyUPI(){
+  navigator.clipboard.writeText('shrishiventerprises2@idfcbank').then(()=>showToast('✅ UPI ID copied!')).catch(()=>{showToast('UPI ID: shrishiventerprises2@idfcbank')});
 }
 
 // ===== PLACE ORDER =====
@@ -1124,7 +1146,7 @@ function placeOrder(){
   const orderId='SSE'+Date.now().toString().slice(-6);
   const items=cart.map(i=>i.name+' x'+i.qty).join(', ');
 
-  orderData={orderId,name,email,phone,total,items,payment:selectedPayment==='online'?'Online (Mock)':'Cash on Delivery',status:selectedPayment==='online'?'Paid (Mock)':'Pending',gst,sub,ship};
+  orderData={orderId,name,email,phone,total,items,payment:selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',status:selectedPayment==='upi'?'Paid (UPI)':'Pending',gst,sub,ship};
 
   cart=[];saveCart();
   buildSuccess();
