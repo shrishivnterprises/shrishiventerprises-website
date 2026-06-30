@@ -532,7 +532,7 @@ input, textarea, select { font-family: var(--font); outline: none; }
 .continue-btn { width: 100%; background: transparent; color: var(--text-muted); padding: 10px; font-size: 14px; text-align: center; }
 
 /* ===================== MODALS ===================== */
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 3000; backdrop-filter: blur(3px); }
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 3000; display: none; }
 .modal-box {
   position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
   background: var(--card-bg); border-radius: 20px; padding: 36px;
