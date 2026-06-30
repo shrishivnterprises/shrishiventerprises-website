@@ -1,975 +1,969 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shri Shiv Enterprises — Premium Notebooks & Stationery Manufacturer</title>
-  <meta name="description" content="Manufacturer & Wholesaler of Premium Notebooks, Registers, Exercise Books. School, College & Corporate Stationery. Kanpur, UP. Bulk Orders Welcome." />
-  <meta name="keywords" content="notebooks, exercise books, registers, stationery, wholesale, manufacturer, Kanpur, school notebooks, customized notebooks" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shri Shiv Enterprises — Premium Notebooks Manufacturer | Kanpur</title>
+<meta name="description" content="Manufacturer & Wholesaler of School Notebooks, Exercise Books, A4 Notebooks, Registers, Drawing Books. GST Compliant. Pan-India Delivery. Bulk Orders Welcome." />
+<meta name="keywords" content="notebook manufacturer kanpur, school notebooks wholesale, exercise books, A4 notebooks, OEM notebooks, private label notebooks, bulk notebooks india" />
+<meta property="og:title" content="Shri Shiv Enterprises — Premium Notebooks" />
+<meta property="og:description" content="Premium notebook manufacturer from Kanpur serving schools, distributors and businesses across India." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy: #1B2D5F;
+  --navy-dark: #111E42;
+  --navy-light: #243B6B;
+  --gold: #F4C542;
+  --gold-dark: #D4A820;
+  --white: #ffffff;
+  --gray-50: #F8F9FC;
+  --gray-100: #F0F2F8;
+  --gray-200: #E2E6F0;
+  --gray-400: #9AA3B8;
+  --gray-600: #5A6480;
+  --gray-800: #2D3550;
+  --green: #10B981;
+  --red: #EF4444;
+  --shadow-sm: 0 1px 3px rgba(27,45,95,0.08);
+  --shadow-md: 0 4px 16px rgba(27,45,95,0.12);
+  --shadow-lg: 0 8px 32px rgba(27,45,95,0.16);
+  --shadow-xl: 0 16px 48px rgba(27,45,95,0.2);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ===== TOPBAR ===== */
+.topbar{background:var(--navy-dark);color:rgba(255,255,255,0.85);font-size:12px;padding:7px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.topbar span{display:flex;align-items:center;gap:6px}
+.topbar .promo{background:var(--gold);color:var(--navy-dark);padding:3px 12px;border-radius:20px;font-weight:700;font-size:11px;letter-spacing:.3px}
+.topbar-right{display:flex;gap:20px;align-items:center}
+
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200);padding:0 24px;display:flex;align-items:center;gap:20px;height:72px;box-shadow:var(--shadow-sm)}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{height:48px;width:auto;border-radius:8px}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-text .brand-name{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:.5px}
+.nav-logo-text .brand-sub{font-size:9.5px;color:var(--gray-400);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.nav-links{display:flex;gap:4px;flex:1;justify-content:center}
+.nav-links a{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray-600);transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--gray-100);font-weight:600}
+.nav-search{flex:1;max-width:340px;position:relative}
+.nav-search input{width:100%;padding:10px 16px 10px 42px;border:2px solid var(--gray-200);border-radius:24px;font-size:14px;color:var(--gray-800);background:var(--gray-50);transition:all .2s;outline:none}
+.nav-search input:focus{border-color:var(--navy);background:white;box-shadow:0 0 0 3px rgba(27,45,95,0.08)}
+.nav-search .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:16px}
+.nav-actions{display:flex;gap:6px;align-items:center}
+.nav-btn{padding:10px 20px;border-radius:24px;font-size:13px;font-weight:600;transition:all .2s}
+.nav-btn-primary{background:var(--navy);color:white}
+.nav-btn-primary:hover{background:var(--navy-dark);transform:translateY(-1px)}
+.nav-icon-btn{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:18px;transition:all .2s;position:relative}
+.nav-icon-btn:hover{background:var(--gray-100);color:var(--navy)}
+.nav-badge{position:absolute;top:4px;right:4px;width:18px;height:18px;background:var(--gold);color:var(--navy-dark);font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* ===== HERO ===== */
+.hero{min-height:90vh;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 45%,#1E3A7A 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding:60px 24px}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,197,66,0.15);border:1px solid rgba(244,197,66,0.3);color:var(--gold);padding:8px 16px;border-radius:24px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,58px);color:white;line-height:1.15;font-weight:800;margin-bottom:20px}
+.hero h1 span{color:var(--gold)}
+.hero-desc{color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{background:var(--gold);color:var(--navy-dark);padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;transition:all .25s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(244,197,66,0.35)}
+.btn-primary:hover{background:#FFD45C;transform:translateY(-2px);box-shadow:0 8px 28px rgba(244,197,66,0.45)}
+.btn-secondary{background:rgba(255,255,255,0.12);color:white;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;border:2px solid rgba(255,255,255,0.2);transition:all .25s;backdrop-filter:blur(8px)}
+.btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:32px}
+.hero-stat .num{font-size:28px;font-weight:800;color:var(--gold)}
+.hero-stat .label{font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.hero-visual{position:relative}
+.hero-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-xl);padding:32px;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(244,197,66,0.15),transparent 70%);border-radius:50%}
+.hero-card img{width:100%;border-radius:var(--radius-lg);object-fit:cover;height:300px}
+.hero-card-badges{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.hero-card-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600}
+.hero-card-badge.gold{background:rgba(244,197,66,0.2);border-color:rgba(244,197,66,0.3);color:var(--gold)}
+
+/* ===== TRUST BAR ===== */
+.trust-bar{background:white;border-bottom:1px solid var(--gray-100);padding:18px 24px}
+.trust-bar-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:16px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--gray-600)}
+.trust-icon{width:36px;height:36px;border-radius:10px;background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+
+/* ===== SECTION COMMONS ===== */
+.section{padding:80px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--navy-dark);line-height:1.2;margin-bottom:12px}
+.section-desc{font-size:15px;color:var(--gray-600);line-height:1.7;max-width:560px}
+.section-header{margin-bottom:48px}
+
+/* ===== CATEGORIES ===== */
+.categories{background:var(--gray-50)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat-card{background:white;border-radius:var(--radius-lg);overflow:hidden;border:2px solid transparent;transition:all .3s;cursor:pointer;box-shadow:var(--shadow-sm)}
+.cat-card:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.cat-img{height:160px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--gray-100),var(--gray-200))}
+.cat-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.cat-card:hover .cat-img img{transform:scale(1.08)}
+.cat-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px}
+.cat-body{padding:16px}
+.cat-name{font-size:14px;font-weight:700;color:var(--navy-dark);margin-bottom:4px}
+.cat-cta{font-size:12px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:4px;opacity:0;transition:.2s}
+.cat-card:hover .cat-cta{opacity:1}
+
+/* ===== PRODUCTS ===== */
+.products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.view-all-btn{padding:10px 22px;border-radius:24px;border:2px solid var(--navy);color:var(--navy);font-size:13px;font-weight:700;transition:all .2s}
+.view-all-btn:hover{background:var(--navy);color:white}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--gray-100);overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:var(--shadow-sm)}
+.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-xl);border-color:var(--gray-200)}
+.product-img{height:220px;position:relative;overflow:hidden;background:linear-gradient(135deg,#F0F4FF,#E8EEF8)}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.badge-bestseller{background:var(--navy);color:white}
+.badge-new{background:var(--green);color:white}
+.badge-off{background:var(--red);color:white}
+.product-wishlist{position:absolute;top:12px;right:12px;width:36px;height:36px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:var(--shadow-sm);transition:all .2s}
+.product-wishlist:hover{transform:scale(1.1)}
+.product-body{padding:18px}
+.product-cat{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.product-name{font-size:15px;font-weight:700;color:var(--navy-dark);margin-bottom:8px;line-height:1.35}
+.product-rating{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.stars{color:var(--gold);font-size:13px}
+.rating-num{font-size:13px;font-weight:600;color:var(--gray-800)}
+.rating-count{font-size:12px;color:var(--gray-400)}
+.product-price{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.price-main{font-size:22px;font-weight:800;color:var(--navy-dark)}
+.price-old{font-size:14px;color:var(--gray-400);text-decoration:line-through}
+.price-save{font-size:12px;font-weight:700;color:var(--green);background:#ECFDF5;padding:2px 8px;border-radius:20px}
+.add-cart-btn{width:100%;padding:11px;background:var(--navy);color:white;border-radius:10px;font-size:14px;font-weight:700;transition:all .2s}
+.add-cart-btn:hover{background:var(--navy-dark);transform:translateY(-1px)}
+
+/* ===== FACTORY STRIP ===== */
+.factory-strip{background:var(--navy-dark);padding:60px 24px;position:relative;overflow:hidden}
+.factory-strip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,197,66,0.05),transparent)}
+.factory-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.factory-visual{border-radius:var(--radius-xl);overflow:hidden;position:relative;height:280px;background:linear-gradient(135deg,#243B6B,#1B2D5F)}
+.factory-visual img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.factory-label{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);color:white;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:600}
+.factory-content .section-tag{color:var(--gold)}
+.factory-content .section-title{color:white}
+.factory-content p{color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:28px}
+.factory-points{display:flex;flex-direction:column;gap:14px}
+.factory-point{display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.85);font-size:14px}
+.factory-point-dot{width:24px;height:24px;background:rgba(244,197,66,0.2);border:2px solid var(--gold);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:12px;margin-top:1px}
+
+/* ===== NEW ARRIVALS ===== */
+.new-arrivals{background:var(--gray-50)}
+
+/* ===== BULK CTA ===== */
+.bulk-cta{background:linear-gradient(135deg,var(--navy) 0%,#1E3A8A 100%);padding:80px 24px;position:relative;overflow:hidden}
+.bulk-cta::after{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(244,197,66,0.12),transparent 70%);border-radius:50%}
+.bulk-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.bulk-cta .section-tag{color:var(--gold)}
+.bulk-cta .section-title{color:white}
+.bulk-cta p{color:rgba(255,255,255,0.75);font-size:15px;line-height:1.75;margin-bottom:32px}
+.bulk-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.bulk-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:20px;text-align:center;backdrop-filter:blur(10px)}
+.bulk-stat .num{font-size:26px;font-weight:800;color:var(--gold);display:block;margin-bottom:4px}
+.bulk-stat .lbl{font-size:12px;color:rgba(255,255,255,0.6);font-weight:600}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.testimonial-card{background:white;border-radius:var(--radius-lg);padding:28px;border:1px solid var(--gray-100);box-shadow:var(--shadow-sm);transition:all .3s}
+.testimonial-card:hover{box-shadow:var(--shadow-lg);border-color:var(--gray-200);transform:translateY(-2px)}
+.testimonial-quote{font-size:36px;color:var(--gold);line-height:1;margin-bottom:12px;font-family:'Playfair Display',serif}
+.testimonial-text{font-size:14px;color:var(--gray-600);line-height:1.75;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0}
+.testimonial-name{font-size:14px;font-weight:700;color:var(--navy-dark)}
+.testimonial-role{font-size:12px;color:var(--gray-400)}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--gray-50)}
+.faq-list{max-width:760px;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:white;border-radius:var(--radius);border:1px solid var(--gray-100);overflow:hidden}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;font-size:15px;font-weight:600;color:var(--navy-dark);text-align:left;gap:12px}
+.faq-question:hover{background:var(--gray-50)}
+.faq-icon{font-size:20px;color:var(--navy);flex-shrink:0;transition:transform .3s}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-answer p{padding:0 24px 20px;font-size:14px;color:var(--gray-600);line-height:1.75}
+.faq-item.open .faq-answer{max-height:300px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* ===== NEWSLETTER ===== */
+.newsletter{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:72px 24px;text-align:center}
+.newsletter h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:white;margin-bottom:12px}
+.newsletter p{color:rgba(255,255,255,0.7);font-size:15px;margin-bottom:32px}
+.newsletter-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
+.newsletter-form input{flex:1;padding:14px 20px;border-radius:10px;border:2px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:14px;outline:none;transition:all .2s}
+.newsletter-form input::placeholder{color:rgba(255,255,255,0.45)}
+.newsletter-form input:focus{border-color:var(--gold);background:rgba(255,255,255,0.12)}
+.newsletter-form button{padding:14px 28px;background:var(--gold);color:var(--navy-dark);border-radius:10px;font-size:14px;font-weight:700;transition:all .2s;white-space:nowrap}
+.newsletter-form button:hover{background:#FFD45C;transform:translateY(-1px)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-dark);color:rgba(255,255,255,0.75);padding:64px 24px 0}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:48px}
+.footer-brand img{height:52px;margin-bottom:16px;border-radius:8px}
+.footer-brand p{font-size:13px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:16px}
+.footer-gstin{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600;color:var(--gold);display:inline-block}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:white}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.6)}
+.footer-contact-item span{font-size:16px;flex-shrink:0;margin-top:1px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.4)}
+.footer-bottom a{color:rgba(255,255,255,0.5);margin-left:16px;transition:color .2s}
+.footer-bottom a:hover{color:white}
+
+/* ===== FLOATING BUTTONS ===== */
+.floating-wa{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);animation:pulse-wa 2.5s infinite}
+.floating-wa svg{width:28px;height:28px;fill:white}
+@keyframes pulse-wa{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
+.floating-call{position:fixed;bottom:100px;right:28px;z-index:9999;width:48px;height:48px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);font-size:22px;color:white;transition:all .2s}
+.floating-call:hover{background:var(--navy-dark);transform:scale(1.08)}
+
+/* ===== CART SIDEBAR ===== */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-sidebar{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:white;z-index:2001;display:flex;flex-direction:column;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow-xl)}
+.cart-sidebar.open{right:0}
+.cart-header{padding:20px 24px;border-bottom:1px solid var(--gray-100);display:flex;justify-content:space-between;align-items:center}
+.cart-header h3{font-size:18px;font-weight:700;color:var(--navy-dark)}
+.cart-close{width:36px;height:36px;border-radius:8px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gray-600);transition:all .2s}
+.cart-close:hover{background:var(--gray-200)}
+.cart-items{flex:1;overflow-y:auto;padding:16px 24px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--gray-400)}
+.cart-empty-icon{font-size:60px;margin-bottom:16px}
+.cart-empty p{font-size:15px}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--gray-100)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:14px;color:var(--gray-600)}
+.cart-total-row.grand{font-size:18px;font-weight:800;color:var(--navy-dark);margin-top:12px;padding-top:12px;border-top:2px solid var(--gray-100)}
+.cart-checkout-btn{width:100%;padding:14px;background:var(--navy);color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:16px;transition:all .2s}
+.cart-checkout-btn:hover{background:var(--navy-dark)}
+.cart-wa-btn{width:100%;padding:12px;background:#25D366;color:white;border-radius:12px;font-size:14px;font-weight:700;margin-top:10px;transition:all .2s}
+.cart-wa-btn:hover{background:#1DA851}
+
+/* ===== TOAST ===== */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy-dark);color:white;padding:14px 24px;border-radius:12px;font-size:14px;font-weight:600;z-index:9999;transition:transform .3s;box-shadow:var(--shadow-xl);display:flex;align-items:center;gap:10px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate-up{animation:fadeUp .6s ease both}
+.delay-1{animation-delay:.1s}
+.delay-2{animation-delay:.2s}
+.delay-3{animation-delay:.3s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+.cat-grid{grid-template-columns:repeat(3,1fr)}
+.products-grid{grid-template-columns:repeat(2,1fr)}
+.footer-inner{grid-template-columns:1fr 1fr}
+.bulk-cta-inner,.factory-strip-inner,.hero-inner{grid-template-columns:1fr}
+.hero-visual{display:none}
+.testimonials-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+.topbar{display:none}
+.navbar{padding:0 16px;height:62px}
+.nav-links{display:none}
+.nav-search{display:none}
+.hero{padding:48px 16px;min-height:auto}
+.hero h1{font-size:32px}
+.cat-grid{grid-template-columns:repeat(2,1fr)}
+.products-grid{grid-template-columns:1fr}
+.section{padding:56px 16px}
+.footer-inner{grid-template-columns:1fr}
+.bulk-stats{grid-template-columns:repeat(2,1fr)}
+.newsletter-form{flex-direction:column}
+.footer-bottom{flex-direction:column;gap:12px;text-align:center}
+.cart-sidebar{width:100%;right:-100%}
+}
+</style>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar" id="announcementBar">
-  <div class="announcement-inner">
-    <span>🎉 Bulk Order Discounts Available — Call <a href="tel:+916393539533">+91 6393539533</a> for wholesale pricing</span>
-    <span class="ann-sep">|</span>
-    <span>🚚 Pan-India Delivery &nbsp;|&nbsp; 🏭 Direct from Manufacturer</span>
-    <span class="ann-sep">|</span>
-    <span>✅ GST Invoice Provided</span>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <span>📞 +91 6393539533</span>
+    <span>✉️ shrishiventerprises2025@gmail.com</span>
   </div>
-  <button class="ann-close" onclick="document.getElementById('announcementBar').style.display='none'">×</button>
+  <div class="topbar-right">
+    <span>Free Shipping above <strong>₹999</strong></span>
+    <span class="promo">Use SHIV10 for 10% OFF</span>
+  </div>
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <!-- Logo -->
-    <a href="#home" class="nav-logo" onclick="showPage('home')">
-      <img src="images/logo.jpg" alt="Shri Shiv Enterprises Logo" class="logo-img" />
-      <div class="logo-text">
-        <span class="logo-main">Shri Shiv</span>
-        <span class="logo-sub">ENTERPRISES</span>
-      </div>
-    </a>
-
-    <!-- Search Bar -->
-    <div class="nav-search">
-      <input type="text" id="searchInput" placeholder="Search notebooks, registers, exercise books..." onkeyup="handleSearch(event)" />
-      <button class="search-btn" onclick="performSearch()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      </button>
-    </div>
-
-    <!-- Nav Actions -->
-    <div class="nav-actions">
-      <button class="nav-btn theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
-        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <button class="nav-btn wishlist-btn" onclick="toggleWishlistPanel()" title="Wishlist">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <span class="badge" id="wishlistCount">0</span>
-      </button>
-      <button class="nav-btn cart-btn" onclick="toggleCart()" title="Cart">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="badge" id="cartCount">0</span>
-      </button>
-      <button class="nav-btn login-btn" onclick="showModal('loginModal')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Login</span>
-      </button>
-      <button class="hamburger" onclick="toggleMobileMenu()" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="navbar">
+  <div class="nav-logo" onclick="scrollToTop()">
+    <img src="images/logo.jpg" alt="Shri Shiv Enterprises Logo" />
+    <div class="nav-logo-text">
+      <span class="brand-name">Shri Shiv Enterprises</span>
+      <span class="brand-sub">Since 2020 · Kanpur</span>
     </div>
   </div>
-
-  <!-- Desktop Nav Links -->
-  <div class="nav-links" id="navLinks">
-    <a href="#home" class="nav-link active" onclick="showPage('home');setActiveNav(this)">Home</a>
-    <a href="#shop" class="nav-link" onclick="showPage('shop');setActiveNav(this)">Shop</a>
-    <div class="nav-dropdown">
-      <a href="#categories" class="nav-link" onclick="showPage('categories');setActiveNav(this)">Categories <span class="arrow">▾</span></a>
-      <div class="dropdown-menu">
-        <a href="#" onclick="filterCategory('school')">📚 School Notebooks</a>
-        <a href="#" onclick="filterCategory('exercise')">📓 Exercise Notebooks</a>
-        <a href="#" onclick="filterCategory('a4')">📄 A4 Notebooks</a>
-        <a href="#" onclick="filterCategory('practical')">🔬 Practical Notebooks</a>
-        <a href="#" onclick="filterCategory('registers')">📋 Registers</a>
-        <a href="#" onclick="filterCategory('long')">📜 Long Books</a>
-        <a href="#" onclick="filterCategory('drawing')">🎨 Drawing Books</a>
-        <a href="#" onclick="filterCategory('custom')">✏️ Customized Notebooks</a>
-      </div>
-    </div>
-    <a href="#about" class="nav-link" onclick="showPage('about');setActiveNav(this)">About Us</a>
-    <a href="#contact" class="nav-link" onclick="showPage('contact');setActiveNav(this)">Contact</a>
-    <a href="#bulk" class="nav-link bulk-link" onclick="showPage('bulk');setActiveNav(this)">📦 Bulk Orders</a>
+  <div class="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#categories">Categories</a>
+    <a href="#bulk">Bulk Orders</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Search notebooks, registers, drawing books..." id="searchInput" oninput="handleSearch(this.value)" />
+  </div>
+  <div class="nav-actions">
+    <button class="nav-icon-btn" title="Wishlist">❤️</button>
+    <button class="nav-icon-btn" onclick="openCart()" title="Cart">
+      🛒
+      <span class="nav-badge" id="cartCount">0</span>
+    </button>
+    <button class="nav-btn nav-btn-primary" onclick="openWhatsApp()">WhatsApp Us</button>
   </div>
 </nav>
 
-<!-- MAIN CONTENT PAGES -->
-<main id="mainContent">
-
-<!-- ============================================================ HOME PAGE ============================================================ -->
-<div id="page-home" class="page active">
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-slider" id="heroSlider">
-      <div class="hero-slide active" style="background: linear-gradient(135deg, #243B6B 0%, #1a2d54 50%, #0d1a33 100%);">
-        <div class="hero-content">
-          <div class="hero-badge">🏭 Manufacturer & Wholesaler Since 2010</div>
-          <h1 class="hero-title">Premium Quality<br /><span class="gold-text">Notebooks & Registers</span><br />Manufacturer</h1>
-          <p class="hero-subtitle">Delivering quality stationery products for schools, colleges, wholesalers, distributors, retailers, and corporate clients across India.</p>
-          <div class="hero-stats">
-            <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Products</span></div>
-            <div class="stat"><span class="stat-num">5000+</span><span class="stat-label">Happy Clients</span></div>
-            <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
-            <div class="stat"><span class="stat-num">Pan India</span><span class="stat-label">Delivery</span></div>
-          </div>
-          <div class="hero-buttons">
-            <button class="btn-primary-hero" onclick="showPage('shop');setActiveNav(document.querySelector('[onclick*=\"shop\"]'))">Shop Now →</button>
-            <button class="btn-secondary-hero" onclick="showPage('contact');setActiveNav(document.querySelector('[onclick*=\"contact\"]'))">Contact Us</button>
-          </div>
-        </div>
-        <div class="hero-image-col">
-          <div class="hero-img-stack">
-            <img src="images/lifestyle-piyus.jpg" alt="Premium Notebook" class="hero-img hero-img-1" loading="lazy" />
-            <img src="images/notebook-summer.jpg" alt="Summer Notebook" class="hero-img hero-img-2" loading="lazy" />
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge animate-up">🏭 TRUSTED NOTEBOOK MANUFACTURER</div>
+      <h1 class="animate-up delay-1">Premium Notebooks.<br/><span>Crafted in Kanpur.</span></h1>
+      <p class="hero-desc animate-up delay-2">Manufacturer &amp; wholesaler of school notebooks, A4 notebooks, exercise books, registers and customised OEM/private-label products. Trusted by schools, distributors and offices across India.</p>
+      <div class="hero-btns animate-up delay-3">
+        <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">🛍️ Shop Now</button>
+        <button class="btn-secondary" onclick="document.getElementById('bulk').scrollIntoView({behavior:'smooth'})">📦 Bulk Inquiry</button>
+        <button class="btn-secondary" onclick="openWhatsApp()">💬 Contact Sales</button>
       </div>
-
-      <div class="hero-slide" style="background: linear-gradient(135deg, #1a2d54 0%, #243B6B 60%, #2d4a80 100%);">
-        <div class="hero-content">
-          <div class="hero-badge">⭐ No.1 Brand Superior Quality</div>
-          <h1 class="hero-title">Customized<br /><span class="gold-text">Printed Notebooks</span><br />& OEM Manufacturing</h1>
-          <p class="hero-subtitle">Get your brand name and logo printed on premium quality notebooks. Minimum order 500 units. Perfect for schools, corporates & retailers.</p>
-          <div class="hero-buttons">
-            <button class="btn-primary-hero" onclick="showPage('bulk');setActiveNav(document.querySelector('[onclick*=\"bulk\"]'))">Get Bulk Quote →</button>
-            <button class="btn-secondary-hero" href="tel:+916393539533">Call Now: +91 6393539533</button>
-          </div>
-        </div>
-        <div class="hero-image-col">
-          <div class="hero-img-stack">
-            <img src="images/lifestyle-harsh.jpg" alt="Sports Notebook" class="hero-img hero-img-1" loading="lazy" />
-            <img src="images/notebook-vaishnavi.jpg" alt="Vaishnavi Notebook" class="hero-img hero-img-2" loading="lazy" />
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide" style="background: linear-gradient(135deg, #0d1a33 0%, #243B6B 50%, #1a2d54 100%);">
-        <div class="hero-content">
-          <div class="hero-badge">🌿 Eco Friendly | Vocal for Local</div>
-          <h1 class="hero-title">A4 Exercise<br /><span class="gold-text">Notebooks Collection</span><br />by Shiv Enterprises</h1>
-          <p class="hero-subtitle">Premium ruled, unruled & graph paper notebooks. Best quality writing paper, smooth finish, durable binding. Eco-certified manufacturing.</p>
-          <div class="hero-buttons">
-            <button class="btn-primary-hero" onclick="filterCategory('a4');showPage('shop');">Shop A4 Range →</button>
-            <button class="btn-secondary-hero" onclick="showPage('about')">Our Story</button>
-          </div>
-        </div>
-        <div class="hero-image-col">
-          <div class="hero-img-stack">
-            <img src="images/notebook-anshika-a4.jpg" alt="A4 Notebook" class="hero-img hero-img-1" loading="lazy" />
-            <img src="images/notebooks-a4-set.jpg" alt="A4 Notebook Set" class="hero-img hero-img-2" loading="lazy" />
-          </div>
-        </div>
+      <div class="hero-stats animate-up">
+        <div class="hero-stat"><div class="num">10M+</div><div class="label">Notebooks Manufactured</div></div>
+        <div class="hero-stat"><div class="num">500+</div><div class="label">Bulk Clients</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="label">GST Compliant</div></div>
       </div>
     </div>
-
-    <!-- Slider Controls -->
-    <button class="slider-prev" onclick="changeSlide(-1)">‹</button>
-    <button class="slider-next" onclick="changeSlide(1)">›</button>
-    <div class="slider-dots" id="sliderDots">
-      <span class="dot active" onclick="goToSlide(0)"></span>
-      <span class="dot" onclick="goToSlide(1)"></span>
-      <span class="dot" onclick="goToSlide(2)"></span>
-    </div>
-  </section>
-
-  <!-- TRUST BADGES -->
-  <section class="trust-bar">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Free Delivery</strong><span>On orders above ₹5000</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🏭</div><div><strong>Direct Manufacturer</strong><span>No middlemen, best price</span></div></div>
-        <div class="trust-item"><div class="trust-icon">📦</div><div><strong>Bulk Orders</strong><span>Special wholesale pricing</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🧾</div><div><strong>GST Invoice</strong><span>Proper tax documentation</span></div></div>
-        <div class="trust-item"><div class="trust-icon">⚡</div><div><strong>Fast Dispatch</strong><span>48-hour processing</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🌿</div><div><strong>Eco Certified</strong><span>Sustainable manufacturing</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <section class="section categories-section" id="categoriesHome">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Shop by <span class="gold-text">Category</span></h2>
-        <p class="section-subtitle">Explore our complete range of premium stationery products</p>
-      </div>
-      <div class="categories-grid">
-        <div class="cat-card" onclick="filterCategory('school');showPage('shop')">
-          <div class="cat-icon">📚</div>
-          <div class="cat-img-wrap"><img src="images/lifestyle-piyus.jpg" alt="School Notebooks" loading="lazy"/></div>
-          <h3>School Notebooks</h3>
-          <p>All standards • Ruled & Blank</p>
-          <span class="cat-count">12 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('exercise');showPage('shop')">
-          <div class="cat-icon">📓</div>
-          <div class="cat-img-wrap"><img src="images/lifestyle-harsh.jpg" alt="Exercise Notebooks" loading="lazy"/></div>
-          <h3>Exercise Notebooks</h3>
-          <p>Ruled • Graph • Square</p>
-          <span class="cat-count">8 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('a4');showPage('shop')">
-          <div class="cat-icon">📄</div>
-          <div class="cat-img-wrap"><img src="images/notebooks-a4-set.jpg" alt="A4 Notebooks" loading="lazy"/></div>
-          <h3>A4 Notebooks</h3>
-          <p>Premium writing paper</p>
-          <span class="cat-count">10 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('practical');showPage('shop')">
-          <div class="cat-icon">🔬</div>
-          <div class="cat-img-wrap"><img src="images/notebook-anshika-a4.jpg" alt="Practical Notebooks" loading="lazy"/></div>
-          <h3>Practical Notebooks</h3>
-          <p>Science • Art • Lab records</p>
-          <span class="cat-count">6 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('registers');showPage('shop')">
-          <div class="cat-icon">📋</div>
-          <div class="cat-img-wrap"><img src="images/lifestyle-anshika.jpg" alt="Registers" loading="lazy"/></div>
-          <h3>Registers</h3>
-          <p>Office • School • Account</p>
-          <span class="cat-count">7 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('drawing');showPage('shop')">
-          <div class="cat-icon">🎨</div>
-          <div class="cat-img-wrap"><img src="images/promo-notebooks.jpg" alt="Drawing Books" loading="lazy"/></div>
-          <h3>Drawing Books</h3>
-          <p>Plain • Art paper quality</p>
-          <span class="cat-count">5 Products</span>
-        </div>
-        <div class="cat-card" onclick="filterCategory('long');showPage('shop')">
-          <div class="cat-icon">📜</div>
-          <div class="cat-img-wrap"><img src="images/notebook-summer.jpg" alt="Long Books" loading="lazy"/></div>
-          <h3>Long Books</h3>
-          <p>200 to 500 pages</p>
-          <span class="cat-count">4 Products</span>
-        </div>
-        <div class="cat-card featured-cat" onclick="showPage('bulk')">
-          <div class="cat-icon">✏️</div>
-          <div class="cat-img-wrap"><img src="images/notebook-vaishnavi.jpg" alt="Customized Notebooks" loading="lazy"/></div>
-          <h3>Customized Printed</h3>
-          <p>Your brand • OEM orders</p>
-          <span class="cat-count">Custom Order</span>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="images/promo-notebooks.jpg" alt="Premium Notebooks" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#243B6B,#1B2D5F)'" />
+        <div class="hero-card-badges">
+          <span class="hero-card-badge gold">✅ ISO Quality Certified</span>
+          <span class="hero-card-badge">🚚 Pan-India Fast Delivery</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FEATURED PRODUCTS -->
-  <section class="section products-section" id="featuredHome">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured <span class="gold-text">Products</span></h2>
-        <p class="section-subtitle">Our best-selling notebooks loved by schools and colleges across India</p>
-        <a class="view-all-btn" onclick="showPage('shop')">View All Products →</a>
-      </div>
-      <div class="products-grid" id="featuredProductsGrid"></div>
-    </div>
-  </section>
-
-  <!-- BEST SELLERS BANNER -->
-  <section class="promo-banner">
-    <div class="promo-inner">
-      <div class="promo-text">
-        <span class="promo-tag">🔥 Best Sellers</span>
-        <h2>Vaishnavi & Siya Series</h2>
-        <p>Our most popular notebook brands — vibrant covers, smooth paper, durable binding. Trusted by 5000+ schools.</p>
-        <button class="btn-gold" onclick="showPage('shop')">Shop Best Sellers</button>
-      </div>
-      <div class="promo-images">
-        <img src="images/promo-notebooks.jpg" alt="Best Seller Notebooks" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW ARRIVALS -->
-  <section class="section products-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">New <span class="gold-text">Arrivals</span></h2>
-        <p class="section-subtitle">Fresh designs — just launched for the 2026 school season</p>
-      </div>
-      <div class="products-grid" id="newArrivalsGrid"></div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="section why-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Why Choose <span class="gold-text">Shri Shiv Enterprises</span></h2>
-        <p class="section-subtitle">15 years of manufacturing excellence, trusted by thousands of institutions</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">🏭</div>
-          <h3>Direct Manufacturer</h3>
-          <p>We manufacture every product in-house at our Kanpur facility. No middlemen means the best price for you.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🌿</div>
-          <h3>Eco Certified</h3>
-          <p>Rain water harvesting certified, eco-friendly quality paper, Vocal for Local pledge. Sustainable manufacturing.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">⭐</div>
-          <h3>Superior Quality</h3>
-          <p>Premium 60GSM to 80GSM writing paper, smooth finish, smear-free ink absorption, durable hard spine binding.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🎨</div>
-          <h3>Vibrant Covers</h3>
-          <p>Attractive full-colour printed covers that students love. Cartoon, nature, sports & educational themes available.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">📦</div>
-          <h3>Bulk Orders Welcome</h3>
-          <p>Wholesale pricing for schools, distributors, retailers. Minimum 100 units. Custom branding available.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🚚</div>
-          <h3>Pan-India Delivery</h3>
-          <p>Fast dispatch within 48 hours. Reliable courier partners. Bulk freight arrangements for large orders.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🧾</div>
-          <h3>GST Compliant</h3>
-          <p>Proper GST invoice provided for all orders. MSME registered. Trusted by government schools & institutions.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🤝</div>
-          <h3>15+ Years Trust</h3>
-          <p>Established in Kanpur, UP. Over 5000 satisfied clients. Repeat orders from across India for 15+ years.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CUSTOMER REVIEWS -->
-  <section class="section reviews-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">What Our Customers <span class="gold-text">Say</span></h2>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>"Excellent quality notebooks at factory prices. We order 10,000 units every year for our school group. Always on time, always perfect."</p>
-          <div class="reviewer"><div class="reviewer-avatar">RS</div><div><strong>Rajan Sharma</strong><span>School Principal, Lucknow</span></div></div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>"Best stationery manufacturer in UP. The Vaishnavi and Siya series are a hit with students. Very attractive covers and great paper quality."</p>
-          <div class="reviewer"><div class="reviewer-avatar">MK</div><div><strong>Mohan Kumar</strong><span>Stationery Wholesaler, Kanpur</span></div></div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>"Ordered customized notebooks with our company logo. The printing quality was superb and delivery was faster than expected. Highly recommend!"</p>
-          <div class="reviewer"><div class="reviewer-avatar">PG</div><div><strong>Priya Gupta</strong><span>Corporate Procurement, Delhi</span></div></div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★☆</div>
-          <p>"Good quality exercise books at bulk rates. The A4 notebook series is very popular in our outlet. Will definitely reorder next season."</p>
-          <div class="reviewer"><div class="reviewer-avatar">AV</div><div><strong>Anil Verma</strong><span>Retailer, Varanasi</span></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section faq-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Frequently Asked <span class="gold-text">Questions</span></h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">What is the minimum order quantity for bulk orders? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">Minimum order is 100 units per product for standard orders. For customized/printed notebooks, minimum is 500 units. Call us at +91 6393539533 for special requirements.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">Do you offer customized printing? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">Yes! We offer full OEM manufacturing with your brand name, logo, and custom cover designs. Send your artwork and we'll produce premium notebooks branded for your school or company.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">What payment methods do you accept? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">We accept UPI, NEFT/RTGS bank transfer, cheque, and cash. For new clients, 50% advance is required. For registered clients, credit terms available.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">How long does delivery take? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">Standard orders dispatch within 48 hours. Delivery takes 3-7 working days depending on location. Express delivery available for urgent orders at extra cost.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">Do you provide GST invoices? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">Yes, all orders come with proper GST invoices. We are GST registered. Our GST number is available on all invoices.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">What paper quality do you use? <span class="faq-arrow">▾</span></button>
-          <div class="faq-answer">We use premium 60GSM to 80GSM writing paper depending on the product range. Our paper is eco-certified, smooth finish, with excellent ink absorption and minimal ghosting.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-inner">
-        <div class="cta-text">
-          <h2>Ready to Place a <span class="gold-text">Bulk Order?</span></h2>
-          <p>Contact us today for wholesale pricing, customized notebooks, and special bulk discounts. Our team is ready to assist you.</p>
-        </div>
-        <div class="cta-buttons">
-          <a href="https://wa.me/916393539533?text=Hello%20Shri%20Shiv%20Enterprises!%20I%20want%20to%20enquire%20about%20bulk%20orders." target="_blank" class="btn-whatsapp-cta">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp Us
-          </a>
-          <a href="tel:+916393539533" class="btn-call-cta">📞 Call: +91 6393539533</a>
-          <button class="btn-outline-cta" onclick="showPage('bulk')">Get Bulk Quote</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- end home page -->
-
-<!-- ============================================================ SHOP PAGE ============================================================ -->
-<div id="page-shop" class="page">
-  <div class="page-header-bg">
-    <div class="container">
-      <h1>Our <span class="gold-text">Products</span></h1>
-      <p>Premium quality notebooks & stationery, direct from manufacturer</p>
     </div>
   </div>
-  <div class="container shop-layout">
-    <!-- Sidebar Filters -->
-    <aside class="shop-sidebar">
-      <div class="filter-section">
-        <h3>Filter by Category</h3>
-        <label><input type="checkbox" value="all" checked onchange="filterProducts()"> All Products</label>
-        <label><input type="checkbox" value="school" onchange="filterProducts()"> School Notebooks</label>
-        <label><input type="checkbox" value="exercise" onchange="filterProducts()"> Exercise Notebooks</label>
-        <label><input type="checkbox" value="a4" onchange="filterProducts()"> A4 Notebooks</label>
-        <label><input type="checkbox" value="practical" onchange="filterProducts()"> Practical Notebooks</label>
-        <label><input type="checkbox" value="registers" onchange="filterProducts()"> Registers</label>
-        <label><input type="checkbox" value="drawing" onchange="filterProducts()"> Drawing Books</label>
-        <label><input type="checkbox" value="long" onchange="filterProducts()"> Long Books</label>
-        <label><input type="checkbox" value="custom" onchange="filterProducts()"> Customized</label>
-      </div>
-      <div class="filter-section">
-        <h3>Price Range</h3>
-        <input type="range" min="0" max="500" value="500" id="priceRange" oninput="document.getElementById('priceVal').textContent='₹'+this.value; filterProducts()">
-        <span id="priceVal">₹500</span>
-      </div>
-      <div class="filter-section">
-        <h3>Sort By</h3>
-        <select id="sortBy" onchange="filterProducts()">
-          <option value="default">Default</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="name">Name A-Z</option>
-        </select>
-      </div>
-    </aside>
-    <!-- Products Grid -->
-    <div class="shop-main">
-      <div class="shop-toolbar">
-        <span id="shopResultCount">Showing all products</span>
-        <div class="view-toggles">
-          <button class="view-btn active" onclick="setView('grid',this)">⊞</button>
-          <button class="view-btn" onclick="setView('list',this)">≡</button>
-        </div>
-      </div>
-      <div class="products-grid" id="shopProductsGrid"></div>
-    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Free Shipping</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">On orders above ₹999</span></div></div>
+    <div class="trust-item"><div class="trust-icon">🧾</div><div><strong>Secure Checkout</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">GST invoice every order</span></div></div>
+    <div class="trust-item"><div class="trust-icon">🏭</div><div><strong>Direct from Factory</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">Manufacturer pricing</span></div></div>
+    <div class="trust-item"><div class="trust-icon">📄</div><div><strong>Premium Quality</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">70–130 GSM paper</span></div></div>
   </div>
 </div>
 
-<!-- ============================================================ ABOUT PAGE ============================================================ -->
-<div id="page-about" class="page">
-  <div class="page-header-bg">
-    <div class="container">
-      <h1>About <span class="gold-text">Us</span></h1>
-      <p>15 years of manufacturing excellence from Kanpur, India</p>
+<!-- CATEGORIES -->
+<section class="section categories" id="categories">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">EXPLORE</div>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-desc">Premium stationery for every need — from primary school to corporate offices.</p>
     </div>
-  </div>
-  <div class="container about-content">
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>Our <span class="gold-text">Story</span></h2>
-        <p>Shri Shiv Enterprises was established in Kanpur, Uttar Pradesh, with a single mission: to provide the highest quality stationery products at manufacturer-direct prices to schools, colleges, wholesalers, and retailers across India.</p>
-        <p>Over 15 years of manufacturing excellence, we have grown from a small workshop to a full-scale manufacturing facility producing millions of notebooks each year under our flagship brands — <strong>Vaishnavi, Siya, Harsh, Piyus, Anshika, Sainesh, Shivangi, and Sushant</strong>.</p>
-        <p>Our products are eco-certified, comply with all national quality standards, and are proudly <strong>Made in India</strong> under the Vocal for Local initiative.</p>
-        <div class="about-stats">
-          <div class="astat"><span>15+</span><label>Years</label></div>
-          <div class="astat"><span>5000+</span><label>Clients</label></div>
-          <div class="astat"><span>50+</span><label>Products</label></div>
-          <div class="astat"><span>Pan India</span><label>Delivery</label></div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="filterCategory('school')">
+        <div class="cat-img"><div class="cat-emoji">📚</div></div>
+        <div class="cat-body">
+          <div class="cat-name">School Notebooks</div>
+          <div class="cat-cta">Shop now →</div>
         </div>
       </div>
-      <div class="about-img">
-        <img src="images/lifestyle-anshika.jpg" alt="About Shri Shiv Enterprises" />
+      <div class="cat-card" onclick="filterCategory('exercise')">
+        <div class="cat-img"><div class="cat-emoji">📓</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Exercise Books</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
       </div>
-    </div>
-    <div class="about-values">
-      <h2>Our <span class="gold-text">Values</span></h2>
-      <div class="values-grid">
-        <div class="value-card"><div class="value-icon">🎯</div><h3>Quality First</h3><p>Every notebook is crafted with the finest materials. Our QC team inspects every batch before dispatch.</p></div>
-        <div class="value-card"><div class="value-icon">🤝</div><h3>Client Relationships</h3><p>We build long-term partnerships. Many of our clients have been ordering from us for over 10 years.</p></div>
-        <div class="value-card"><div class="value-icon">🌿</div><h3>Sustainability</h3><p>Eco-certified paper, rainwater harvesting, minimal waste manufacturing. We care for the environment.</p></div>
-        <div class="value-card"><div class="value-icon">🇮🇳</div><h3>Made in India</h3><p>Proud supporters of Vocal for Local. 100% Indian manufacturing, supporting local employment.</p></div>
+      <div class="cat-card" onclick="filterCategory('a4')">
+        <div class="cat-img"><div class="cat-emoji">📋</div></div>
+        <div class="cat-body">
+          <div class="cat-name">A4 Notebooks</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
       </div>
-    </div>
-    <div class="about-brands">
-      <h2>Our Notebook <span class="gold-text">Brands</span></h2>
-      <div class="brands-grid">
-        <div class="brand-tag">Vaishnavi Series</div>
-        <div class="brand-tag">Siya Series</div>
-        <div class="brand-tag">Harsh Series</div>
-        <div class="brand-tag">Piyus Series</div>
-        <div class="brand-tag">Anshika Series</div>
-        <div class="brand-tag">Sainesh Series</div>
-        <div class="brand-tag">Shivangi Series</div>
-        <div class="brand-tag">Sushant Series</div>
+      <div class="cat-card" onclick="filterCategory('practical')">
+        <div class="cat-img"><div class="cat-emoji">🔬</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Practical Books</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
       </div>
-    </div>
-    <div class="certifications">
-      <h2>Certifications & <span class="gold-text">Compliances</span></h2>
-      <div class="cert-grid">
-        <div class="cert-item">🌿 Eco Friendly Quality</div>
-        <div class="cert-item">💧 Rainwater Harvesting Certified</div>
-        <div class="cert-item">🇮🇳 Vocal for Local Pledge</div>
-        <div class="cert-item">📋 GST Registered MSME</div>
-        <div class="cert-item">⭐ Superior Quality Assured</div>
-        <div class="cert-item">✅ No.1 Brand Certified</div>
+      <div class="cat-card" onclick="filterCategory('drawing')">
+        <div class="cat-img"><div class="cat-emoji">🎨</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Drawing Books</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('register')">
+        <div class="cat-img"><div class="cat-emoji">📒</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Registers</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('office')">
+        <div class="cat-img"><div class="cat-emoji">🗂️</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Office Registers</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="filterCategory('custom')">
+        <div class="cat-img"><div class="cat-emoji">🖨️</div></div>
+        <div class="cat-body">
+          <div class="cat-name">Custom Printing</div>
+          <div class="cat-cta">Shop now →</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ============================================================ CONTACT PAGE ============================================================ -->
-<div id="page-contact" class="page">
-  <div class="page-header-bg">
-    <div class="container">
-      <h1>Contact <span class="gold-text">Us</span></h1>
-      <p>Get in touch for bulk orders, custom notebooks & wholesale enquiries</p>
+<!-- BEST SELLERS -->
+<section class="section" id="shop">
+  <div class="section-inner">
+    <div class="products-header">
+      <div>
+        <div class="section-tag">BEST SELLERS</div>
+        <h2 class="section-title">Customer Favourites</h2>
+        <p class="section-desc">The most loved notebooks by our customers</p>
+      </div>
+      <button class="view-all-btn" onclick="openWhatsApp()">View all →</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <!-- Product cards injected by JS -->
     </div>
   </div>
-  <div class="container contact-content">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Get in <span class="gold-text">Touch</span></h2>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="cd-icon">📍</div>
-            <div><strong>Factory & Office Address</strong><p>41/1 Bajrang Vihar, Khadepur,<br/>Kanpur, Uttar Pradesh - 208021<br/>India</p></div>
-          </div>
-          <div class="contact-detail">
-            <div class="cd-icon">📞</div>
-            <div><strong>Phone</strong><p><a href="tel:+916393539533">+91 6393539533</a><br/><a href="tel:+919839930333">+91 9839930333</a></p></div>
-          </div>
-          <div class="contact-detail">
-            <div class="cd-icon">💬</div>
-            <div><strong>WhatsApp</strong><p><a href="https://wa.me/916393539533" target="_blank">+91 6393539533</a></p></div>
-          </div>
-          <div class="contact-detail">
-            <div class="cd-icon">📧</div>
-            <div><strong>Email</strong><p><a href="mailto:shrishiventerprises2025@gmail.com">shrishiventerprises2025@gmail.com</a></p></div>
-          </div>
-          <div class="contact-detail">
-            <div class="cd-icon">🕐</div>
-            <div><strong>Business Hours</strong><p>Monday - Saturday<br/>9:00 AM - 7:00 PM IST</p></div>
-          </div>
-        </div>
-        <div class="map-container">
-          <iframe src="https://maps.google.com/maps?q=41/1+Bajrang+Vihar+Khadepur+Kanpur+Uttar+Pradesh+208021&output=embed" width="100%" height="250" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="contact-form-wrap">
-        <h2>Send us a <span class="gold-text">Message</span></h2>
-        <form class="contact-form" onsubmit="submitContactForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Your Name *</label>
-              <input type="text" placeholder="Full Name" required />
-            </div>
-            <div class="form-group">
-              <label>Phone Number *</label>
-              <input type="tel" placeholder="+91 XXXXX XXXXX" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label>Subject</label>
-            <select>
-              <option>Bulk Order Enquiry</option>
-              <option>Product Information</option>
-              <option>Customized Notebooks</option>
-              <option>Distributorship / Dealership</option>
-              <option>General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Your Message *</label>
-            <textarea rows="5" placeholder="Please describe your requirement — product type, quantity, delivery location, etc." required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message →</button>
-        </form>
+</section>
+
+<!-- FACTORY / WHY US -->
+<section class="factory-strip" id="about">
+  <div class="factory-strip-inner">
+    <div class="factory-visual">
+      <img src="images/lifestyle-harsh.jpg" alt="Factory" onerror="this.style.opacity='0'" />
+      <div class="factory-label">🏭 OUR FACTORY &nbsp;·&nbsp; Khadepur, Kanpur</div>
+    </div>
+    <div class="factory-content">
+      <div class="section-tag">WHY CHOOSE US</div>
+      <h2 class="section-title" style="color:white">Built on Quality.<br/>Backed by Trust.</h2>
+      <p>From sourcing premium 70–130 GSM paper to delivering pan-India, Shri Shiv Enterprises is the manufacturer that distributors, schools and businesses rely on for consistent quality and fair wholesale pricing.</p>
+      <div class="factory-points">
+        <div class="factory-point"><div class="factory-point-dot">✓</div>Acid-free, eye-friendly maplitho paper sourced from top mills.</div>
+        <div class="factory-point"><div class="factory-point-dot">✓</div>Complete control over printing, binding &amp; quality checks.</div>
+        <div class="factory-point"><div class="factory-point-dot">✓</div>OEM &amp; Private Label — manufacture under your brand.</div>
+        <div class="factory-point"><div class="factory-point-dot">✓</div>Transparent GST invoicing for distributors and businesses.</div>
       </div>
     </div>
-    <div class="whatsapp-cta-box">
-      <div class="wa-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="section new-arrivals" id="new">
+  <div class="section-inner">
+    <div class="products-header">
+      <div>
+        <div class="section-tag">JUST IN</div>
+        <h2 class="section-title">New Arrivals</h2>
+        <p class="section-desc">Fresh additions to our premium catalogue</p>
+      </div>
+      <button class="view-all-btn" onclick="openWhatsApp()">View all →</button>
+    </div>
+    <div class="products-grid" id="newArrivalsGrid"></div>
+  </div>
+</section>
+
+<!-- BULK CTA -->
+<section class="bulk-cta" id="bulk">
+  <div class="bulk-cta-inner">
+    <div>
+      <div class="section-tag">FOR DISTRIBUTORS &amp; SCHOOLS</div>
+      <h2 class="section-title">Bulk Orders &amp;<br/>Custom Manufacturing</h2>
+      <p>Get factory-direct pricing on bulk orders starting from 500 units. We do custom covers, branding, OEM and private-label manufacturing with end-to-end GST compliance.</p>
+      <button class="btn-primary" onclick="document.getElementById('bulkForm').scrollIntoView({behavior:'smooth'})">📋 Request Quotation</button>
+    </div>
+    <div class="bulk-stats">
+      <div class="bulk-stat"><span class="num">500+</span><span class="lbl">MOQ Bulk</span></div>
+      <div class="bulk-stat"><span class="num">7-15</span><span class="lbl">Days Delivery</span></div>
+      <div class="bulk-stat"><span class="num">100%</span><span class="lbl">Customisable</span></div>
+      <div class="bulk-stat"><span class="num">Best</span><span class="lbl">Wholesale Price</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BULK FORM -->
+<section class="section" id="bulkForm" style="background:var(--gray-50)">
+  <div class="section-inner" style="max-width:680px">
+    <div class="section-tag">BULK INQUIRY</div>
+    <h2 class="section-title">Get a Free Quote</h2>
+    <p class="section-desc" style="margin-bottom:36px">Fill in your requirements and we'll get back to you within 2 hours.</p>
+    <form onsubmit="submitBulkForm(event)" style="display:flex;flex-direction:column;gap:16px;background:white;padding:36px;border-radius:var(--radius-xl);border:1px solid var(--gray-100);box-shadow:var(--shadow-md)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Company Name</label><input type="text" placeholder="Your company name" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
+        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">GST Number</label><input type="text" placeholder="GSTIN (if applicable)" style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Phone / WhatsApp</label><input type="tel" placeholder="+91 XXXXXXXXXX" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
+        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Quantity Required</label><input type="number" placeholder="Min 500 units" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
+      </div>
+      <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Product Required</label><select required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;background:white"><option value="">Select product type</option><option>School Notebooks</option><option>Exercise Books</option><option>A4 Notebooks</option><option>Practical Books</option><option>Drawing Books</option><option>Registers</option><option>Office Registers</option><option>Custom/OEM</option></select></div>
+      <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Additional Requirements</label><textarea placeholder="Describe your requirements — paper quality, GSM, binding, cover design etc." rows="3" style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;resize:vertical;font-family:inherit" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'"></textarea></div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px">📋 Submit Bulk Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:white">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">TESTIMONIALS</div>
+      <h2 class="section-title">Loved by Businesses &amp; Schools</h2>
+      <p class="section-desc">What our partners and customers say about us</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Shri Shiv ne hamein consistent quality di hai pichle 3 saal se. Bulk pricing aur on-time delivery best in market hai.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RK</div>
+          <div><div class="testimonial-name">Rajesh Kumar</div><div class="testimonial-role">Distributor, Delhi</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">School ke saare notebooks yahin se lete hain. Paper quality aur binding bahut premium hai. Parents bhi khush hain.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AS</div>
+          <div><div class="testimonial-name">Anita Sharma</div><div class="testimonial-role">Principal, DPS Lucknow</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">OEM private label ke liye perfect partner. Custom printing fast aur professional. Margins bhi healthy milte hain.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SP</div>
+          <div><div class="testimonial-name">Suresh Patel</div><div class="testimonial-role">Stationery Retailer, Mumbai</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Office registers and A4 notebooks for our 500+ employees. Quality consistent, GST invoices instant. Highly recommended.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div><div class="testimonial-name">Megha Reddy</div><div class="testimonial-role">Procurement Manager, IT Corp</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Everything you need to know about our products and services</p>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What is the minimum order quantity for bulk orders?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Our minimum order quantity for bulk orders is 500 units. For custom/OEM orders with printed covers, MOQ starts at 1000 units. Contact us for special pricing on larger quantities.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you provide GST invoice with every order?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes! Every order comes with a proper GST invoice with our GSTIN: 09BYUPP5969E2ZF. You can download invoices instantly from your order confirmation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you offer customized / private label manufacturing?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Absolutely! We specialize in OEM and private label manufacturing. You can customize cover design, paper quality, page count, binding style, and get your brand printed on the notebooks.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What paper quality do you use?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We use premium acid-free maplitho paper ranging from 70 GSM to 130 GSM. All paper is eye-friendly, sourced from top mills, and suitable for all types of pens and pencils.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What is your delivery time?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>For standard orders: 3–7 business days. For bulk/custom orders: 7–15 business days depending on quantity and customization. We ship pan-India via trusted logistics partners.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you ship pan-India?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes, we ship to all states and union territories across India. Free shipping is available on orders above ₹999. For bulk orders, we offer special logistics arrangements.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" style="background:white">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div>
+        <div class="section-tag">GET IN TOUCH</div>
+        <h2 class="section-title">Contact Us</h2>
+        <p style="color:var(--gray-600);font-size:15px;line-height:1.75;margin-bottom:32px">We're available Mon–Sat, 9 AM – 7 PM. WhatsApp us for fastest response.</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📍</div>
+            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:4px">Factory Address</div><div style="font-size:14px;color:var(--gray-600);line-height:1.65">41/1 Bajrang Vihar, Khadepur<br/>Kanpur, Uttar Pradesh – 208021</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center">
+            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📞</div>
+            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">Phone &amp; WhatsApp</div><a href="tel:+916393539533" style="font-size:15px;color:var(--navy);font-weight:600">+91 6393539533</a></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center">
+            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">✉️</div>
+            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">Email</div><a href="mailto:shrishiventerprises2025@gmail.com" style="font-size:14px;color:var(--navy)">shrishiventerprises2025@gmail.com</a></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center">
+            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🧾</div>
+            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">GSTIN</div><div style="font-size:14px;color:var(--gray-600)">09BYUPP5969E2ZF</div></div>
+          </div>
+        </div>
+        <button class="btn-primary" style="margin-top:28px" onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
       </div>
       <div>
-        <h3>Quick response on WhatsApp</h3>
-        <p>For faster replies, send us a WhatsApp message with your requirement.</p>
-        <a href="https://wa.me/916393539533?text=Hello%20Shri%20Shiv%20Enterprises!%20I%20want%20to%20enquire%20about%20your%20products." target="_blank" class="btn-whatsapp-cta">Chat on WhatsApp</a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.832!2d80.3523!3d26.4588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI3JzMxLjciTiA4MMKwMjEnMDguMyJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="320" style="border:0;border-radius:var(--radius-lg);filter:grayscale(20%)" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ============================================================ BULK ORDERS PAGE ============================================================ -->
-<div id="page-bulk" class="page">
-  <div class="page-header-bg">
-    <div class="container">
-      <h1>Bulk & Wholesale <span class="gold-text">Orders</span></h1>
-      <p>Special pricing for distributors, retailers, schools & corporates</p>
-    </div>
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="section-inner" style="max-width:600px">
+    <h2>Join the Shri Shiv Family</h2>
+    <p>Get exclusive bulk discounts, new product launches and seasonal offers straight to your inbox.</p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="you@example.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
-  <div class="container bulk-content">
-    <div class="bulk-hero">
-      <div class="bulk-text">
-        <h2>Wholesale Partner <span class="gold-text">Program</span></h2>
-        <p>Join thousands of distributors, retailers, and educational institutions who source directly from us. Enjoy manufacturer-direct pricing, GST invoices, and dedicated account support.</p>
-        <ul class="bulk-benefits">
-          <li>✅ Minimum 100 units per order (standard)</li>
-          <li>✅ 500+ units: 10% discount</li>
-          <li>✅ 1000+ units: 20% discount</li>
-          <li>✅ 5000+ units: Special pricing negotiable</li>
-          <li>✅ Custom branding available from 500 units</li>
-          <li>✅ Pan-India delivery with tracking</li>
-          <li>✅ GST invoice for all orders</li>
-          <li>✅ Credit terms for verified partners</li>
-        </ul>
-      </div>
-      <div class="bulk-img">
-        <img src="images/promo-notebooks.jpg" alt="Bulk Notebooks" loading="lazy" />
-      </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="Shri Shiv Enterprises" />
+      <p>Premium notebook manufacturer &amp; wholesaler from Kanpur, serving schools, distributors and businesses across India.</p>
+      <span class="footer-gstin">GSTIN: 09BYUPP5969E2ZF</span>
     </div>
-
-    <div class="bulk-form-section">
-      <h2>Request a <span class="gold-text">Quote</span></h2>
-      <form class="bulk-form" onsubmit="submitBulkForm(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Company / School Name *</label>
-            <input type="text" placeholder="Business name" required />
-          </div>
-          <div class="form-group">
-            <label>Contact Person *</label>
-            <input type="text" placeholder="Your full name" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone / WhatsApp *</label>
-            <input type="tel" placeholder="+91 XXXXX XXXXX" required />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Product Type *</label>
-            <select required>
-              <option value="">Select product category</option>
-              <option>School Notebooks (Ruled)</option>
-              <option>Exercise Books</option>
-              <option>A4 Notebooks</option>
-              <option>Practical Notebooks</option>
-              <option>Registers</option>
-              <option>Drawing Books</option>
-              <option>Long Books</option>
-              <option>Customized / OEM Notebooks</option>
-              <option>Mixed Assortment</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Estimated Quantity *</label>
-            <select required>
-              <option value="">Select quantity range</option>
-              <option>100 - 500 units</option>
-              <option>500 - 1000 units</option>
-              <option>1000 - 5000 units</option>
-              <option>5000+ units</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>City / State for Delivery *</label>
-          <input type="text" placeholder="e.g. Lucknow, Uttar Pradesh" required />
-        </div>
-        <div class="form-group">
-          <label>Special Requirements</label>
-          <textarea rows="4" placeholder="e.g. Custom logo printing, specific paper weight, page count, binding type, cover design..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Submit Bulk Enquiry →</button>
-      </form>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#bulk">Bulk Orders</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQs</a>
     </div>
-
-    <div class="bulk-process">
-      <h2>Our Order <span class="gold-text">Process</span></h2>
-      <div class="process-steps">
-        <div class="step"><div class="step-num">1</div><h3>Submit Enquiry</h3><p>Fill the form or WhatsApp us your requirement</p></div>
-        <div class="step-arrow">→</div>
-        <div class="step"><div class="step-num">2</div><h3>Get Quote</h3><p>We'll send detailed pricing within 24 hours</p></div>
-        <div class="step-arrow">→</div>
-        <div class="step"><div class="step-num">3</div><h3>Confirm Order</h3><p>Share artwork (if custom), pay advance</p></div>
-        <div class="step-arrow">→</div>
-        <div class="step"><div class="step-num">4</div><h3>Production</h3><p>Manufacturing in 3-7 working days</p></div>
-        <div class="step-arrow">→</div>
-        <div class="step"><div class="step-num">5</div><h3>Delivery</h3><p>Packed & dispatched with tracking</p></div>
-      </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <a href="#">School Notebooks</a>
+      <a href="#">Exercise Books</a>
+      <a href="#">A4 Notebooks</a>
+      <a href="#">Drawing Books</a>
+      <a href="#">Registers</a>
+      <a href="#">OEM/Custom</a>
     </div>
-  </div>
-</div>
-
-<!-- ============================================================ CATEGORIES PAGE ============================================================ -->
-<div id="page-categories" class="page">
-  <div class="page-header-bg">
-    <div class="container">
-      <h1>Product <span class="gold-text">Categories</span></h1>
-    </div>
-  </div>
-  <div class="container" style="padding:40px 20px;">
-    <div class="categories-grid" id="categoriesPageGrid"></div>
-  </div>
-</div>
-
-</main><!-- end main content -->
-
-<!-- ============================================================ FOOTER ============================================================ -->
-<footer class="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo.jpg" alt="Logo" class="footer-logo" />
-          <p>India's trusted manufacturer & wholesaler of premium quality notebooks, registers, and school stationery since 2010. Factory based in Kanpur, UP.</p>
-          <div class="social-links">
-            <a href="https://wa.me/916393539533" target="_blank" class="social-link wa">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-            <a href="mailto:shrishiventerprises2025@gmail.com" class="social-link email">✉</a>
-            <a href="tel:+916393539533" class="social-link phone">📞</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('shop')">All Products</a></li>
-            <li><a href="#" onclick="showPage('about')">About Us</a></li>
-            <li><a href="#" onclick="showPage('bulk')">Bulk Orders</a></li>
-            <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Products</h4>
-          <ul>
-            <li><a href="#" onclick="filterCategory('school');showPage('shop')">School Notebooks</a></li>
-            <li><a href="#" onclick="filterCategory('exercise');showPage('shop')">Exercise Notebooks</a></li>
-            <li><a href="#" onclick="filterCategory('a4');showPage('shop')">A4 Notebooks</a></li>
-            <li><a href="#" onclick="filterCategory('registers');showPage('shop')">Registers</a></li>
-            <li><a href="#" onclick="filterCategory('drawing');showPage('shop')">Drawing Books</a></li>
-            <li><a href="#" onclick="filterCategory('custom');showPage('shop')">Customized Notebooks</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Details</h4>
-          <ul class="contact-list">
-            <li>📍 41/1 Bajrang Vihar, Khadepur,<br>&nbsp;&nbsp;&nbsp;&nbsp;Kanpur, UP - 208021</li>
-            <li>📞 <a href="tel:+916393539533">+91 6393539533</a></li>
-            <li>📞 <a href="tel:+919839930333">+91 9839930333</a></li>
-            <li>📧 <a href="mailto:shrishiventerprises2025@gmail.com">shrishiventerprises2025@gmail.com</a></li>
-          </ul>
-          <div class="newsletter">
-            <h4>Newsletter</h4>
-            <div class="newsletter-form">
-              <input type="email" placeholder="Your email" />
-              <button onclick="showToast('Thank you for subscribing!')">Subscribe</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>📍</span>41/1 Bajrang Vihar, Khadepur, Kanpur UP 208021</div>
+      <div class="footer-contact-item"><span>📞</span><a href="tel:+916393539533">+91 6393539533</a></div>
+      <div class="footer-contact-item"><span>✉️</span><a href="mailto:shrishiventerprises2025@gmail.com">shrishiventerprises2025@gmail.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="container">
-      <p>© 2026 Shri Shiv Enterprises. All Rights Reserved. | Manufacturer & Wholesaler of Premium Stationery, Kanpur, India</p>
-      <div class="footer-links">
-        <a href="#" onclick="showModal('privacyModal')">Privacy Policy</a>
-        <a href="#" onclick="showModal('termsModal')">Terms & Conditions</a>
-      </div>
+    <span>© 2026 Shri Shiv Enterprises. All rights reserved. Made with ❤️ in Kanpur 🇮🇳</span>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Return Policy</a>
     </div>
   </div>
 </footer>
 
-<!-- ============================================================ FLOATING BUTTONS ============================================================ -->
-<a href="https://wa.me/916393539533?text=Hello%20Shri%20Shiv%20Enterprises!%20I%20want%20to%20enquire%20about%20your%20products." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span class="wa-tooltip">Chat with us!</span>
+<!-- FLOATING BUTTONS -->
+<a class="floating-wa" href="https://wa.me/916393539533?text=Hi%20Shri%20Shiv%20Enterprises!%20I%20am%20interested%20in%20your%20notebooks." target="_blank" title="WhatsApp Us">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+<a class="floating-call" href="tel:+916393539533" title="Call Us">📞</a>
 
-<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<!-- ============================================================ CART SIDEBAR ============================================================ -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <h3>🛒 Shopping Cart</h3>
-    <button class="cart-close" onclick="toggleCart()">×</button>
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
-    <div class="cart-empty">
-      <div class="empty-icon">🛒</div>
-      <p>Your cart is empty</p>
-      <button onclick="toggleCart();showPage('shop')">Start Shopping</button>
-    </div>
+    <div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty.<br/>Start shopping!</p></div>
   </div>
-  <div class="cart-footer" id="cartFooter" style="display:none;">
-    <div class="coupon-row">
-      <input type="text" id="couponInput" placeholder="Enter coupon code" />
-      <button onclick="applyCoupon()">Apply</button>
-    </div>
-    <div class="cart-totals">
-      <div class="total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
-      <div class="total-row"><span>GST (18%)</span><span id="cartGST">₹0</span></div>
-      <div class="total-row"><span>Shipping</span><span id="cartShipping">₹0</span></div>
-      <div class="total-row discount-row" id="discountRow" style="display:none;"><span>Discount</span><span id="cartDiscount">-₹0</span></div>
-      <div class="total-row grand-total"><span>Total</span><span id="cartTotal">₹0</span></div>
-    </div>
-    <button class="checkout-btn" onclick="showModal('checkoutModal')">Proceed to Checkout →</button>
-    <button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+    <div class="cart-total-row"><span>GST (18%)</span><span id="cartGst">₹0</span></div>
+    <div class="cart-total-row"><span>Shipping</span><span id="cartShipping">FREE</span></div>
+    <div class="cart-total-row grand"><span>Grand Total</span><span id="cartTotal">₹0</span></div>
+    <button class="cart-checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    <button class="cart-wa-btn" onclick="checkoutViaWhatsApp()">💬 Order via WhatsApp</button>
   </div>
 </div>
 
-<!-- WISHLIST PANEL -->
-<div class="cart-overlay" id="wishlistOverlay" onclick="toggleWishlistPanel()"></div>
-<div class="cart-sidebar wishlist-sidebar" id="wishlistSidebar">
-  <div class="cart-header">
-    <h3>❤️ My Wishlist</h3>
-    <button class="cart-close" onclick="toggleWishlistPanel()">×</button>
-  </div>
-  <div class="cart-items" id="wishlistItems">
-    <div class="cart-empty"><div class="empty-icon">❤️</div><p>Your wishlist is empty</p></div>
-  </div>
-</div>
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Added to cart!</div>
 
-<!-- ============================================================ PRODUCT DETAIL MODAL ============================================================ -->
-<div class="modal-overlay" id="productModalOverlay" style="display:none;" onclick="closeProductModal()"></div>
-<div class="product-modal" id="productModal">
-  <button class="modal-close-btn" onclick="closeProductModal()">×</button>
-  <div class="product-modal-inner" id="productModalContent"></div>
-</div>
+<script>
+// ===== PRODUCT DATA =====
+const products = [
+  {id:1,name:"Premium School Notebook 200 Pages",cat:"SCHOOL NOTEBOOKS",catKey:"school",price:65,oldPrice:95,rating:4.8,reviews:312,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📓"},
+  {id:2,name:"Single Line Exercise Book 172 Pages",cat:"EXERCISE BOOKS",catKey:"exercise",price:42,oldPrice:60,rating:4.7,reviews:540,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📒"},
+  {id:3,name:"School Notebook Bundle (Pack of 12)",cat:"SCHOOL NOTEBOOKS",catKey:"school",price:599,oldPrice:960,rating:4.9,reviews:410,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📚"},
+];
+const newArrivals = [
+  {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 NOTEBOOKS",catKey:"a4",price:145,oldPrice:220,rating:4.9,reviews:187,badge:"New",badgeType:"new",isNew:true,emoji:"📋"},
+  {id:5,name:"Drawing Book A4 Top Spiral",cat:"DRAWING BOOKS",catKey:"drawing",price:75,oldPrice:110,rating:4.9,reviews:142,badge:"New",badgeType:"new",isNew:true,emoji:"🎨"},
+  {id:6,name:"Practical Lab Notebook 80 Pages",cat:"PRACTICAL BOOKS",catKey:"practical",price:55,oldPrice:80,rating:4.6,reviews:98,badge:"New",badgeType:"new",isNew:true,emoji:"🔬"},
+];
 
-<!-- LOGIN MODAL -->
-<div class="modal-overlay" id="loginModalOverlay" style="display:none;" onclick="closeModal('loginModal')"></div>
-<div class="modal-box" id="loginModal" style="display:none;">
-  <button class="modal-close-btn" onclick="closeModal('loginModal')">×</button>
-  <div class="modal-tabs">
-    <button class="modal-tab active" onclick="switchTab('login', this)">Login</button>
-    <button class="modal-tab" onclick="switchTab('signup', this)">Sign Up</button>
-  </div>
-  <div id="loginTab">
-    <h3>Welcome Back</h3>
-    <div class="form-group"><label>Email / Phone</label><input type="text" placeholder="Email or phone number" /></div>
-    <div class="form-group"><label>Password</label><input type="password" placeholder="Enter password" /></div>
-    <button class="submit-btn" onclick="showToast('Login feature coming soon!');closeModal('loginModal')">Login</button>
-    <p class="forgot-pw"><a href="#">Forgot Password?</a></p>
-  </div>
-  <div id="signupTab" style="display:none;">
-    <h3>Create Account</h3>
-    <div class="form-row">
-      <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" /></div>
-      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" /></div>
-    </div>
-    <div class="form-group"><label>Email</label><input type="email" placeholder="Email address" /></div>
-    <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX" /></div>
-    <div class="form-group"><label>Password</label><input type="password" placeholder="Create password" /></div>
-    <button class="submit-btn" onclick="showToast('Registration coming soon!');closeModal('loginModal')">Create Account</button>
-  </div>
-</div>
+// ===== CART STATE =====
+let cart = JSON.parse(localStorage.getItem('sseCart') || '[]');
 
-<!-- CHECKOUT MODAL -->
-<div class="modal-overlay" id="checkoutModalOverlay" style="display:none;" onclick="closeModal('checkoutModal')"></div>
-<div class="modal-box checkout-modal-box" id="checkoutModal" style="display:none;">
-  <button class="modal-close-btn" onclick="closeModal('checkoutModal')">×</button>
-  <h2>Checkout</h2>
-  <div class="checkout-grid">
-    <div class="checkout-form-side">
-      <h3>Shipping Details</h3>
-      <div class="form-row">
-        <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your name" /></div>
-        <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 XXXXX" /></div>
+function saveCart(){localStorage.setItem('sseCart',JSON.stringify(cart));updateCartCount();}
+function updateCartCount(){
+  const count = cart.reduce((a,b)=>a+b.qty,0);
+  document.getElementById('cartCount').textContent = count;
+}
+
+// ===== RENDER PRODUCTS =====
+function renderProductCard(p){
+  const disc = Math.round((1-p.price/p.oldPrice)*100);
+  const imgs = ['images/notebook-vaishnavi.jpg','images/notebook-summer.jpg','images/notebook-anshika-a4.jpg','images/notebooks-a4-set.jpg','images/lifestyle-piyus.jpg'];
+  const imgSrc = imgs[p.id % imgs.length] || '';
+  return `<div class="product-card" id="prod-${p.id}">
+    <div class="product-img">
+      <img src="${imgSrc}" alt="${p.name}" onerror="this.style.display='none'" />
+      <div class="product-badges">
+        <span class="badge badge-${p.badgeType}">${p.badge}</span>
+        <span class="badge badge-off">${disc}% OFF</span>
       </div>
-      <div class="form-group"><label>Address *</label><textarea rows="2" placeholder="House no, street, area"></textarea></div>
-      <div class="form-row">
-        <div class="form-group"><label>City *</label><input type="text" placeholder="City" /></div>
-        <div class="form-group"><label>PIN Code *</label><input type="text" placeholder="PIN Code" /></div>
-      </div>
-      <h3 style="margin-top:20px;">Payment Method</h3>
-      <div class="payment-methods">
-        <label class="payment-option active"><input type="radio" name="payment" value="upi" checked /> <span>📱 UPI Payment</span></label>
-        <label class="payment-option"><input type="radio" name="payment" value="card" /> <span>💳 Debit / Credit Card</span></label>
-        <label class="payment-option"><input type="radio" name="payment" value="netbanking" /> <span>🏦 Net Banking</span></label>
-        <label class="payment-option"><input type="radio" name="payment" value="cod" /> <span>💵 Cash on Delivery</span></label>
-      </div>
+      <button class="product-wishlist" onclick="event.stopPropagation();toggleWishlist(${p.id},this)" title="Wishlist">🤍</button>
     </div>
-    <div class="checkout-summary-side">
-      <h3>Order Summary</h3>
-      <div id="checkoutOrderSummary"></div>
-      <div class="cart-totals">
-        <div class="total-row"><span>Subtotal</span><span id="checkoutSubtotal">₹0</span></div>
-        <div class="total-row"><span>GST (18%)</span><span id="checkoutGST">₹0</span></div>
-        <div class="total-row"><span>Shipping</span><span id="checkoutShipping">₹0</span></div>
-        <div class="total-row grand-total"><span>Total</span><span id="checkoutTotal">₹0</span></div>
+    <div class="product-body">
+      <div class="product-cat">${p.emoji} ${p.cat}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">${p.rating}</span>
+        <span class="rating-count">(${p.reviews})</span>
       </div>
-      <button class="submit-btn" onclick="placeOrder()">Place Order →</button>
+      <div class="product-price">
+        <span class="price-main">₹${p.price}</span>
+        <span class="price-old">₹${p.oldPrice}</span>
+        <span class="price-save">Save ₹${p.oldPrice-p.price}</span>
+      </div>
+      <button class="add-cart-btn" onclick="addToCart(${p.id})">🛒 Add to Cart</button>
     </div>
-  </div>
-</div>
+  </div>`;
+}
 
-<!-- PRIVACY & TERMS MODALS -->
-<div class="modal-overlay" id="privacyModalOverlay" style="display:none;" onclick="closeModal('privacyModal')"></div>
-<div class="modal-box" id="privacyModal" style="display:none;">
-  <button class="modal-close-btn" onclick="closeModal('privacyModal')">×</button>
-  <h2>Privacy Policy</h2>
-  <p>Shri Shiv Enterprises respects your privacy. We collect only the information necessary to process your orders and respond to enquiries. Your personal data is never sold or shared with third parties. All transactions are secured. Contact us at shrishiventerprises2025@gmail.com for any privacy concerns.</p>
-</div>
-<div class="modal-overlay" id="termsModalOverlay" style="display:none;" onclick="closeModal('termsModal')"></div>
-<div class="modal-box" id="termsModal" style="display:none;">
-  <button class="modal-close-btn" onclick="closeModal('termsModal')">×</button>
-  <h2>Terms & Conditions</h2>
-  <p>All orders are subject to availability. Prices are subject to change without notice. Minimum order quantities apply for bulk orders. Payment terms: 50% advance for new clients. Disputes subject to Kanpur jurisdiction. GST applicable as per government norms. For full terms, contact us directly.</p>
-</div>
+function renderProducts(){
+  document.getElementById('productsGrid').innerHTML = products.map(renderProductCard).join('');
+  document.getElementById('newArrivalsGrid').innerHTML = newArrivals.map(renderProductCard).join('');
+}
 
-<!-- TOAST NOTIFICATION -->
-<div class="toast" id="toast"></div>
+// ===== CART FUNCTIONS =====
+function addToCart(id){
+  const p = [...products,...newArrivals].find(x=>x.id===id);
+  if(!p) return;
+  const ex = cart.find(x=>x.id===id);
+  if(ex) ex.qty++;
+  else cart.push({...p,qty:1});
+  saveCart();
+  showToast(`✅ ${p.name} added to cart!`);
+  openCart();
+}
 
-<!-- SEARCH RESULTS -->
-<div id="searchResultsOverlay" style="display:none;" onclick="closeSearch()" class="modal-overlay"></div>
-<div class="search-results-dropdown" id="searchResults" style="display:none;"></div>
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartSidebar').classList.add('open');
+  renderCart();
+}
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartSidebar').classList.remove('open');
+}
 
-<!-- SCRIPTS -->
-<script src="app.js"></script>
+function renderCart(){
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+  if(!cart.length){
+    container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty.<br/>Start shopping!</p></div>';
+    footer.style.display='none';
+    return;
+  }
+  let sub=0;
+  container.innerHTML = cart.map(item=>{
+    sub+=item.price*item.qty;
+    return `<div style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--gray-100);align-items:center">
+      <div style="width:52px;height:52px;background:var(--gray-50);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${item.emoji}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:600;color:var(--navy-dark);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${item.name}</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy)">₹${item.price}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button onclick="changeQty(${item.id},-1)" style="width:28px;height:28px;border-radius:8px;background:var(--gray-100);font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700">-</button>
+        <span style="font-weight:700;font-size:14px;width:20px;text-align:center">${item.qty}</span>
+        <button onclick="changeQty(${item.id},1)" style="width:28px;height:28px;border-radius:8px;background:var(--navy);color:white;font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700">+</button>
+      </div>
+    </div>`;
+  }).join('');
+  const gst=Math.round(sub*0.18);
+  const ship=sub>=999?0:60;
+  const total=sub+gst+ship;
+  document.getElementById('cartSubtotal').textContent='₹'+sub;
+  document.getElementById('cartGst').textContent='₹'+gst;
+  document.getElementById('cartShipping').textContent=ship===0?'FREE':'₹'+ship;
+  document.getElementById('cartTotal').textContent='₹'+total;
+  footer.style.display='block';
+}
 
+function changeQty(id,delta){
+  const item=cart.find(x=>x.id===id);
+  if(!item) return;
+  item.qty+=delta;
+  if(item.qty<=0) cart=cart.filter(x=>x.id!==id);
+  saveCart();
+  renderCart();
+}
+
+function checkout(){
+  if(!cart.length){showToast('Your cart is empty!');return;}
+  checkoutViaWhatsApp();
+}
+
+function checkoutViaWhatsApp(){
+  if(!cart.length){showToast('Your cart is empty!');return;}
+  let msg='Hello Shri Shiv Enterprises! I want to order:%0A%0A';
+  cart.forEach(i=>{msg+=`• ${i.name} x${i.qty} = ₹${i.price*i.qty}%0A`;});
+  msg+='%0APlease confirm availability and payment details. Thank you!';
+  window.open(`https://wa.me/916393539533?text=${msg}`,'_blank');
+}
+
+// ===== WISHLIST =====
+function toggleWishlist(id,btn){
+  btn.textContent = btn.textContent==='🤍'?'❤️':'🤍';
+  showToast(btn.textContent==='❤️'?'Added to wishlist!':'Removed from wishlist');
+}
+
+// ===== SEARCH =====
+function handleSearch(val){
+  if(val.length<2) return;
+  const q=val.toLowerCase();
+  const all=[...products,...newArrivals];
+  const filtered=all.filter(p=>p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q));
+  if(filtered.length){
+    document.getElementById('productsGrid').innerHTML=filtered.map(renderProductCard).join('');
+    document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+// ===== CATEGORY FILTER =====
+function filterCategory(key){
+  const all=[...products,...newArrivals];
+  const filtered=all.filter(p=>p.catKey===key);
+  const grid=document.getElementById('productsGrid');
+  if(filtered.length){
+    grid.innerHTML=filtered.map(renderProductCard).join('');
+    document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+  } else {
+    showToast('Coming soon! WhatsApp us for this category.');
+    openWhatsApp();
+  }
+}
+
+// ===== FAQ =====
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ===== FORMS =====
+function submitBulkForm(e){
+  e.preventDefault();
+  showToast('✅ Inquiry submitted! We\'ll call you within 2 hours.');
+  setTimeout(()=>openWhatsApp(),1000);
+  e.target.reset();
+}
+
+function subscribeNewsletter(e){
+  e.preventDefault();
+  showToast('🎉 Subscribed successfully!');
+  e.target.reset();
+}
+
+// ===== UTILS =====
+function openWhatsApp(){
+  window.open('https://wa.me/916393539533?text=Hi%20Shri%20Shiv%20Enterprises!%20I%20am%20interested%20in%20your%20notebooks.%20Please%20share%20more%20details.','_blank');
+}
+
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ===== SCROLL ANIMATIONS =====
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+},{threshold:0.1});
+document.querySelectorAll('.product-card,.cat-card,.testimonial-card,.bulk-stat,.factory-point').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity .5s ease,transform .5s ease';
+  observer.observe(el);
+});
+
+// ===== INIT =====
+renderProducts();
+updateCartCount();
+</script>
 </body>
 </html>
