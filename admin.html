@@ -317,26 +317,35 @@ const PRODUCTS_DATA = [
 ];
 
 let allOrders = [...DEMO_ORDERS];
-// Merge real orders from website localStorage if any
-try{
-  const real = JSON.parse(localStorage.getItem('sse_all_orders')||'[]');
-  // Normalize real order fields to match admin expected fields
-  const normalized = real.map(o=>({
-    id: o.id || o.orderId || ('SSE'+Date.now()),
-    name: o.name || 'N/A',
-    phone: o.phone || 'N/A',
-    email: o.email || '',
-    city: o.city || 'N/A',
-    state: o.state || 'N/A',
-    address: o.address || o.addr || 'N/A',
-    products: o.products || o.items || 'N/A',
-    total: o.total || 0,
-    payment: o.payment || 'N/A',
-    status: o.status || 'Pending',
-    date: o.date || new Date().toLocaleString('en-IN')
-  }));
-  allOrders = [...normalized, ...DEMO_ORDERS];
-} catch(e){ console.error('Order load error:',e); }
+
+// Load real orders from GitHub orders.json
+function loadRealOrders() {
+  fetch('https://raw.githubusercontent.com/shrishivnterprises/shrishiventerprises-website/main/orders.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const real = (data.orders || []).map(o => ({
+        id: o.id || 'N/A',
+        name: o.name || 'N/A',
+        phone: o.phone || 'N/A',
+        email: o.email || '',
+        city: o.city || 'N/A',
+        state: o.state || 'N/A',
+        address: o.address || 'N/A',
+        products: o.products || o.items || 'N/A',
+        total: o.total || 0,
+        payment: o.payment || 'N/A',
+        status: o.status || 'Pending',
+        date: o.date || ''
+      }));
+      allOrders = [...real, ...DEMO_ORDERS];
+      loadDashboard();
+      console.log('✅ Loaded', real.length, 'real orders from GitHub');
+    })
+    .catch(e => {
+      console.log('Using demo orders only:', e);
+      loadDashboard();
+    });
+}
 
 // ===== TABS =====
 function switchTab(name, el){
@@ -475,8 +484,8 @@ function exportCSV(){
 }
 
 function clearOrders(){
-  if(confirm('Clear all demo orders? (Real orders will remain)')){
-    allOrders = JSON.parse(localStorage.getItem('sse_all_orders')||'[]');
+  if(confirm('Refresh orders from server?')){
+    loadRealOrders(); return; allOrders = [];
     loadDashboard();
   }
 }
