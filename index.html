@@ -16,7 +16,7 @@ img{max-width:100%;display:block}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 /* PAGE SYSTEM */
-.page{display:none}
+.page{display:none}.page.active{display:block}.page.active.success-page{display:flex}.page.active.checkout-page{display:block}
 .page.active{display:block}
 
 /* TOPBAR */
@@ -1137,7 +1137,9 @@ function placeOrder(){
   const city=document.getElementById('cCity')?.value?.trim();
   const state=document.getElementById('cState')?.value?.trim();
   const pin=document.getElementById('cPin')?.value?.trim();
-  if(!name||!email||!phone||!addr||!city||!state||!pin){showToast('Please fill all required fields');return;}
+  if(!name){showToast('Please enter your name');return;}
+  if(!phone||phone.length<10){showToast('Please enter valid phone number');return;}
+  if(!addr||!city||!state||!pin){showToast('Please fill complete address');return;}
 
   const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
   const gst=Math.round(sub*0.12);
@@ -1146,7 +1148,25 @@ function placeOrder(){
   const orderId='SSE'+Date.now().toString().slice(-6);
   const items=cart.map(i=>i.name+' x'+i.qty).join(', ');
 
-  orderData={orderId,name,email,phone,total,items,payment:selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',status:selectedPayment==='upi'?'Paid (UPI)':'Pending',gst,sub,ship};
+  orderData={orderId,name,email:email||'',phone,total,items,
+    payment:selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
+    status:selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
+    gst,sub,ship,addr,city,state,pin};
+
+  // Send WhatsApp notification to shop owner
+  const msg=encodeURIComponent(
+    '🛒 *NEW ORDER*\n' +
+    '━━━━━━━━━━━━━━━\n' +
+    '📦 Order: #'+orderId+'\n'+
+    '👤 Name: '+name+'\n'+
+    '📱 Phone: '+phone+'\n'+
+    '📍 '+addr+', '+city+', '+state+' - '+pin+'\n'+
+    '🛍️ Items: '+items+'\n'+
+    '💰 Total: ₹'+total+'\n'+
+    '💳 Payment: '+(selectedPayment==='upi'?'UPI':'COD')+'\n'+
+    '━━━━━━━━━━━━━━━'
+  );
+  setTimeout(()=>{window.open('https://wa.me/916393539533?text='+msg,'_blank');},1000);
 
   cart=[];saveCart();
   buildSuccess();
