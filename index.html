@@ -1153,6 +1153,28 @@ function placeOrder(){
     status:selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
     gst,sub,ship,addr,city,state,pin};
 
+  // Save order to localStorage so Admin panel can read it
+  try{
+    const savedOrders = JSON.parse(localStorage.getItem('sse_all_orders')||'[]');
+    const newOrder = {
+      id: orderId,
+      name: name,
+      phone: phone,
+      email: email||'',
+      city: city,
+      state: state,
+      address: addr+', '+city+', '+state+' - '+pin,
+      products: items,
+      items: items,
+      total: total,
+      payment: selectedPayment==='upi'?'UPI Payment':'Cash on Delivery',
+      status: selectedPayment==='upi'?'Paid (UPI)':'Pending (COD)',
+      date: new Date().toLocaleString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+    };
+    savedOrders.unshift(newOrder);
+    localStorage.setItem('sse_all_orders', JSON.stringify(savedOrders));
+  } catch(e){}
+
   // Send WhatsApp notification to shop owner
   const msg=encodeURIComponent(
     '🛒 *NEW ORDER*\n' +
