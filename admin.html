@@ -154,14 +154,14 @@ td,th{padding:10px 12px}
     <p class="login-sub">Sign in to manage your orders and business</p>
     <div class="form-group">
       <label class="form-label">Username</label>
-      <input class="form-input" id="loginUser" type="text" placeholder="admin" value="admin"/>
+      <input class="form-input" id="loginUser" type="text" placeholder="shrishiventerprises" value="shrishiventerprises"/>
     </div>
     <div class="form-group">
       <label class="form-label">Password</label>
       <input class="form-input" id="loginPass" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
     </div>
     <button class="login-btn" onclick="doLogin()">Sign In →</button>
-    <p class="login-err" id="loginErr">❌ Wrong credentials. Try admin / shiv2026</p>
+    <p class="login-err" id="loginErr">❌ Wrong credentials. Try shrishiventerprises / shiv2026</p>
     <p style="font-size:12px;color:rgba(11,29,58,.35);margin-top:16px;text-align:center">Default: admin / shiv2026</p>
   </div>
 </div>
@@ -284,7 +284,7 @@ td,th{padding:10px 12px}
 function doLogin(){
   const u=document.getElementById('loginUser').value.trim();
   const p=document.getElementById('loginPass').value.trim();
-  if((u==='admin'&&p==='shiv2026')||(u==='shiv'&&p==='shiv2026')){
+  if((u==='shrishiventerprises'&&p==='shiv2026')||(u==='admin'&&p==='shiv2026')){
     document.getElementById('loginPage').style.display='none';
     document.getElementById('dashboardPage').style.display='block';
     loadDashboard();
