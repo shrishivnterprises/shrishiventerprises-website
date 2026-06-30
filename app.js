@@ -652,15 +652,10 @@ function showToast(msg) {
 
 // ===================== SCROLL EFFECTS =====================
 function initScrollEffects() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
+  // Cards always visible — opacity:0 hata diya taaki click kaam kare
   document.querySelectorAll('.product-card, .cat-card, .why-card, .review-card, .value-card, .step').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
+    el.style.opacity = '1';
+    el.style.transform = 'none';
   });
 }
 
