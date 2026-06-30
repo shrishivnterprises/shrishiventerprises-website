@@ -1,969 +1,1167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shri Shiv Enterprises — Premium Notebooks Manufacturer | Kanpur</title>
-<meta name="description" content="Manufacturer & Wholesaler of School Notebooks, Exercise Books, A4 Notebooks, Registers, Drawing Books. GST Compliant. Pan-India Delivery. Bulk Orders Welcome." />
-<meta name="keywords" content="notebook manufacturer kanpur, school notebooks wholesale, exercise books, A4 notebooks, OEM notebooks, private label notebooks, bulk notebooks india" />
-<meta property="og:title" content="Shri Shiv Enterprises — Premium Notebooks" />
-<meta property="og:description" content="Premium notebook manufacturer from Kanpur serving schools, distributors and businesses across India." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Shri Shiv Enterprises – Premium Notebooks & Registers Manufacturer | Kanpur</title>
+<meta name="description" content="Manufacturer & Wholesaler of premium school notebooks, A4 notebooks, exercise books, registers, drawing books & OEM/Private label manufacturing. Kanpur, India."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --navy: #1B2D5F;
-  --navy-dark: #111E42;
-  --navy-light: #243B6B;
-  --gold: #F4C542;
-  --gold-dark: #D4A820;
-  --white: #ffffff;
-  --gray-50: #F8F9FC;
-  --gray-100: #F0F2F8;
-  --gray-200: #E2E6F0;
-  --gray-400: #9AA3B8;
-  --gray-600: #5A6480;
-  --gray-800: #2D3550;
-  --green: #10B981;
-  --red: #EF4444;
-  --shadow-sm: 0 1px 3px rgba(27,45,95,0.08);
-  --shadow-md: 0 4px 16px rgba(27,45,95,0.12);
-  --shadow-lg: 0 8px 32px rgba(27,45,95,0.16);
-  --shadow-xl: 0 16px 48px rgba(27,45,95,0.2);
-  --radius: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0b1d3a;--navy2:#061226;--gold:#c9a227;--gold2:#e7c768;--bg:#f8f7f3;--white:#fff;--text:#0b1d3a;--muted:rgba(11,29,58,0.6);--border:rgba(11,29,58,0.08)}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
-button{cursor:pointer;border:none;background:none;font-family:inherit}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
 
-/* ===== TOPBAR ===== */
-.topbar{background:var(--navy-dark);color:rgba(255,255,255,0.85);font-size:12px;padding:7px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.topbar span{display:flex;align-items:center;gap:6px}
-.topbar .promo{background:var(--gold);color:var(--navy-dark);padding:3px 12px;border-radius:20px;font-weight:700;font-size:11px;letter-spacing:.3px}
-.topbar-right{display:flex;gap:20px;align-items:center}
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
 
-/* ===== NAVBAR ===== */
-.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200);padding:0 24px;display:flex;align-items:center;gap:20px;height:72px;box-shadow:var(--shadow-sm)}
-.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nav-logo img{height:48px;width:auto;border-radius:8px}
-.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
-.nav-logo-text .brand-name{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:.5px}
-.nav-logo-text .brand-sub{font-size:9.5px;color:var(--gray-400);letter-spacing:2px;text-transform:uppercase;font-weight:600}
-.nav-links{display:flex;gap:4px;flex:1;justify-content:center}
-.nav-links a{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray-600);transition:all .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--gray-100);font-weight:600}
-.nav-search{flex:1;max-width:340px;position:relative}
-.nav-search input{width:100%;padding:10px 16px 10px 42px;border:2px solid var(--gray-200);border-radius:24px;font-size:14px;color:var(--gray-800);background:var(--gray-50);transition:all .2s;outline:none}
-.nav-search input:focus{border-color:var(--navy);background:white;box-shadow:0 0 0 3px rgba(27,45,95,0.08)}
-.nav-search .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:16px}
-.nav-actions{display:flex;gap:6px;align-items:center}
-.nav-btn{padding:10px 20px;border-radius:24px;font-size:13px;font-weight:600;transition:all .2s}
-.nav-btn-primary{background:var(--navy);color:white}
-.nav-btn-primary:hover{background:var(--navy-dark);transform:translateY(-1px)}
-.nav-icon-btn{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:18px;transition:all .2s;position:relative}
-.nav-icon-btn:hover{background:var(--gray-100);color:var(--navy)}
-.nav-badge{position:absolute;top:4px;right:4px;width:18px;height:18px;background:var(--gold);color:var(--navy-dark);font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+/* TOPBAR */
+.topbar{background:var(--navy);color:rgba(255,255,255,0.85);font-size:12px;padding:8px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar-left{display:flex;gap:20px;align-items:center}
+.topbar-item{display:flex;align-items:center;gap:5px}
+.topbar-item svg{color:var(--gold);flex-shrink:0}
+.topbar-right{display:flex;gap:16px;align-items:center}
 
-/* ===== HERO ===== */
-.hero{min-height:90vh;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 45%,#1E3A7A 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding:60px 24px}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,197,66,0.15);border:1px solid rgba(244,197,66,0.3);color:var(--gold);padding:8px 16px;border-radius:24px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,58px);color:white;line-height:1.15;font-weight:800;margin-bottom:20px}
-.hero h1 span{color:var(--gold)}
-.hero-desc{color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:36px;max-width:500px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-.btn-primary{background:var(--gold);color:var(--navy-dark);padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;transition:all .25s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(244,197,66,0.35)}
-.btn-primary:hover{background:#FFD45C;transform:translateY(-2px);box-shadow:0 8px 28px rgba(244,197,66,0.45)}
-.btn-secondary{background:rgba(255,255,255,0.12);color:white;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;border:2px solid rgba(255,255,255,0.2);transition:all .25s;backdrop-filter:blur(8px)}
-.btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:32px}
-.hero-stat .num{font-size:28px;font-weight:800;color:var(--gold)}
-.hero-stat .label{font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;text-transform:uppercase;font-weight:600}
-.hero-visual{position:relative}
-.hero-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-xl);padding:32px;position:relative;overflow:hidden}
-.hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(244,197,66,0.15),transparent 70%);border-radius:50%}
-.hero-card img{width:100%;border-radius:var(--radius-lg);object-fit:cover;height:300px}
-.hero-card-badges{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.hero-card-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600}
-.hero-card-badge.gold{background:rgba(244,197,66,0.2);border-color:rgba(244,197,66,0.3);color:var(--gold)}
-
-/* ===== TRUST BAR ===== */
-.trust-bar{background:white;border-bottom:1px solid var(--gray-100);padding:18px 24px}
-.trust-bar-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:16px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--gray-600)}
-.trust-icon{width:36px;height:36px;border-radius:10px;background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-
-/* ===== SECTION COMMONS ===== */
-.section{padding:80px 24px}
-.section-inner{max-width:1200px;margin:0 auto}
-.section-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--navy-dark);line-height:1.2;margin-bottom:12px}
-.section-desc{font-size:15px;color:var(--gray-600);line-height:1.7;max-width:560px}
-.section-header{margin-bottom:48px}
-
-/* ===== CATEGORIES ===== */
-.categories{background:var(--gray-50)}
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.cat-card{background:white;border-radius:var(--radius-lg);overflow:hidden;border:2px solid transparent;transition:all .3s;cursor:pointer;box-shadow:var(--shadow-sm)}
-.cat-card:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.cat-img{height:160px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--gray-100),var(--gray-200))}
-.cat-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.cat-card:hover .cat-img img{transform:scale(1.08)}
-.cat-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px}
-.cat-body{padding:16px}
-.cat-name{font-size:14px;font-weight:700;color:var(--navy-dark);margin-bottom:4px}
-.cat-cta{font-size:12px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:4px;opacity:0;transition:.2s}
-.cat-card:hover .cat-cta{opacity:1}
-
-/* ===== PRODUCTS ===== */
-.products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
-.view-all-btn{padding:10px 22px;border-radius:24px;border:2px solid var(--navy);color:var(--navy);font-size:13px;font-weight:700;transition:all .2s}
-.view-all-btn:hover{background:var(--navy);color:white}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.product-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--gray-100);overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:var(--shadow-sm)}
-.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-xl);border-color:var(--gray-200)}
-.product-img{height:220px;position:relative;overflow:hidden;background:linear-gradient(135deg,#F0F4FF,#E8EEF8)}
-.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.product-card:hover .product-img img{transform:scale(1.05)}
-.product-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
-.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700}
-.badge-bestseller{background:var(--navy);color:white}
-.badge-new{background:var(--green);color:white}
-.badge-off{background:var(--red);color:white}
-.product-wishlist{position:absolute;top:12px;right:12px;width:36px;height:36px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:var(--shadow-sm);transition:all .2s}
-.product-wishlist:hover{transform:scale(1.1)}
-.product-body{padding:18px}
-.product-cat{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
-.product-name{font-size:15px;font-weight:700;color:var(--navy-dark);margin-bottom:8px;line-height:1.35}
-.product-rating{display:flex;align-items:center;gap:6px;margin-bottom:12px}
-.stars{color:var(--gold);font-size:13px}
-.rating-num{font-size:13px;font-weight:600;color:var(--gray-800)}
-.rating-count{font-size:12px;color:var(--gray-400)}
-.product-price{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.price-main{font-size:22px;font-weight:800;color:var(--navy-dark)}
-.price-old{font-size:14px;color:var(--gray-400);text-decoration:line-through}
-.price-save{font-size:12px;font-weight:700;color:var(--green);background:#ECFDF5;padding:2px 8px;border-radius:20px}
-.add-cart-btn{width:100%;padding:11px;background:var(--navy);color:white;border-radius:10px;font-size:14px;font-weight:700;transition:all .2s}
-.add-cart-btn:hover{background:var(--navy-dark);transform:translateY(-1px)}
-
-/* ===== FACTORY STRIP ===== */
-.factory-strip{background:var(--navy-dark);padding:60px 24px;position:relative;overflow:hidden}
-.factory-strip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,197,66,0.05),transparent)}
-.factory-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.factory-visual{border-radius:var(--radius-xl);overflow:hidden;position:relative;height:280px;background:linear-gradient(135deg,#243B6B,#1B2D5F)}
-.factory-visual img{width:100%;height:100%;object-fit:cover;opacity:.7}
-.factory-label{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);color:white;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:600}
-.factory-content .section-tag{color:var(--gold)}
-.factory-content .section-title{color:white}
-.factory-content p{color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:28px}
-.factory-points{display:flex;flex-direction:column;gap:14px}
-.factory-point{display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.85);font-size:14px}
-.factory-point-dot{width:24px;height:24px;background:rgba(244,197,66,0.2);border:2px solid var(--gold);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:12px;margin-top:1px}
-
-/* ===== NEW ARRIVALS ===== */
-.new-arrivals{background:var(--gray-50)}
-
-/* ===== BULK CTA ===== */
-.bulk-cta{background:linear-gradient(135deg,var(--navy) 0%,#1E3A8A 100%);padding:80px 24px;position:relative;overflow:hidden}
-.bulk-cta::after{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(244,197,66,0.12),transparent 70%);border-radius:50%}
-.bulk-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
-.bulk-cta .section-tag{color:var(--gold)}
-.bulk-cta .section-title{color:white}
-.bulk-cta p{color:rgba(255,255,255,0.75);font-size:15px;line-height:1.75;margin-bottom:32px}
-.bulk-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.bulk-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:20px;text-align:center;backdrop-filter:blur(10px)}
-.bulk-stat .num{font-size:26px;font-weight:800;color:var(--gold);display:block;margin-bottom:4px}
-.bulk-stat .lbl{font-size:12px;color:rgba(255,255,255,0.6);font-weight:600}
-
-/* ===== TESTIMONIALS ===== */
-.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.testimonial-card{background:white;border-radius:var(--radius-lg);padding:28px;border:1px solid var(--gray-100);box-shadow:var(--shadow-sm);transition:all .3s}
-.testimonial-card:hover{box-shadow:var(--shadow-lg);border-color:var(--gray-200);transform:translateY(-2px)}
-.testimonial-quote{font-size:36px;color:var(--gold);line-height:1;margin-bottom:12px;font-family:'Playfair Display',serif}
-.testimonial-text{font-size:14px;color:var(--gray-600);line-height:1.75;margin-bottom:20px;font-style:italic}
-.testimonial-author{display:flex;align-items:center;gap:12px}
-.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0}
-.testimonial-name{font-size:14px;font-weight:700;color:var(--navy-dark)}
-.testimonial-role{font-size:12px;color:var(--gray-400)}
-
-/* ===== FAQ ===== */
-.faq-section{background:var(--gray-50)}
-.faq-list{max-width:760px;display:flex;flex-direction:column;gap:12px}
-.faq-item{background:white;border-radius:var(--radius);border:1px solid var(--gray-100);overflow:hidden}
-.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;font-size:15px;font-weight:600;color:var(--navy-dark);text-align:left;gap:12px}
-.faq-question:hover{background:var(--gray-50)}
-.faq-icon{font-size:20px;color:var(--navy);flex-shrink:0;transition:transform .3s}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-answer p{padding:0 24px 20px;font-size:14px;color:var(--gray-600);line-height:1.75}
-.faq-item.open .faq-answer{max-height:300px}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-
-/* ===== NEWSLETTER ===== */
-.newsletter{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:72px 24px;text-align:center}
-.newsletter h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:white;margin-bottom:12px}
-.newsletter p{color:rgba(255,255,255,0.7);font-size:15px;margin-bottom:32px}
-.newsletter-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
-.newsletter-form input{flex:1;padding:14px 20px;border-radius:10px;border:2px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:14px;outline:none;transition:all .2s}
-.newsletter-form input::placeholder{color:rgba(255,255,255,0.45)}
-.newsletter-form input:focus{border-color:var(--gold);background:rgba(255,255,255,0.12)}
-.newsletter-form button{padding:14px 28px;background:var(--gold);color:var(--navy-dark);border-radius:10px;font-size:14px;font-weight:700;transition:all .2s;white-space:nowrap}
-.newsletter-form button:hover{background:#FFD45C;transform:translateY(-1px)}
-
-/* ===== FOOTER ===== */
-footer{background:var(--navy-dark);color:rgba(255,255,255,0.75);padding:64px 24px 0}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:48px}
-.footer-brand img{height:52px;margin-bottom:16px;border-radius:8px}
-.footer-brand p{font-size:13px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:16px}
-.footer-gstin{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600;color:var(--gold);display:inline-block}
-.footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:10px;transition:color .2s}
-.footer-col a:hover{color:white}
-.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.6)}
-.footer-contact-item span{font-size:16px;flex-shrink:0;margin-top:1px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.4)}
-.footer-bottom a{color:rgba(255,255,255,0.5);margin-left:16px;transition:color .2s}
-.footer-bottom a:hover{color:white}
-
-/* ===== FLOATING BUTTONS ===== */
-.floating-wa{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);animation:pulse-wa 2.5s infinite}
-.floating-wa svg{width:28px;height:28px;fill:white}
-@keyframes pulse-wa{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
-.floating-call{position:fixed;bottom:100px;right:28px;z-index:9999;width:48px;height:48px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);font-size:22px;color:white;transition:all .2s}
-.floating-call:hover{background:var(--navy-dark);transform:scale(1.08)}
-
-/* ===== CART SIDEBAR ===== */
-.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s}
-.cart-overlay.open{opacity:1;pointer-events:all}
-.cart-sidebar{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:white;z-index:2001;display:flex;flex-direction:column;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow-xl)}
-.cart-sidebar.open{right:0}
-.cart-header{padding:20px 24px;border-bottom:1px solid var(--gray-100);display:flex;justify-content:space-between;align-items:center}
-.cart-header h3{font-size:18px;font-weight:700;color:var(--navy-dark)}
-.cart-close{width:36px;height:36px;border-radius:8px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gray-600);transition:all .2s}
-.cart-close:hover{background:var(--gray-200)}
-.cart-items{flex:1;overflow-y:auto;padding:16px 24px}
-.cart-empty{text-align:center;padding:60px 20px;color:var(--gray-400)}
-.cart-empty-icon{font-size:60px;margin-bottom:16px}
-.cart-empty p{font-size:15px}
-.cart-footer{padding:20px 24px;border-top:1px solid var(--gray-100)}
-.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:14px;color:var(--gray-600)}
-.cart-total-row.grand{font-size:18px;font-weight:800;color:var(--navy-dark);margin-top:12px;padding-top:12px;border-top:2px solid var(--gray-100)}
-.cart-checkout-btn{width:100%;padding:14px;background:var(--navy);color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:16px;transition:all .2s}
-.cart-checkout-btn:hover{background:var(--navy-dark)}
-.cart-wa-btn{width:100%;padding:12px;background:#25D366;color:white;border-radius:12px;font-size:14px;font-weight:700;margin-top:10px;transition:all .2s}
-.cart-wa-btn:hover{background:#1DA851}
-
-/* ===== TOAST ===== */
-.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy-dark);color:white;padding:14px 24px;border-radius:12px;font-size:14px;font-weight:600;z-index:9999;transition:transform .3s;box-shadow:var(--shadow-xl);display:flex;align-items:center;gap:10px}
-.toast.show{transform:translateX(-50%) translateY(0)}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.animate-up{animation:fadeUp .6s ease both}
-.delay-1{animation-delay:.1s}
-.delay-2{animation-delay:.2s}
-.delay-3{animation-delay:.3s}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-.cat-grid{grid-template-columns:repeat(3,1fr)}
-.products-grid{grid-template-columns:repeat(2,1fr)}
-.footer-inner{grid-template-columns:1fr 1fr}
-.bulk-cta-inner,.factory-strip-inner,.hero-inner{grid-template-columns:1fr}
-.hero-visual{display:none}
-.testimonials-grid{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-.topbar{display:none}
-.navbar{padding:0 16px;height:62px}
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.logo-box{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#c9a227,#e7c768);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;line-height:1.15}
+.nav-brand-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy)}
+.nav-brand-sub{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:600}
 .nav-links{display:none}
-.nav-search{display:none}
-.hero{padding:48px 16px;min-height:auto}
-.hero h1{font-size:32px}
-.cat-grid{grid-template-columns:repeat(2,1fr)}
-.products-grid{grid-template-columns:1fr}
-.section{padding:56px 16px}
-.footer-inner{grid-template-columns:1fr}
-.bulk-stats{grid-template-columns:repeat(2,1fr)}
-.newsletter-form{flex-direction:column}
-.footer-bottom{flex-direction:column;gap:12px;text-align:center}
-.cart-sidebar{width:100%;right:-100%}
+@media(min-width:1024px){.nav-links{display:flex;gap:4px;align-items:center}}
+.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .2s;cursor:pointer}
+.nav-link:hover,.nav-link.active{color:var(--gold);background:rgba(201,162,39,0.08)}
+.nav-actions{display:flex;align-items:center;gap:6px}
+.nav-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s;cursor:pointer;position:relative}
+.nav-icon:hover{background:var(--bg);color:var(--navy)}
+.cart-badge{position:absolute;top:2px;right:2px;width:18px;height:18px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;display:none}
+.cart-badge.show{display:flex}
+.menu-btn{display:flex}
+@media(min-width:1024px){.menu-btn{display:none}}
+
+/* MOBILE MENU */
+.mobile-menu{position:fixed;inset:0;z-index:200;background:var(--navy2);color:white;padding:24px 20px;display:none;flex-direction:column;gap:8px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.mobile-menu-link{padding:14px 0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:color .2s}
+.mobile-menu-link:hover{color:var(--gold)}
+.mobile-menu-cats{margin-top:16px}
+.mobile-menu-cats h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px;font-weight:600}
+.mobile-contact{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+.mobile-contact h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:4px;font-weight:600}
+.mobile-contact a{color:rgba(255,255,255,0.7);font-size:14px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 60%,#1a3866 100%);color:white;padding:80px 20px;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1800&q=60&auto=format') center/cover;opacity:.15}
+.hero-glow1{position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.2),transparent 70%)}
+.hero-glow2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.1),transparent 70%)}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:1024px){.hero-inner{grid-template-columns:1fr 1fr;align-items:center}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:8px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:800;line-height:1.08;margin-bottom:20px}
+.hero h1 .gold{color:var(--gold)}
+.hero-desc{color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:32px;max-width:520px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#e7c768);color:var(--navy);padding:13px 28px;border-radius:8px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 4px 20px rgba(201,162,39,.35)}
+.btn-gold:hover{opacity:.9;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:white;padding:13px 28px;border-radius:8px;font-size:15px;font-weight:600;border:1.5px solid rgba(255,255,255,.3);transition:all .25s}
+.btn-outline:hover{background:white;color:var(--navy)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.8);padding:13px 20px;border-radius:8px;font-size:15px;font-weight:500;transition:all .25s}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:32px}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1}
+.hero-stat-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.55);margin-top:4px;font-weight:600}
+.hero-visual{position:relative}
+.hero-img-wrap{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:4/5}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top right,rgba(11,29,58,.5),transparent)}
+.hero-float{position:absolute;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-radius:16px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.15);display:flex;align-items:center;gap:12px}
+.hero-float-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-float-1{bottom:-20px;left:-20px}
+.hero-float-1 .hero-float-icon{background:linear-gradient(135deg,var(--gold),#e7c768)}
+.hero-float-2{top:-16px;right:-16px}
+.hero-float-2 .hero-float-icon{background:var(--navy)}
+.hero-float-text .title{font-size:13px;font-weight:700;color:var(--navy)}
+.hero-float-text .sub{font-size:11px;color:var(--muted)}
+
+/* TRUST BAR */
+.trust-bar{background:white;border-bottom:1px solid var(--border)}
+.trust-bar-inner{max-width:1200px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(min-width:768px){.trust-bar-inner{grid-template-columns:repeat(4,1fr)}}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-icon{width:48px;height:48px;border-radius:12px;background:rgba(11,29,58,.05);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-text strong{font-size:14px;font-weight:600;color:var(--navy);display:block}
+.trust-text span{font-size:12px;color:var(--muted)}
+
+/* SECTION COMMONS */
+.section{padding:64px 20px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:10px}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.65}
+.section-header{text-align:center;max-width:600px;margin:0 auto 48px}
+
+/* CATEGORIES */
+.categories-bg{background:var(--bg)}
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:768px){.cat-grid{grid-template-columns:repeat(4,1fr)}}
+.cat-card{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer}
+.cat-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.cat-card:hover img{transform:scale(1.07)}
+.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,29,58,.92) 0%,rgba(11,29,58,.25) 50%,transparent 100%)}
+.cat-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:1;color:white}
+.cat-icon{margin-bottom:8px;color:var(--gold)}
+.cat-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.2;margin-bottom:6px}
+.cat-cta{font-size:12px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
+
+/* PRODUCTS GRID */
+.products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px}
+.products-header-left .section-tag{margin-bottom:4px}
+.view-all-btn{color:var(--gold);font-size:14px;font-weight:600;display:flex;align-items:center;gap:4px;transition:opacity .2s}
+.view-all-btn:hover{opacity:.7}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:1024px){.prod-grid{grid-template-columns:repeat(4,1fr)}}
+.prod-card{background:white;border-radius:16px;overflow:hidden;border:1px solid rgba(11,29,58,.06);box-shadow:0 2px 12px rgba(11,29,58,.06);transition:all .3s;cursor:pointer}
+.prod-card:hover{box-shadow:0 8px 32px rgba(11,29,58,.12);transform:translateY(-3px)}
+.prod-img{position:relative;aspect-ratio:1;overflow:hidden;background:#f0f2f8}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-badges{position:absolute;top:10px;left:10px;display:flex;flex-direction:column;gap:5px}
+.badge{padding:3px 9px;border-radius:6px;font-size:11px;font-weight:700}
+.badge-bestseller{background:var(--gold);color:var(--navy)}
+.badge-new{background:var(--navy);color:white}
+.badge-off{background:white;color:var(--navy);border:1px solid rgba(11,29,58,.1)}
+.prod-wish{position:absolute;top:10px;right:10px;width:34px;height:34px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .2s;cursor:pointer}
+.prod-wish:hover{transform:scale(1.1)}
+.prod-wish.active{background:#fff0f0}
+.prod-body{padding:16px}
+.prod-cat-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.prod-name{font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:8px}
+.prod-rating{display:flex;align-items:center;gap:5px;margin-bottom:10px}
+.prod-stars{color:var(--gold);font-size:12px}
+.prod-rating-num{font-size:12px;font-weight:600;color:var(--navy)}
+.prod-rating-count{font-size:11px;color:var(--muted)}
+.prod-price{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.prod-price-main{font-size:20px;font-weight:800;color:var(--navy)}
+.prod-price-old{font-size:13px;color:var(--muted);text-decoration:line-through}
+.add-cart-btn{width:100%;padding:10px;background:var(--navy);color:white;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .2s}
+.add-cart-btn:hover{background:#0d2448}
+
+/* FACTORY */
+.factory-section{background:white;padding:64px 20px}
+.factory-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:1024px){.factory-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.factory-img{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.factory-img img{width:100%;height:100%;object-fit:cover}
+.factory-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top right,rgba(11,29,58,.4),transparent)}
+.factory-label{position:absolute;bottom:20px;left:20px;background:rgba(6,18,38,.75);backdrop-filter:blur(12px);padding:10px 16px;border-radius:12px;color:white}
+.factory-label .fl-tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:2px}
+.factory-label .fl-name{font-family:'Playfair Display',serif;font-weight:700;font-size:15px}
+.why-points{display:flex;flex-direction:column;gap:18px;margin-top:24px}
+.why-point{display:flex;align-items:flex-start;gap:14px}
+.why-point-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--gold),#e7c768);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy)}
+.why-point-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.why-point-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* BULK CTA */
+.bulk-section{padding:64px 20px}
+.bulk-card{max-width:1200px;margin:0 auto;background:linear-gradient(135deg,var(--navy) 0%,#1a3866 100%);border-radius:28px;padding:48px 40px;position:relative;overflow:hidden}
+.bulk-glow{position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.2),transparent 70%)}
+.bulk-grid{display:grid;grid-template-columns:1fr;gap:40px;position:relative;z-index:1}
+@media(min-width:1024px){.bulk-grid{grid-template-columns:1fr 1fr;align-items:center}}
+.bulk-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
+.bulk-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:white;line-height:1.15;margin-bottom:16px}
+.bulk-desc{color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;margin-bottom:28px}
+.bulk-stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bulk-stat-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(8px)}
+.bulk-stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1}
+.bulk-stat-label{font-size:12px;color:rgba(255,255,255,.6);margin-top:6px}
+
+/* TESTIMONIALS */
+.testimonials-bg{background:white}
+.testi-grid{display:flex;flex-direction:column;gap:16px}
+@media(min-width:768px){.testi-grid{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1200px){.testi-grid{grid-template-columns:repeat(4,1fr)}}
+.testi-card{background:var(--bg);border-radius:16px;padding:24px;border:1px solid var(--border);position:relative}
+.testi-quote-icon{position:absolute;top:16px;right:16px;opacity:.15;font-size:40px;font-family:serif;color:var(--gold);line-height:1}
+.testi-stars{display:flex;gap:2px;margin-bottom:12px}
+.testi-star{color:var(--gold);font-size:14px}
+.testi-text{font-size:14px;color:rgba(11,29,58,.75);line-height:1.7;margin-bottom:16px;font-style:normal}
+.testi-name{font-size:14px;font-weight:700;color:var(--navy)}
+.testi-role{font-size:12px;color:var(--muted)}
+
+/* FAQ */
+.faq-bg{background:var(--bg)}
+.faq-inner{max-width:800px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;font-size:14px;font-weight:600;color:var(--navy);text-align:left;gap:12px;cursor:pointer}
+.faq-q:hover{background:rgba(11,29,58,.02)}
+.faq-chevron{flex-shrink:0;transition:transform .3s;color:var(--muted)}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 22px 18px;font-size:13px;color:var(--muted);line-height:1.75}
+.faq-item.open .faq-a{max-height:300px}
+
+/* NEWSLETTER */
+.newsletter-section{padding:64px 20px}
+.newsletter-card{max-width:700px;margin:0 auto;background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:24px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+.newsletter-glow{position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.15),transparent)}
+.newsletter-card h2{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,34px);font-weight:800;color:white;margin-bottom:10px;position:relative;z-index:1}
+.newsletter-card p{color:rgba(255,255,255,.7);margin-bottom:28px;font-size:14px;line-height:1.65;position:relative;z-index:1}
+.newsletter-form{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+@media(min-width:500px){.newsletter-form{flex-direction:row}}
+.newsletter-input{flex:1;padding:13px 18px;border-radius:8px;border:none;background:rgba(255,255,255,.95);font-size:14px;color:var(--navy);outline:none}
+.newsletter-input:focus{box-shadow:0 0 0 3px rgba(201,162,39,.4)}
+.newsletter-btn{padding:13px 28px;background:linear-gradient(135deg,var(--gold),#e7c768);color:var(--navy);border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap}
+
+/* FOOTER */
+footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;padding-bottom:48px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1.5fr}}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:white}
+.footer-brand-sub{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--gold)}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px}
+.footer-gstin{font-size:12px;color:rgba(255,255,255,.4)}
+.footer-gstin span{color:var(--gold)}
+.footer-col h4{font-size:13px;font-weight:700;color:white;margin-bottom:16px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a,.footer-links button{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;cursor:pointer;text-align:left}
+.footer-links a:hover,.footer-links button:hover{color:var(--gold)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.55);margin-bottom:12px}
+.footer-contact-item svg{color:var(--gold);flex-shrink:0;margin-top:2px}
+.footer-contact-item a{color:rgba(255,255,255,.55);transition:color .2s}
+.footer-contact-item a:hover{color:var(--gold)}
+.footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom-links{display:flex;gap:16px}
+.footer-bottom-links button{font-size:12px;color:rgba(255,255,255,.4);transition:color .2s;cursor:pointer}
+.footer-bottom-links button:hover{color:var(--gold)}
+
+/* SHOP PAGE */
+.shop-page{background:var(--bg);min-height:100vh;padding:24px 20px 64px}
+.shop-inner{max-width:1200px;margin:0 auto}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.breadcrumb span{cursor:pointer;transition:color .2s}
+.breadcrumb span:hover{color:var(--gold)}
+.shop-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.shop-count{font-size:14px;color:var(--muted);margin-bottom:24px}
+.shop-filters{background:white;border-radius:16px;padding:20px;border:1px solid var(--border);margin-bottom:24px}
+.shop-search{position:relative;margin-bottom:20px}
+.shop-search input{width:100%;padding:12px 16px 12px 44px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;outline:none;background:var(--bg);transition:border .2s}
+.shop-search input:focus{border-color:var(--gold)}
+.shop-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.filter-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.filter-cats{display:flex;flex-direction:column;gap:4px}
+.filter-cat{padding:10px 14px;border-radius:8px;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s;text-align:left}
+.filter-cat:hover,.filter-cat.active{background:var(--navy);color:white}
+.promo-banner{background:var(--navy);border-radius:14px;padding:20px;margin-top:16px;color:white}
+.promo-banner .pb-tag{color:var(--gold);font-size:18px;margin-bottom:8px}
+.promo-banner h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.promo-banner p{font-size:13px;color:rgba(255,255,255,.7)}
+.promo-banner .promo-code{color:var(--gold);font-weight:700}
+.shop-results-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.shop-results-count{font-size:14px;color:var(--muted)}
+.shop-sort select{padding:8px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;background:white;color:var(--navy);outline:none}
+
+/* CHECKOUT PAGE */
+.checkout-page{background:var(--bg);min-height:100vh;padding:24px 20px 64px}
+.checkout-inner{max-width:680px;margin:0 auto}
+.checkout-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--navy);margin-bottom:32px}
+.checkout-card{background:white;border-radius:16px;padding:24px;border:1px solid var(--border);margin-bottom:20px}
+.checkout-section-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.checkout-section-title svg{color:var(--gold)}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.form-label span{color:var(--muted);font-weight:400}
+.form-input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;color:var(--navy);background:var(--bg);outline:none;transition:border .2s;font-family:inherit}
+.form-input:focus{border-color:var(--gold);background:white}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.payment-option{border:2px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .2s;margin-bottom:10px}
+.payment-option.selected{border-color:var(--gold);background:rgba(201,162,39,.05)}
+.payment-radio{display:flex;align-items:flex-start;gap:12px}
+.radio-circle{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.payment-option.selected .radio-circle{border-color:var(--gold);background:var(--gold)}
+.payment-option.selected .radio-circle::after{content:'';width:6px;height:6px;border-radius:50%;background:white}
+.payment-label-title{font-size:14px;font-weight:700;color:var(--navy)}
+.payment-label-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.recommended-badge{background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:8px}
+.order-summary-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.order-summary-item:last-child{border-bottom:none}
+.order-item-img{width:56px;height:56px;border-radius:8px;object-fit:cover;background:#f0f2f8;flex-shrink:0}
+.order-item-name{font-size:14px;font-weight:600;color:var(--navy);flex:1}
+.order-item-qty{font-size:12px;color:var(--muted)}
+.order-item-price{font-size:14px;font-weight:700;color:var(--navy)}
+.order-totals{padding-top:16px;display:flex;flex-direction:column;gap:10px}
+.order-total-row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.order-total-row.grand{font-size:17px;font-weight:800;color:var(--navy);padding-top:12px;border-top:2px solid var(--border);margin-top:4px}
+.place-order-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--gold),#e7c768);color:var(--navy);border-radius:10px;font-size:16px;font-weight:700;margin-top:20px;transition:all .2s;box-shadow:0 4px 20px rgba(201,162,39,.3)}
+.place-order-btn:hover{opacity:.9;transform:translateY(-1px)}
+.place-order-note{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
+
+/* ORDER SUCCESS */
+.success-page{background:var(--bg);min-height:100vh;padding:48px 20px;display:flex;align-items:center;justify-content:center}
+.success-card{background:white;border-radius:24px;padding:48px 32px;max-width:560px;width:100%;text-align:center;box-shadow:0 4px 32px rgba(11,29,58,.08)}
+.success-icon{width:72px;height:72px;background:linear-gradient(135deg,var(--gold),#e7c768);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px}
+.success-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.success-sub{font-size:15px;color:var(--muted);margin-bottom:28px;line-height:1.6}
+.success-order-card{background:var(--bg);border-radius:14px;padding:20px;margin-bottom:24px;text-align:left}
+.success-row{display:flex;justify-content:space-between;font-size:14px;padding:8px 0;border-bottom:1px solid var(--border)}
+.success-row:last-child{border-bottom:none}
+.success-row .label{color:var(--muted)}
+.success-row .val{font-weight:600;color:var(--navy)}
+.success-btns{display:flex;flex-direction:column;gap:10px}
+
+/* FLOATING */
+.floating-wa{position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4)}
+.floating-wa::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2s infinite;z-index:-1}
+@keyframes waPulse{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.4);opacity:0}}
+.floating-call{position:fixed;bottom:24px;left:24px;z-index:9999;width:56px;height:56px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(11,29,58,.3)}
+
+/* CART DRAWER */
+.cart-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-backdrop.open{opacity:1;pointer-events:all}
+.cart-drawer{position:fixed;top:0;right:-110%;width:100%;max-width:420px;height:100vh;background:white;z-index:501;display:flex;flex-direction:column;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 32px rgba(0,0,0,.1)}
+.cart-drawer.open{right:0}
+.cart-head{padding:20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.cart-head h3{font-size:18px;font-weight:700;color:var(--navy)}
+.cart-close{width:34px;height:34px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--muted)}
+.cart-body{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-empty-state{text-align:center;padding:60px 20px;color:var(--muted)}
+.cart-empty-state .empty-icon{font-size:56px;margin-bottom:14px}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.cart-item-img{width:60px;height:60px;border-radius:10px;object-fit:cover;background:var(--bg);flex-shrink:0}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-item-price{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.cart-qty{display:flex;align-items:center;gap:8px}
+.qty-btn{width:28px;height:28px;border-radius:7px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;color:var(--navy)}
+.qty-btn:hover{border-color:var(--navy);background:var(--navy);color:white}
+.qty-num{font-size:14px;font-weight:700;min-width:20px;text-align:center}
+.cart-foot{padding:16px 20px;border-top:1px solid var(--border)}
+.cart-subtotal{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:8px}
+.cart-gst{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:8px}
+.cart-ship{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:12px}
+.cart-total{display:flex;justify-content:space-between;font-size:18px;font-weight:800;color:var(--navy);padding-top:12px;border-top:2px solid var(--border);margin-bottom:16px}
+.cart-checkout-btn{width:100%;padding:14px;background:var(--navy);color:white;border-radius:10px;font-size:15px;font-weight:700;margin-bottom:10px}
+.cart-checkout-btn:hover{background:#0d2448}
+
+/* TOAST */
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--navy);color:white;padding:12px 22px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:all .3s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:480px){
+.bulk-card{padding:32px 24px}
+.newsletter-card{padding:40px 24px}
+.hero-float{display:none}
 }
 </style>
 </head>
 <body>
 
+<!-- PAGES -->
+<div id="homePage" class="page active"></div>
+<div id="shopPage" class="page shop-page"></div>
+<div id="checkoutPage" class="page checkout-page"></div>
+<div id="successPage" class="page success-page"></div>
+
 <!-- TOPBAR -->
 <div class="topbar">
-  <div style="display:flex;gap:24px;flex-wrap:wrap">
-    <span>📞 +91 6393539533</span>
-    <span>✉️ shrishiventerprises2025@gmail.com</span>
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+      +91 6393539533
+    </div>
+    <div class="topbar-item" style="display:none" id="emailTopbar">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      shrishiventerprises2025@gmail.com
+    </div>
   </div>
   <div class="topbar-right">
-    <span>Free Shipping above <strong>₹999</strong></span>
-    <span class="promo">Use SHIV10 for 10% OFF</span>
+    <div class="topbar-item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+      Free Shipping above ₹999
+    </div>
   </div>
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-logo" onclick="scrollToTop()">
-    <img src="images/logo.jpg" alt="Shri Shiv Enterprises Logo" />
-    <div class="nav-logo-text">
-      <span class="brand-name">Shri Shiv Enterprises</span>
-      <span class="brand-sub">Since 2020 · Kanpur</span>
+<nav class="navbar" id="mainNav">
+  <div class="nav-logo" onclick="goHome()">
+    <div class="logo-box">S</div>
+    <div class="nav-brand">
+      <span class="nav-brand-name">Shri Shiv</span>
+      <span class="nav-brand-sub">Enterprises</span>
     </div>
   </div>
   <div class="nav-links">
-    <a href="#" class="active">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#categories">Categories</a>
-    <a href="#bulk">Bulk Orders</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="nav-search">
-    <span class="search-icon">🔍</span>
-    <input type="text" placeholder="Search notebooks, registers, drawing books..." id="searchInput" oninput="handleSearch(this.value)" />
+    <div class="nav-link active" onclick="goHome()">Home</div>
+    <div class="nav-link" onclick="goShop()">Shop</div>
+    <div class="nav-link" onclick="scrollToBulk()">Bulk Orders</div>
+    <div class="nav-link" onclick="scrollToAbout()">About</div>
+    <div class="nav-link" onclick="scrollToContact()">Contact</div>
   </div>
   <div class="nav-actions">
-    <button class="nav-icon-btn" title="Wishlist">❤️</button>
-    <button class="nav-icon-btn" onclick="openCart()" title="Cart">
-      🛒
-      <span class="nav-badge" id="cartCount">0</span>
-    </button>
-    <button class="nav-btn nav-btn-primary" onclick="openWhatsApp()">WhatsApp Us</button>
+    <div class="nav-icon" onclick="openCart()" title="Cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </div>
+    <div class="nav-icon menu-btn" onclick="openMenu()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge animate-up">🏭 TRUSTED NOTEBOOK MANUFACTURER</div>
-      <h1 class="animate-up delay-1">Premium Notebooks.<br/><span>Crafted in Kanpur.</span></h1>
-      <p class="hero-desc animate-up delay-2">Manufacturer &amp; wholesaler of school notebooks, A4 notebooks, exercise books, registers and customised OEM/private-label products. Trusted by schools, distributors and offices across India.</p>
-      <div class="hero-btns animate-up delay-3">
-        <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">🛍️ Shop Now</button>
-        <button class="btn-secondary" onclick="document.getElementById('bulk').scrollIntoView({behavior:'smooth'})">📦 Bulk Inquiry</button>
-        <button class="btn-secondary" onclick="openWhatsApp()">💬 Contact Sales</button>
-      </div>
-      <div class="hero-stats animate-up">
-        <div class="hero-stat"><div class="num">10M+</div><div class="label">Notebooks Manufactured</div></div>
-        <div class="hero-stat"><div class="num">500+</div><div class="label">Bulk Clients</div></div>
-        <div class="hero-stat"><div class="num">100%</div><div class="label">GST Compliant</div></div>
-      </div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="logo-box" style="width:38px;height:38px;font-size:18px">S</div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:white">Shri Shiv</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--gold)">Enterprises</div></div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <img src="images/promo-notebooks.jpg" alt="Premium Notebooks" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#243B6B,#1B2D5F)'" />
-        <div class="hero-card-badges">
-          <span class="hero-card-badge gold">✅ ISO Quality Certified</span>
-          <span class="hero-card-badge">🚚 Pan-India Fast Delivery</span>
-        </div>
-      </div>
-    </div>
+    <div onclick="closeMenu()" style="cursor:pointer;font-size:22px;color:rgba(255,255,255,.6)">✕</div>
   </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Free Shipping</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">On orders above ₹999</span></div></div>
-    <div class="trust-item"><div class="trust-icon">🧾</div><div><strong>Secure Checkout</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">GST invoice every order</span></div></div>
-    <div class="trust-item"><div class="trust-icon">🏭</div><div><strong>Direct from Factory</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">Manufacturer pricing</span></div></div>
-    <div class="trust-item"><div class="trust-icon">📄</div><div><strong>Premium Quality</strong><br/><span style="font-size:11px;font-weight:400;color:var(--gray-400)">70–130 GSM paper</span></div></div>
+  <div class="mobile-menu-link" onclick="goHome();closeMenu()">Home</div>
+  <div class="mobile-menu-link" onclick="goShop();closeMenu()">Shop</div>
+  <div class="mobile-menu-link" onclick="scrollToBulk();closeMenu()">Bulk Orders</div>
+  <div class="mobile-menu-link" onclick="scrollToAbout();closeMenu()">About</div>
+  <div class="mobile-menu-link" onclick="scrollToContact();closeMenu()">Contact</div>
+  <div class="mobile-menu-cats">
+    <h4>Categories</h4>
+    <div class="mobile-menu-link" style="font-size:14px;padding:10px 0" onclick="goShop('School Notebooks');closeMenu()">School Notebooks</div>
+    <div class="mobile-menu-link" style="font-size:14px;padding:10px 0" onclick="goShop('Exercise Books');closeMenu()">Exercise Books</div>
+    <div class="mobile-menu-link" style="font-size:14px;padding:10px 0" onclick="goShop('A4 Notebooks');closeMenu()">A4 Notebooks</div>
+    <div class="mobile-menu-link" style="font-size:14px;padding:10px 0" onclick="goShop('Drawing Books');closeMenu()">Drawing Books</div>
+    <div class="mobile-menu-link" style="font-size:14px;padding:10px 0" onclick="goShop('Registers');closeMenu()">Registers</div>
+  </div>
+  <div class="mobile-contact">
+    <h4>Get in Touch</h4>
+    <a href="tel:+916393539533">📞 +91 6393539533</a>
+    <a href="https://wa.me/916393539533" target="_blank">💬 WhatsApp</a>
+    <a href="mailto:shrishiventerprises2025@gmail.com">✉️ shrishiventerprises2025@gmail.com</a>
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<section class="section categories" id="categories">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">EXPLORE</div>
-      <h2 class="section-title">Shop by Category</h2>
-      <p class="section-desc">Premium stationery for every need — from primary school to corporate offices.</p>
-    </div>
-    <div class="cat-grid">
-      <div class="cat-card" onclick="filterCategory('school')">
-        <div class="cat-img"><div class="cat-emoji">📚</div></div>
-        <div class="cat-body">
-          <div class="cat-name">School Notebooks</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('exercise')">
-        <div class="cat-img"><div class="cat-emoji">📓</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Exercise Books</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('a4')">
-        <div class="cat-img"><div class="cat-emoji">📋</div></div>
-        <div class="cat-body">
-          <div class="cat-name">A4 Notebooks</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('practical')">
-        <div class="cat-img"><div class="cat-emoji">🔬</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Practical Books</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('drawing')">
-        <div class="cat-img"><div class="cat-emoji">🎨</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Drawing Books</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('register')">
-        <div class="cat-img"><div class="cat-emoji">📒</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Registers</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('office')">
-        <div class="cat-img"><div class="cat-emoji">🗂️</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Office Registers</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-      <div class="cat-card" onclick="filterCategory('custom')">
-        <div class="cat-img"><div class="cat-emoji">🖨️</div></div>
-        <div class="cat-body">
-          <div class="cat-name">Custom Printing</div>
-          <div class="cat-cta">Shop now →</div>
-        </div>
-      </div>
-    </div>
+<!-- CART DRAWER -->
+<div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>🛒 Your Cart</h3>
+    <div class="cart-close" onclick="closeCart()">✕</div>
   </div>
-</section>
-
-<!-- BEST SELLERS -->
-<section class="section" id="shop">
-  <div class="section-inner">
-    <div class="products-header">
-      <div>
-        <div class="section-tag">BEST SELLERS</div>
-        <h2 class="section-title">Customer Favourites</h2>
-        <p class="section-desc">The most loved notebooks by our customers</p>
-      </div>
-      <button class="view-all-btn" onclick="openWhatsApp()">View all →</button>
-    </div>
-    <div class="products-grid" id="productsGrid">
-      <!-- Product cards injected by JS -->
-    </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty-state"><div class="empty-icon">🛒</div><p>Your cart is empty</p></div>
   </div>
-</section>
-
-<!-- FACTORY / WHY US -->
-<section class="factory-strip" id="about">
-  <div class="factory-strip-inner">
-    <div class="factory-visual">
-      <img src="images/lifestyle-harsh.jpg" alt="Factory" onerror="this.style.opacity='0'" />
-      <div class="factory-label">🏭 OUR FACTORY &nbsp;·&nbsp; Khadepur, Kanpur</div>
-    </div>
-    <div class="factory-content">
-      <div class="section-tag">WHY CHOOSE US</div>
-      <h2 class="section-title" style="color:white">Built on Quality.<br/>Backed by Trust.</h2>
-      <p>From sourcing premium 70–130 GSM paper to delivering pan-India, Shri Shiv Enterprises is the manufacturer that distributors, schools and businesses rely on for consistent quality and fair wholesale pricing.</p>
-      <div class="factory-points">
-        <div class="factory-point"><div class="factory-point-dot">✓</div>Acid-free, eye-friendly maplitho paper sourced from top mills.</div>
-        <div class="factory-point"><div class="factory-point-dot">✓</div>Complete control over printing, binding &amp; quality checks.</div>
-        <div class="factory-point"><div class="factory-point-dot">✓</div>OEM &amp; Private Label — manufacture under your brand.</div>
-        <div class="factory-point"><div class="factory-point-dot">✓</div>Transparent GST invoicing for distributors and businesses.</div>
-      </div>
-    </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cSub">₹0</span></div>
+    <div class="cart-gst"><span>GST (12%)</span><span id="cGst">₹0</span></div>
+    <div class="cart-ship"><span>Shipping</span><span id="cShip">₹60</span></div>
+    <div class="cart-total"><span>Total</span><span id="cTotal">₹0</span></div>
+    <button class="cart-checkout-btn" onclick="goCheckout()">Proceed to Checkout</button>
   </div>
-</section>
-
-<!-- NEW ARRIVALS -->
-<section class="section new-arrivals" id="new">
-  <div class="section-inner">
-    <div class="products-header">
-      <div>
-        <div class="section-tag">JUST IN</div>
-        <h2 class="section-title">New Arrivals</h2>
-        <p class="section-desc">Fresh additions to our premium catalogue</p>
-      </div>
-      <button class="view-all-btn" onclick="openWhatsApp()">View all →</button>
-    </div>
-    <div class="products-grid" id="newArrivalsGrid"></div>
-  </div>
-</section>
-
-<!-- BULK CTA -->
-<section class="bulk-cta" id="bulk">
-  <div class="bulk-cta-inner">
-    <div>
-      <div class="section-tag">FOR DISTRIBUTORS &amp; SCHOOLS</div>
-      <h2 class="section-title">Bulk Orders &amp;<br/>Custom Manufacturing</h2>
-      <p>Get factory-direct pricing on bulk orders starting from 500 units. We do custom covers, branding, OEM and private-label manufacturing with end-to-end GST compliance.</p>
-      <button class="btn-primary" onclick="document.getElementById('bulkForm').scrollIntoView({behavior:'smooth'})">📋 Request Quotation</button>
-    </div>
-    <div class="bulk-stats">
-      <div class="bulk-stat"><span class="num">500+</span><span class="lbl">MOQ Bulk</span></div>
-      <div class="bulk-stat"><span class="num">7-15</span><span class="lbl">Days Delivery</span></div>
-      <div class="bulk-stat"><span class="num">100%</span><span class="lbl">Customisable</span></div>
-      <div class="bulk-stat"><span class="num">Best</span><span class="lbl">Wholesale Price</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- BULK FORM -->
-<section class="section" id="bulkForm" style="background:var(--gray-50)">
-  <div class="section-inner" style="max-width:680px">
-    <div class="section-tag">BULK INQUIRY</div>
-    <h2 class="section-title">Get a Free Quote</h2>
-    <p class="section-desc" style="margin-bottom:36px">Fill in your requirements and we'll get back to you within 2 hours.</p>
-    <form onsubmit="submitBulkForm(event)" style="display:flex;flex-direction:column;gap:16px;background:white;padding:36px;border-radius:var(--radius-xl);border:1px solid var(--gray-100);box-shadow:var(--shadow-md)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Company Name</label><input type="text" placeholder="Your company name" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
-        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">GST Number</label><input type="text" placeholder="GSTIN (if applicable)" style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Phone / WhatsApp</label><input type="tel" placeholder="+91 XXXXXXXXXX" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
-        <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Quantity Required</label><input type="number" placeholder="Min 500 units" required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'" /></div>
-      </div>
-      <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Product Required</label><select required style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;background:white"><option value="">Select product type</option><option>School Notebooks</option><option>Exercise Books</option><option>A4 Notebooks</option><option>Practical Books</option><option>Drawing Books</option><option>Registers</option><option>Office Registers</option><option>Custom/OEM</option></select></div>
-      <div><label style="font-size:13px;font-weight:600;color:var(--navy-dark);display:block;margin-bottom:6px">Additional Requirements</label><textarea placeholder="Describe your requirements — paper quality, GSM, binding, cover design etc." rows="3" style="width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:10px;font-size:14px;outline:none;resize:vertical;font-family:inherit" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--gray-200)'"></textarea></div>
-      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px">📋 Submit Bulk Inquiry</button>
-    </form>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section" style="background:white">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">TESTIMONIALS</div>
-      <h2 class="section-title">Loved by Businesses &amp; Schools</h2>
-      <p class="section-desc">What our partners and customers say about us</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Shri Shiv ne hamein consistent quality di hai pichle 3 saal se. Bulk pricing aur on-time delivery best in market hai.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">RK</div>
-          <div><div class="testimonial-name">Rajesh Kumar</div><div class="testimonial-role">Distributor, Delhi</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">School ke saare notebooks yahin se lete hain. Paper quality aur binding bahut premium hai. Parents bhi khush hain.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AS</div>
-          <div><div class="testimonial-name">Anita Sharma</div><div class="testimonial-role">Principal, DPS Lucknow</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">OEM private label ke liye perfect partner. Custom printing fast aur professional. Margins bhi healthy milte hain.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SP</div>
-          <div><div class="testimonial-name">Suresh Patel</div><div class="testimonial-role">Stationery Retailer, Mumbai</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Office registers and A4 notebooks for our 500+ employees. Quality consistent, GST invoices instant. Highly recommended.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MR</div>
-          <div><div class="testimonial-name">Megha Reddy</div><div class="testimonial-role">Procurement Manager, IT Corp</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq-section" id="faq">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">FAQ</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-desc">Everything you need to know about our products and services</p>
-    </div>
-    <div class="faq-list" id="faqList">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What is the minimum order quantity for bulk orders?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Our minimum order quantity for bulk orders is 500 units. For custom/OEM orders with printed covers, MOQ starts at 1000 units. Contact us for special pricing on larger quantities.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Do you provide GST invoice with every order?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Yes! Every order comes with a proper GST invoice with our GSTIN: 09BYUPP5969E2ZF. You can download invoices instantly from your order confirmation.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Do you offer customized / private label manufacturing?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Absolutely! We specialize in OEM and private label manufacturing. You can customize cover design, paper quality, page count, binding style, and get your brand printed on the notebooks.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What paper quality do you use?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>We use premium acid-free maplitho paper ranging from 70 GSM to 130 GSM. All paper is eye-friendly, sourced from top mills, and suitable for all types of pens and pencils.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What is your delivery time?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>For standard orders: 3–7 business days. For bulk/custom orders: 7–15 business days depending on quantity and customization. We ship pan-India via trusted logistics partners.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Do you ship pan-India?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Yes, we ship to all states and union territories across India. Free shipping is available on orders above ₹999. For bulk orders, we offer special logistics arrangements.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact" style="background:white">
-  <div class="section-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-      <div>
-        <div class="section-tag">GET IN TOUCH</div>
-        <h2 class="section-title">Contact Us</h2>
-        <p style="color:var(--gray-600);font-size:15px;line-height:1.75;margin-bottom:32px">We're available Mon–Sat, 9 AM – 7 PM. WhatsApp us for fastest response.</p>
-        <div style="display:flex;flex-direction:column;gap:20px">
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📍</div>
-            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:4px">Factory Address</div><div style="font-size:14px;color:var(--gray-600);line-height:1.65">41/1 Bajrang Vihar, Khadepur<br/>Kanpur, Uttar Pradesh – 208021</div></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center">
-            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📞</div>
-            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">Phone &amp; WhatsApp</div><a href="tel:+916393539533" style="font-size:15px;color:var(--navy);font-weight:600">+91 6393539533</a></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center">
-            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">✉️</div>
-            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">Email</div><a href="mailto:shrishiventerprises2025@gmail.com" style="font-size:14px;color:var(--navy)">shrishiventerprises2025@gmail.com</a></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center">
-            <div style="width:44px;height:44px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🧾</div>
-            <div><div style="font-weight:700;color:var(--navy-dark);margin-bottom:2px">GSTIN</div><div style="font-size:14px;color:var(--gray-600)">09BYUPP5969E2ZF</div></div>
-          </div>
-        </div>
-        <button class="btn-primary" style="margin-top:28px" onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
-      </div>
-      <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.832!2d80.3523!3d26.4588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI3JzMxLjciTiA4MMKwMjEnMDguMyJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="320" style="border:0;border-radius:var(--radius-lg);filter:grayscale(20%)" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="section-inner" style="max-width:600px">
-    <h2>Join the Shri Shiv Family</h2>
-    <p>Get exclusive bulk discounts, new product launches and seasonal offers straight to your inbox.</p>
-    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-      <input type="email" placeholder="you@example.com" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="images/logo.jpg" alt="Shri Shiv Enterprises" />
-      <p>Premium notebook manufacturer &amp; wholesaler from Kanpur, serving schools, distributors and businesses across India.</p>
-      <span class="footer-gstin">GSTIN: 09BYUPP5969E2ZF</span>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#bulk">Bulk Orders</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#faq">FAQs</a>
-    </div>
-    <div class="footer-col">
-      <h4>Categories</h4>
-      <a href="#">School Notebooks</a>
-      <a href="#">Exercise Books</a>
-      <a href="#">A4 Notebooks</a>
-      <a href="#">Drawing Books</a>
-      <a href="#">Registers</a>
-      <a href="#">OEM/Custom</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <div class="footer-contact-item"><span>📍</span>41/1 Bajrang Vihar, Khadepur, Kanpur UP 208021</div>
-      <div class="footer-contact-item"><span>📞</span><a href="tel:+916393539533">+91 6393539533</a></div>
-      <div class="footer-contact-item"><span>✉️</span><a href="mailto:shrishiventerprises2025@gmail.com">shrishiventerprises2025@gmail.com</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Shri Shiv Enterprises. All rights reserved. Made with ❤️ in Kanpur 🇮🇳</span>
-    <div>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-      <a href="#">Shipping Policy</a>
-      <a href="#">Return Policy</a>
-    </div>
-  </div>
-</footer>
+</div>
 
 <!-- FLOATING BUTTONS -->
-<a class="floating-wa" href="https://wa.me/916393539533?text=Hi%20Shri%20Shiv%20Enterprises!%20I%20am%20interested%20in%20your%20notebooks." target="_blank" title="WhatsApp Us">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="floating-wa" href="https://wa.me/916393539533?text=Hello%20Shri%20Shiv%20Enterprises!%20I%20want%20to%20enquire%20about%20notebooks." target="_blank">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-<a class="floating-call" href="tel:+916393539533" title="Call Us">📞</a>
-
-<!-- CART SIDEBAR -->
-<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-<div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <h3>🛒 Your Cart</h3>
-    <button class="cart-close" onclick="closeCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty.<br/>Start shopping!</p></div>
-  </div>
-  <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
-    <div class="cart-total-row"><span>GST (18%)</span><span id="cartGst">₹0</span></div>
-    <div class="cart-total-row"><span>Shipping</span><span id="cartShipping">FREE</span></div>
-    <div class="cart-total-row grand"><span>Grand Total</span><span id="cartTotal">₹0</span></div>
-    <button class="cart-checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-    <button class="cart-wa-btn" onclick="checkoutViaWhatsApp()">💬 Order via WhatsApp</button>
-  </div>
-</div>
+<a class="floating-call" href="tel:+916393539533">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+</a>
 
 <!-- TOAST -->
-<div class="toast" id="toast">✅ Added to cart!</div>
+<div class="toast" id="toast"></div>
 
 <script>
-// ===== PRODUCT DATA =====
-const products = [
-  {id:1,name:"Premium School Notebook 200 Pages",cat:"SCHOOL NOTEBOOKS",catKey:"school",price:65,oldPrice:95,rating:4.8,reviews:312,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📓"},
-  {id:2,name:"Single Line Exercise Book 172 Pages",cat:"EXERCISE BOOKS",catKey:"exercise",price:42,oldPrice:60,rating:4.7,reviews:540,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📒"},
-  {id:3,name:"School Notebook Bundle (Pack of 12)",cat:"SCHOOL NOTEBOOKS",catKey:"school",price:599,oldPrice:960,rating:4.9,reviews:410,badge:"Bestseller",badgeType:"bestseller",isNew:false,emoji:"📚"},
-];
-const newArrivals = [
-  {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 NOTEBOOKS",catKey:"a4",price:145,oldPrice:220,rating:4.9,reviews:187,badge:"New",badgeType:"new",isNew:true,emoji:"📋"},
-  {id:5,name:"Drawing Book A4 Top Spiral",cat:"DRAWING BOOKS",catKey:"drawing",price:75,oldPrice:110,rating:4.9,reviews:142,badge:"New",badgeType:"new",isNew:true,emoji:"🎨"},
-  {id:6,name:"Practical Lab Notebook 80 Pages",cat:"PRACTICAL BOOKS",catKey:"practical",price:55,oldPrice:80,rating:4.6,reviews:98,badge:"New",badgeType:"new",isNew:true,emoji:"🔬"},
+// ===== DATA =====
+const PRODUCTS = [
+  {id:1,name:"Premium School Notebook 200 Pages",cat:"School Notebooks",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:65,mrp:95,rating:4.8,reviews:312,badge:"Bestseller",type:"bestseller"},
+  {id:2,name:"Single Line Exercise Book 172 Pages",cat:"Exercise Books",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:42,mrp:60,rating:4.7,reviews:540,badge:"Bestseller",type:"bestseller"},
+  {id:3,name:"School Notebook Bundle (Pack of 12)",cat:"School Notebooks",img:"https://images.unsplash.com/photo-1586188726762-b64569ad86a7?w=400&q=80&auto=format",price:599,mrp:960,rating:4.9,reviews:410,badge:"Bestseller",type:"bestseller"},
+  {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 Notebooks",img:"https://images.unsplash.com/photo-1546747947-0a2cf2ef15de?w=400&q=80&auto=format",price:145,mrp:220,rating:4.9,reviews:187,badge:"New",type:"new"},
+  {id:5,name:"Drawing Book A4 Top Spiral",cat:"Drawing Books",img:"https://images.unsplash.com/photo-1731765521627-a2a1112ea0b1?w=400&q=80&auto=format",price:75,mrp:110,rating:4.9,reviews:142,badge:"New",type:"new"},
+  {id:6,name:"Practical Notebook with Margin 200 Pages",cat:"Practical Books",img:"https://images.pexels.com/photos/32526792/pexels-photo-32526792.jpeg?w=400&q=80&auto=format",price:85,mrp:125,rating:4.7,reviews:88,badge:"New",type:"new"},
+  {id:7,name:"Office Register 384 Pages",cat:"Office Registers",img:"https://images.unsplash.com/photo-1585811759562-a30733b277f1?w=400&q=80&auto=format",price:220,mrp:320,rating:4.8,reviews:64,badge:"",type:""},
+  {id:8,name:"Cash Memo Register Bound",cat:"Registers",img:"https://images.pexels.com/photos/159865/notepad-pencil-green-black-159865.jpeg?w=400&q=80&auto=format",price:165,mrp:240,rating:4.6,reviews:51,badge:"",type:""},
+  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:110,mrp:160,rating:4.5,reviews:73,badge:"",type:""},
+  {id:10,name:"Double Line Exercise Book 144 Pages",cat:"Exercise Books",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:38,mrp:55,rating:4.6,reviews:220,badge:"",type:""},
+  {id:11,name:"A4 Spiral Notebook 100 Pages",cat:"A4 Notebooks",img:"https://images.unsplash.com/photo-1546747947-0a2cf2ef15de?w=400&q=80&auto=format",price:95,mrp:140,rating:4.7,reviews:115,badge:"",type:""},
+  {id:12,name:"Drawing Book A3 Staple Bound",cat:"Drawing Books",img:"https://images.unsplash.com/photo-1731765521627-a2a1112ea0b1?w=400&q=80&auto=format",price:60,mrp:88,rating:4.5,reviews:99,badge:"",type:""},
 ];
 
-// ===== CART STATE =====
-let cart = JSON.parse(localStorage.getItem('sseCart') || '[]');
+const CATEGORIES = [
+  {name:"School Notebooks",img:"https://images.unsplash.com/photo-1586188726762-b64569ad86a7?w=500&q=80&auto=format",icon:"📚"},
+  {name:"Exercise Books",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=500&q=80&auto=format",icon:"📓"},
+  {name:"A4 Notebooks",img:"https://images.unsplash.com/photo-1546747947-0a2cf2ef15de?w=500&q=80&auto=format",icon:"📋"},
+  {name:"Practical Books",img:"https://images.pexels.com/photos/32526792/pexels-photo-32526792.jpeg?w=500&q=80&auto=format",icon:"🔬"},
+  {name:"Drawing Books",img:"https://images.unsplash.com/photo-1731765521627-a2a1112ea0b1?w=500&q=80&auto=format",icon:"🎨"},
+  {name:"Registers",img:"https://images.pexels.com/photos/159865/notepad-pencil-green-black-159865.jpeg?w=500&q=80&auto=format",icon:"📒"},
+  {name:"Office Registers",img:"https://images.unsplash.com/photo-1585811759562-a30733b277f1?w=500&q=80&auto=format",icon:"🗂️"},
+  {name:"Long Books",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=500&q=80&auto=format",icon:"📔"},
+];
 
-function saveCart(){localStorage.setItem('sseCart',JSON.stringify(cart));updateCartCount();}
-function updateCartCount(){
-  const count = cart.reduce((a,b)=>a+b.qty,0);
-  document.getElementById('cartCount').textContent = count;
+// ===== STATE =====
+let cart = JSON.parse(localStorage.getItem('sse_cart') || '[]');
+let wishlist = JSON.parse(localStorage.getItem('sse_wish') || '[]');
+let currentPage = 'home';
+let shopFilter = 'All';
+let shopSearch = '';
+let selectedPayment = 'online';
+let orderData = null;
+
+// ===== UTILS =====
+function disc(p,m){return Math.round((1-p/m)*100)}
+function fmt(n){return '₹'+n.toFixed(0)}
+function saveCart(){localStorage.setItem('sse_cart',JSON.stringify(cart));updateCartBadge()}
+function saveWish(){localStorage.setItem('sse_wish',JSON.stringify(wishlist))}
+function updateCartBadge(){const n=cart.reduce((a,b)=>a+b.qty,0);const b=document.getElementById('cartBadge');if(b){b.textContent=n;n>0?b.classList.add('show'):b.classList.remove('show')}}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+function svgCheck(){return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>`}
+
+// ===== PAGES =====
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+  currentPage=id.replace('Page','');
 }
 
-// ===== RENDER PRODUCTS =====
-function renderProductCard(p){
-  const disc = Math.round((1-p.price/p.oldPrice)*100);
-  const imgs = ['images/notebook-vaishnavi.jpg','images/notebook-summer.jpg','images/notebook-anshika-a4.jpg','images/notebooks-a4-set.jpg','images/lifestyle-piyus.jpg'];
-  const imgSrc = imgs[p.id % imgs.length] || '';
-  return `<div class="product-card" id="prod-${p.id}">
-    <div class="product-img">
-      <img src="${imgSrc}" alt="${p.name}" onerror="this.style.display='none'" />
-      <div class="product-badges">
-        <span class="badge badge-${p.badgeType}">${p.badge}</span>
-        <span class="badge badge-off">${disc}% OFF</span>
+function goHome(){
+  buildHome();
+  showPage('homePage');
+  document.querySelectorAll('.nav-link').forEach((l,i)=>{l.classList.toggle('active',i===0)});
+}
+
+function goShop(filter){
+  if(filter) shopFilter=filter; else if(shopFilter==='All') shopFilter='All';
+  buildShop();
+  showPage('shopPage');
+  document.querySelectorAll('.nav-link').forEach((l,i)=>{l.classList.toggle('active',i===1)});
+}
+
+function goCheckout(){
+  if(!cart.length){showToast('Cart is empty!');return;}
+  closeCart();
+  buildCheckout();
+  showPage('checkoutPage');
+}
+
+// ===== SCROLL HELPERS =====
+function scrollToBulk(){goHome();setTimeout(()=>{const el=document.getElementById('bulkSection');if(el)el.scrollIntoView({behavior:'smooth'})},100)}
+function scrollToAbout(){goHome();setTimeout(()=>{const el=document.getElementById('aboutSection');if(el)el.scrollIntoView({behavior:'smooth'})},100)}
+function scrollToContact(){goHome();setTimeout(()=>{const el=document.getElementById('contactSection');if(el)el.scrollIntoView({behavior:'smooth'})},100)}
+
+// ===== CART =====
+function addToCart(id){
+  const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
+  const ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  saveCart();showToast('✅ Added to cart!');
+}
+function changeQty(id,d){
+  const i=cart.findIndex(x=>x.id===id);if(i<0)return;
+  cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);
+  saveCart();renderCartBody();
+}
+function openCart(){
+  document.getElementById('cartBackdrop').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  renderCartBody();
+}
+function closeCart(){
+  document.getElementById('cartBackdrop').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+}
+function renderCartBody(){
+  const body=document.getElementById('cartBody');
+  const foot=document.getElementById('cartFoot');
+  if(!cart.length){
+    body.innerHTML='<div class="cart-empty-state"><div class="empty-icon">🛒</div><p>Your cart is empty</p></div>';
+    foot.style.display='none';return;
+  }
+  let sub=0;
+  body.innerHTML=cart.map(item=>{
+    sub+=item.price*item.qty;
+    return`<div class="cart-item">
+      <img class="cart-item-img" src="${item.img}" alt="${item.name}" onerror="this.style.background='#f0f2f8';this.src=''"/>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${fmt(item.price)}</div>
+        <div class="cart-qty">
+          <div class="qty-btn" onclick="changeQty(${item.id},-1)">−</div>
+          <div class="qty-num">${item.qty}</div>
+          <div class="qty-btn" onclick="changeQty(${item.id},1)">+</div>
+        </div>
       </div>
-      <button class="product-wishlist" onclick="event.stopPropagation();toggleWishlist(${p.id},this)" title="Wishlist">🤍</button>
+    </div>`;
+  }).join('');
+  const gst=Math.round(sub*0.12);
+  const ship=sub>=999?0:60;
+  const total=sub+gst+ship;
+  document.getElementById('cSub').textContent=fmt(sub);
+  document.getElementById('cGst').textContent=fmt(gst);
+  document.getElementById('cShip').textContent=ship===0?'FREE':fmt(ship);
+  document.getElementById('cTotal').textContent=fmt(total);
+  foot.style.display='block';
+}
+
+// ===== WISHLIST =====
+function toggleWish(id,btn){
+  const idx=wishlist.indexOf(id);
+  if(idx>=0){wishlist.splice(idx,1);btn.textContent='🤍';btn.classList.remove('active');}
+  else{wishlist.push(id);btn.textContent='❤️';btn.classList.add('active');showToast('Added to wishlist!');}
+  saveWish();
+}
+
+// ===== PRODUCT CARD =====
+function prodCard(p){
+  const d=disc(p.price,p.mrp);
+  const w=wishlist.includes(p.id);
+  return`<div class="prod-card">
+    <div class="prod-img">
+      <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"/>
+      <div class="prod-badges">
+        ${p.badge?`<span class="badge badge-${p.type==='bestseller'?'bestseller':'new'}">${p.badge}</span>`:''}
+        <span class="badge badge-off">${d}% OFF</span>
+      </div>
+      <div class="prod-wish${w?' active':''}" onclick="event.stopPropagation();toggleWish(${p.id},this)">${w?'❤️':'🤍'}</div>
     </div>
-    <div class="product-body">
-      <div class="product-cat">${p.emoji} ${p.cat}</div>
-      <div class="product-name">${p.name}</div>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span class="rating-num">${p.rating}</span>
-        <span class="rating-count">(${p.reviews})</span>
+    <div class="prod-body">
+      <div class="prod-cat-label">${p.cat.toUpperCase()}</div>
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-rating">
+        <span class="prod-stars">${'★'.repeat(Math.round(p.rating))}</span>
+        <span class="prod-rating-num">${p.rating}</span>
+        <span class="prod-rating-count">(${p.reviews})</span>
       </div>
-      <div class="product-price">
-        <span class="price-main">₹${p.price}</span>
-        <span class="price-old">₹${p.oldPrice}</span>
-        <span class="price-save">Save ₹${p.oldPrice-p.price}</span>
+      <div class="prod-price">
+        <span class="prod-price-main">${fmt(p.price)}</span>
+        <span class="prod-price-old">${fmt(p.mrp)}</span>
       </div>
-      <button class="add-cart-btn" onclick="addToCart(${p.id})">🛒 Add to Cart</button>
+      <button class="add-cart-btn" onclick="addToCart(${p.id})">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        Add to Cart
+      </button>
     </div>
   </div>`;
 }
 
-function renderProducts(){
-  document.getElementById('productsGrid').innerHTML = products.map(renderProductCard).join('');
-  document.getElementById('newArrivalsGrid').innerHTML = newArrivals.map(renderProductCard).join('');
-}
-
-// ===== CART FUNCTIONS =====
-function addToCart(id){
-  const p = [...products,...newArrivals].find(x=>x.id===id);
-  if(!p) return;
-  const ex = cart.find(x=>x.id===id);
-  if(ex) ex.qty++;
-  else cart.push({...p,qty:1});
-  saveCart();
-  showToast(`✅ ${p.name} added to cart!`);
-  openCart();
-}
-
-function openCart(){
-  document.getElementById('cartOverlay').classList.add('open');
-  document.getElementById('cartSidebar').classList.add('open');
-  renderCart();
-}
-function closeCart(){
-  document.getElementById('cartOverlay').classList.remove('open');
-  document.getElementById('cartSidebar').classList.remove('open');
-}
-
-function renderCart(){
-  const container = document.getElementById('cartItems');
-  const footer = document.getElementById('cartFooter');
-  if(!cart.length){
-    container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty.<br/>Start shopping!</p></div>';
-    footer.style.display='none';
-    return;
-  }
-  let sub=0;
-  container.innerHTML = cart.map(item=>{
-    sub+=item.price*item.qty;
-    return `<div style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--gray-100);align-items:center">
-      <div style="width:52px;height:52px;background:var(--gray-50);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${item.emoji}</div>
-      <div style="flex:1;min-width:0">
-        <div style="font-size:13px;font-weight:600;color:var(--navy-dark);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${item.name}</div>
-        <div style="font-size:14px;font-weight:700;color:var(--navy)">₹${item.price}</div>
+// ===== BUILD HOME =====
+function buildHome(){
+  const hp=document.getElementById('homePage');
+  hp.innerHTML=`
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow1"></div><div class="hero-glow2"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          TRUSTED NOTEBOOK MANUFACTURER
+        </div>
+        <h1>Premium Notebooks.<br/><span class="gold">Crafted in Kanpur.</span></h1>
+        <p class="hero-desc">Manufacturer & wholesaler of school notebooks, A4 notebooks, exercise books, registers and customised OEM/private-label products. Trusted by schools, distributors and offices across India.</p>
+        <div class="hero-btns">
+          <button class="btn-gold" onclick="goShop()">Shop Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <button class="btn-outline" onclick="scrollToBulk()">Bulk Inquiry</button>
+          <button class="btn-ghost" onclick="scrollToContact()">Contact Sales</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">10M+</div><div class="hero-stat-label">Notebooks Manufactured</div></div>
+          <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Bulk Clients</div></div>
+          <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">GST Compliant</div></div>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <button onclick="changeQty(${item.id},-1)" style="width:28px;height:28px;border-radius:8px;background:var(--gray-100);font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700">-</button>
-        <span style="font-weight:700;font-size:14px;width:20px;text-align:center">${item.qty}</span>
-        <button onclick="changeQty(${item.id},1)" style="width:28px;height:28px;border-radius:8px;background:var(--navy);color:white;font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700">+</button>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1523634921619-37ce98c1877f?w=800&q=85&auto=format" alt="Premium notebook"/>
+        </div>
+        <div class="hero-float hero-float-1">
+          <div class="hero-float-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
+          <div class="hero-float-text"><div class="title">ISO Quality</div><div class="sub">Certified Manufacturing</div></div>
+        </div>
+        <div class="hero-float hero-float-2">
+          <div class="hero-float-icon" style="background:var(--navy)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+          <div class="hero-float-text"><div class="title">Pan-India</div><div class="sub">Fast Delivery</div></div>
+        </div>
       </div>
-    </div>`;
-  }).join('');
-  const gst=Math.round(sub*0.18);
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div class="trust-text"><strong>Free Shipping</strong><span>On orders above ₹999</span></div></div>
+      <div class="trust-item"><div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="trust-text"><strong>Secure Checkout</strong><span>GST invoice every order</span></div></div>
+      <div class="trust-item"><div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div><div class="trust-text"><strong>Direct from Factory</strong><span>Manufacturer pricing</span></div></div>
+      <div class="trust-item"><div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div><div class="trust-text"><strong>Premium Quality</strong><span>70–130 GSM paper</span></div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section categories-bg">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">EXPLORE</div>
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-sub">Premium stationery for every need – from primary school to corporate offices.</p>
+      </div>
+      <div class="cat-grid">
+        ${CATEGORIES.map(c=>`
+        <div class="cat-card" onclick="goShop('${c.name}')">
+          <img src="${c.img}" alt="${c.name}" loading="lazy"/>
+          <div class="cat-overlay">
+            <div class="cat-icon" style="font-size:20px">${c.icon}</div>
+            <div class="cat-name">${c.name}</div>
+            <div class="cat-cta">Shop now <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="section" style="background:white">
+    <div class="section-inner">
+      <div class="products-header">
+        <div class="products-header-left">
+          <div class="section-tag">BEST SELLERS</div>
+          <h2 class="section-title" style="margin-bottom:4px">Customer Favourites</h2>
+          <p class="section-sub">The most loved notebooks by our customers</p>
+        </div>
+        <button class="view-all-btn" onclick="goShop()">View all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+      <div class="prod-grid">
+        ${PRODUCTS.filter(p=>p.type==='bestseller').map(prodCard).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTORY / WHY CHOOSE US -->
+  <section class="factory-section" id="aboutSection">
+    <div class="factory-grid">
+      <div class="factory-img">
+        <img src="https://images.pexels.com/photos/32526792/pexels-photo-32526792.jpeg?w=800&q=85&auto=format" alt="Factory"/>
+        <div class="factory-label">
+          <div class="fl-tag">OUR FACTORY</div>
+          <div class="fl-name">Khadepur, Kanpur</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">WHY CHOOSE US</div>
+        <h2 class="section-title">Built on Quality.<br/>Backed by Trust.</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:8px">From sourcing premium 70-130 GSM paper to delivering pan-India, Shri Shiv Enterprises is the manufacturer that distributors, schools and businesses rely on for consistent quality and fair wholesale pricing.</p>
+        <div class="why-points">
+          ${[["Premium Raw Materials","Acid-free, eye-friendly maplitho paper sourced from top mills."],["In-house Manufacturing","Complete control over printing, binding & quality checks."],["OEM & Private Label","Manufacture under your brand with custom covers and specs."],["GST-compliant Wholesale","Transparent invoicing for distributors and businesses."]].map(([t,d])=>`
+          <div class="why-point">
+            <div class="why-point-icon">${svgCheck()}</div>
+            <div><div class="why-point-title">${t}</div><div class="why-point-desc">${d}</div></div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="section categories-bg">
+    <div class="section-inner">
+      <div class="products-header">
+        <div class="products-header-left">
+          <div class="section-tag">JUST IN</div>
+          <h2 class="section-title" style="margin-bottom:4px">New Arrivals</h2>
+          <p class="section-sub">Fresh additions to our premium catalogue</p>
+        </div>
+        <button class="view-all-btn" onclick="goShop()">View all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+      <div class="prod-grid">
+        ${PRODUCTS.filter(p=>p.type==='new').map(prodCard).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- BULK CTA -->
+  <section class="bulk-section" id="bulkSection">
+    <div class="bulk-card">
+      <div class="bulk-glow"></div>
+      <div class="bulk-grid">
+        <div>
+          <div class="bulk-tag">FOR DISTRIBUTORS & SCHOOLS</div>
+          <h2 class="bulk-title">Bulk Orders &<br/>Custom Manufacturing</h2>
+          <p class="bulk-desc">Get factory-direct pricing on bulk orders starting from 500 units. We do custom covers, branding, OEM and private-label manufacturing with end-to-end GST compliance.</p>
+          <button class="btn-gold" onclick="goShop()">Request Quotation <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+        <div class="bulk-stats-grid">
+          <div class="bulk-stat-card"><div class="bulk-stat-num">500+</div><div class="bulk-stat-label">MOQ Bulk</div></div>
+          <div class="bulk-stat-card"><div class="bulk-stat-num">7-15</div><div class="bulk-stat-label">Days Delivery</div></div>
+          <div class="bulk-stat-card"><div class="bulk-stat-num">100%</div><div class="bulk-stat-label">Customisable</div></div>
+          <div class="bulk-stat-card"><div class="bulk-stat-num">Best</div><div class="bulk-stat-label">Wholesale Price</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-bg">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">TESTIMONIALS</div>
+        <h2 class="section-title">Loved by Businesses & Schools</h2>
+        <p class="section-sub">What our partners and customers say about us</p>
+      </div>
+      <div class="testi-grid">
+        ${[
+          ["Shri Shiv ne hamein consistent quality di hai pichle 3 saal se. Bulk pricing aur on-time delivery best in market hai.","Rajesh Kumar","Distributor, Delhi"],
+          ["School ke saare notebooks yahin se lete hain. Paper quality aur binding bahut premium hai. Parents bhi khush hain.","Anita Sharma","Principal, DPS Lucknow"],
+          ["OEM private label ke liye perfect partner. Custom printing fast aur professional. Margins bhi healthy milte hain.","Suresh Patel","Stationery Retailer, Mumbai"],
+          ["Office registers and A4 notebooks for our 500+ employees. Quality consistent, GST invoices instant. Highly recommended.","Megha Reddy","Procurement, IT Corp"],
+        ].map(([txt,name,role])=>`
+        <div class="testi-card">
+          <div class="testi-quote-icon">"</div>
+          <div class="testi-stars">${'<span class="testi-star">★</span>'.repeat(5)}</div>
+          <p class="testi-text">"${txt}"</p>
+          <div class="testi-name">${name}</div>
+          <div class="testi-role">${role}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-bg">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Everything you need to know about our products and services</p>
+      </div>
+      <div class="faq-inner">
+        <div class="faq-list">
+          ${[
+            ["What is the minimum order quantity for bulk orders?","Our minimum order quantity for bulk orders is 500 units. For custom/OEM orders with printed covers, MOQ starts at 1000 units. Contact us for special pricing on larger quantities."],
+            ["Do you provide GST invoice with every order?","Yes! Every order comes with a proper GST invoice with our GSTIN: 09BYUPP5969E2ZF. You can download invoices instantly from your order confirmation."],
+            ["Do you offer customized / private label manufacturing?","Absolutely! We specialize in OEM and private label manufacturing. You can customize cover design, paper quality, page count, binding style, and get your brand printed on the notebooks."],
+            ["What paper quality do you use?","We use premium acid-free maplitho paper ranging from 70 GSM to 130 GSM. All paper is eye-friendly, sourced from top mills, and suitable for all types of pens and pencils."],
+            ["What is your delivery time?","For standard orders: 3–7 business days. For bulk/custom orders: 7–15 business days depending on quantity and customization. We ship pan-India via trusted logistics partners."],
+            ["Do you ship pan-India?","Yes, we ship to all states and union territories across India. Free shipping is available on orders above ₹999."],
+          ].map(([q,a])=>`
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">${q}<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">${a}</div></div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-card">
+      <div class="newsletter-glow"></div>
+      <h2>Join the Shri Shiv Family</h2>
+      <p>Get exclusive bulk discounts, new product launches and seasonal offers straight to your inbox.</p>
+      <form class="newsletter-form" onsubmit="subNewsletter(event)">
+        <input class="newsletter-input" type="email" placeholder="you@example.com" required/>
+        <button type="submit" class="newsletter-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contactSection">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-box" style="width:44px;height:44px;font-size:20px">S</div>
+          <div><div class="footer-brand-name">Shri Shiv</div><div class="footer-brand-sub">Enterprises</div></div>
+        </div>
+        <p class="footer-desc">Premium notebook manufacturer & wholesaler from Kanpur, serving schools, distributors and businesses across India.</p>
+        <p class="footer-gstin">GSTIN: <span>09BYUPP5969E2ZF</span></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <button onclick="goHome()">Home</button>
+          <button onclick="goShop()">Shop</button>
+          <button onclick="scrollToBulk()">Bulk Orders</button>
+          <button onclick="scrollToAbout()">About</button>
+          <button onclick="scrollToContact()">Contact</button>
+        </div>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <div class="footer-links">
+          ${CATEGORIES.slice(0,6).map(c=>`<button onclick="goShop('${c.name}')">${c.name}</button>`).join('')}
+        </div>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><a href="tel:+916393539533">+91 6393539533</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><a href="https://wa.me/916393539533" target="_blank">WhatsApp</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><a href="mailto:shrishiventerprises2025@gmail.com" style="word-break:break-all">shrishiventerprises2025@gmail.com</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span>41/1 Bajrang Vihar, Khadepur, Kanpur, UP – 208021</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Shri Shiv Enterprises. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <button>Privacy</button><button>Terms</button><button>Shipping</button><button>Returns</button>
+      </div>
+    </div>
+  </footer>`;
+}
+
+// ===== BUILD SHOP =====
+function buildShop(){
+  const sp=document.getElementById('shopPage');
+  const cats=['All',...new Set(PRODUCTS.map(p=>p.cat))].sort();
+  let filtered=PRODUCTS;
+  if(shopFilter!=='All') filtered=filtered.filter(p=>p.cat===shopFilter);
+  if(shopSearch) filtered=filtered.filter(p=>p.name.toLowerCase().includes(shopSearch.toLowerCase())||p.cat.toLowerCase().includes(shopSearch.toLowerCase()));
+
+  sp.innerHTML=`
+  <div class="shop-inner">
+    <div class="breadcrumb">
+      <span onclick="goHome()">Home</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      <span>Shop</span>
+    </div>
+    <h1 class="shop-title">Premium Notebooks Collection</h1>
+    <p class="shop-count">${filtered.length} products available</p>
+    <div class="shop-filters">
+      <div class="shop-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        <input type="text" placeholder="Search products" value="${shopSearch}" oninput="shopSearch=this.value;buildShop()" />
+      </div>
+      <div class="filter-title">Categories</div>
+      <div class="filter-cats">
+        ${cats.map(c=>`<div class="filter-cat${shopFilter===c?' active':''}" onclick="shopFilter='${c}';buildShop()">${c}</div>`).join('')}
+      </div>
+      <div class="promo-banner" style="margin-top:16px">
+        <div class="pb-tag">🏷️</div>
+        <h3>Get 10% OFF</h3>
+        <p>Use code <span class="promo-code">SHIV10</span> at checkout</p>
+      </div>
+    </div>
+    <div class="shop-results-bar">
+      <span class="shop-results-count">Showing ${filtered.length} results</span>
+      <select onchange="sortProducts(this.value)">
+        <option>Default</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+    </div>
+    <div class="prod-grid" id="shopProdGrid">
+      ${filtered.length ? filtered.map(prodCard).join('') : '<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">No products found</div>'}
+    </div>
+  </div>`;
+}
+
+function sortProducts(val){
+  let filtered=shopFilter==='All'?[...PRODUCTS]:PRODUCTS.filter(p=>p.cat===shopFilter);
+  if(shopSearch) filtered=filtered.filter(p=>p.name.toLowerCase().includes(shopSearch.toLowerCase()));
+  if(val==='Price: Low to High') filtered.sort((a,b)=>a.price-b.price);
+  if(val==='Price: High to Low') filtered.sort((a,b)=>b.price-a.price);
+  document.getElementById('shopProdGrid').innerHTML=filtered.map(prodCard).join('');
+}
+
+// ===== BUILD CHECKOUT =====
+function buildCheckout(){
+  const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const gst=Math.round(sub*0.12);
   const ship=sub>=999?0:60;
   const total=sub+gst+ship;
-  document.getElementById('cartSubtotal').textContent='₹'+sub;
-  document.getElementById('cartGst').textContent='₹'+gst;
-  document.getElementById('cartShipping').textContent=ship===0?'FREE':'₹'+ship;
-  document.getElementById('cartTotal').textContent='₹'+total;
-  footer.style.display='block';
+  const cp=document.getElementById('checkoutPage');
+  cp.innerHTML=`
+  <div class="checkout-inner">
+    <div class="breadcrumb">
+      <span onclick="goHome()">Home</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      <span onclick="openCart();showPage('homePage')">Cart</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      <span>Checkout</span>
+    </div>
+    <h1 class="checkout-title">Checkout</h1>
+
+    <div class="checkout-card">
+      <div class="checkout-section-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Customer Details
+      </div>
+      <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="cName" type="text" required/></div>
+      <div class="form-group"><label class="form-label">Email *</label><input class="form-input" id="cEmail" type="email" required/></div>
+      <div class="form-group"><label class="form-label">Phone *</label><input class="form-input" id="cPhone" type="tel" required/></div>
+    </div>
+
+    <div class="checkout-card">
+      <div class="checkout-section-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        Shipping Address
+      </div>
+      <div class="form-group"><label class="form-label">Address Line *</label><input class="form-input" id="cAddr" type="text" required/></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">City *</label><input class="form-input" id="cCity" type="text" required/></div>
+        <div class="form-group"><label class="form-label">State *</label><input class="form-input" id="cState" type="text" required/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Pincode *</label><input class="form-input" id="cPin" type="text" required/></div>
+    </div>
+
+    <div class="checkout-card">
+      <div class="checkout-section-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        GST Details <span style="font-size:13px;font-weight:400;color:var(--muted)">(optional)</span>
+      </div>
+      <div class="form-group"><label class="form-label">Company Name</label><input class="form-input" id="cCo" type="text"/></div>
+      <div class="form-group"><label class="form-label">GSTIN</label><input class="form-input" id="cGstin" type="text" placeholder="e.g. 09ABCDE1234F1Z5"/></div>
+    </div>
+
+    <div class="checkout-card">
+      <div class="checkout-section-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        Payment Method
+      </div>
+      <div class="payment-option selected" id="payOnline" onclick="selectPayment('online')">
+        <div class="payment-radio">
+          <div class="radio-circle"></div>
+          <div>
+            <div class="payment-label-title">Online Payment (Razorpay - Demo) <span class="recommended-badge">Recommended</span></div>
+            <div class="payment-label-sub">UPI / Card / Net Banking / Wallets – Currently in demo mode</div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-option" id="payCod" onclick="selectPayment('cod')">
+        <div class="payment-radio">
+          <div class="radio-circle"></div>
+          <div>
+            <div class="payment-label-title">Cash on Delivery</div>
+            <div class="payment-label-sub">Pay when you receive your order</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout-card">
+      <div class="checkout-section-title">Order Summary</div>
+      ${cart.map(item=>`
+      <div class="order-summary-item">
+        <img class="order-item-img" src="${item.img}" alt="${item.name}" onerror="this.style.background='#f0f2f8';this.src=''"/>
+        <div class="order-item-info">
+          <div class="order-item-name">${item.name}</div>
+          <div class="order-item-qty">Qty: ${item.qty}</div>
+        </div>
+        <div class="order-item-price">${fmt(item.price*item.qty)}</div>
+      </div>`).join('')}
+      <div class="order-totals">
+        <div class="order-total-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+        <div class="order-total-row"><span>GST (12%)</span><span>${fmt(gst)}</span></div>
+        <div class="order-total-row"><span>Shipping</span><span>${ship===0?'FREE':fmt(ship)}</span></div>
+        <div class="order-total-row grand"><span>Total</span><span>${fmt(total)}</span></div>
+      </div>
+      <button class="place-order-btn" onclick="placeOrder()">Place Order • ${fmt(total)}</button>
+      <p class="place-order-note">By placing the order you agree to our terms. GST invoice will be auto-generated.</p>
+    </div>
+  </div>`;
 }
 
-function changeQty(id,delta){
-  const item=cart.find(x=>x.id===id);
-  if(!item) return;
-  item.qty+=delta;
-  if(item.qty<=0) cart=cart.filter(x=>x.id!==id);
-  saveCart();
-  renderCart();
+function selectPayment(type){
+  selectedPayment=type;
+  document.getElementById('payOnline').classList.toggle('selected',type==='online');
+  document.getElementById('payCod').classList.toggle('selected',type==='cod');
 }
 
-function checkout(){
-  if(!cart.length){showToast('Your cart is empty!');return;}
-  checkoutViaWhatsApp();
+// ===== PLACE ORDER =====
+function placeOrder(){
+  const name=document.getElementById('cName')?.value?.trim();
+  const email=document.getElementById('cEmail')?.value?.trim();
+  const phone=document.getElementById('cPhone')?.value?.trim();
+  const addr=document.getElementById('cAddr')?.value?.trim();
+  const city=document.getElementById('cCity')?.value?.trim();
+  const state=document.getElementById('cState')?.value?.trim();
+  const pin=document.getElementById('cPin')?.value?.trim();
+  if(!name||!email||!phone||!addr||!city||!state||!pin){showToast('Please fill all required fields');return;}
+
+  const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const gst=Math.round(sub*0.12);
+  const ship=sub>=999?0:60;
+  const total=sub+gst+ship;
+  const orderId='SSE'+Date.now().toString().slice(-6);
+  const items=cart.map(i=>i.name+' x'+i.qty).join(', ');
+
+  orderData={orderId,name,email,phone,total,items,payment:selectedPayment==='online'?'Online (Mock)':'Cash on Delivery',status:selectedPayment==='online'?'Paid (Mock)':'Pending',gst,sub,ship};
+
+  cart=[];saveCart();
+  buildSuccess();
+  showPage('successPage');
 }
 
-function checkoutViaWhatsApp(){
-  if(!cart.length){showToast('Your cart is empty!');return;}
-  let msg='Hello Shri Shiv Enterprises! I want to order:%0A%0A';
-  cart.forEach(i=>{msg+=`• ${i.name} x${i.qty} = ₹${i.price*i.qty}%0A`;});
-  msg+='%0APlease confirm availability and payment details. Thank you!';
-  window.open(`https://wa.me/916393539533?text=${msg}`,'_blank');
+// ===== BUILD SUCCESS =====
+function buildSuccess(){
+  if(!orderData)return;
+  const sp=document.getElementById('successPage');
+  sp.innerHTML=`
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2 class="success-title">Order Placed Successfully!</h2>
+    <p class="success-sub">Thank you, ${orderData.name}! Your order <strong>#${orderData.orderId}</strong> has been confirmed. You will receive a confirmation shortly.</p>
+    <div class="success-order-card">
+      <div class="success-row"><span class="label">Order ID</span><span class="val">#${orderData.orderId}</span></div>
+      <div class="success-row"><span class="label">Payment</span><span class="val">${orderData.payment}</span></div>
+      <div class="success-row"><span class="label">Status</span><span class="val" style="color:${orderData.status.includes('Paid')?'#10b981':'var(--navy)'}">${orderData.status}</span></div>
+      <div class="success-row"><span class="label">Total</span><span class="val">${fmt(orderData.total)}</span></div>
+      <div class="success-row"><span class="label">Items</span><span class="val">${cart.length||orderData.items.split(',').length} products</span></div>
+      <div class="success-row"><span class="label" style="border:none">Products</span><span class="val" style="font-size:12px;border:none">${orderData.items}</span></div>
+    </div>
+    <div class="success-btns">
+      <button class="btn-gold" style="justify-content:center" onclick="downloadInvoice()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download GST Invoice
+      </button>
+      <button class="btn-outline" style="color:var(--navy);border-color:var(--border)" onclick="goHome()">Back to Home</button>
+      <button class="btn-outline" style="color:var(--navy);border-color:var(--border)" onclick="goShop()">Continue Shopping</button>
+    </div>
+  </div>`;
 }
 
-// ===== WISHLIST =====
-function toggleWishlist(id,btn){
-  btn.textContent = btn.textContent==='🤍'?'❤️':'🤍';
-  showToast(btn.textContent==='❤️'?'Added to wishlist!':'Removed from wishlist');
+// ===== INVOICE DOWNLOAD =====
+function downloadInvoice(){
+  if(!orderData){showToast('No order found');return;}
+  const invoiceHTML=`<!DOCTYPE html><html><head><title>GST Invoice - ${orderData.orderId}</title><style>body{font-family:Arial,sans-serif;padding:40px;color:#0b1d3a;max-width:700px;margin:0 auto}h1{color:#0b1d3a;font-size:22px;margin-bottom:4px}.gold{color:#c9a227}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid #0b1d3a}.company h2{font-size:18px;margin-bottom:4px}.company p{font-size:12px;color:#666;margin:2px 0}.invoice-info{text-align:right}.invoice-info h3{font-size:16px;color:#c9a227;margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0}th{background:#0b1d3a;color:white;padding:10px;text-align:left;font-size:13px}td{padding:10px;border-bottom:1px solid #eee;font-size:13px}.total-section{margin-top:20px;max-width:300px;margin-left:auto}.total-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid #eee}.total-row.grand{font-weight:700;font-size:16px;color:#0b1d3a;border-top:2px solid #0b1d3a;border-bottom:none;margin-top:8px;padding-top:10px}.footer-note{margin-top:40px;font-size:11px;color:#999;text-align:center;border-top:1px solid #eee;padding-top:16px}@media print{button{display:none}}</style></head><body>
+  <div class="header"><div class="company"><h2>Shri Shiv Enterprises</h2><p>41/1 Bajrang Vihar, Khadepur, Kanpur, UP 208021</p><p>Phone: +91 6393539533 | Email: shrishiventerprises2025@gmail.com</p><p class="gold" style="font-weight:700;margin-top:6px">GSTIN: 09BYUPP5969E2ZF</p></div><div class="invoice-info"><h3>GST INVOICE</h3><p><strong>Invoice #:</strong> INV-${orderData.orderId}</p><p><strong>Order #:</strong> ${orderData.orderId}</p><p><strong>Date:</strong> ${new Date().toLocaleDateString('en-IN')}</p><p><strong>Customer:</strong> ${orderData.name}</p><p><strong>Phone:</strong> ${orderData.phone}</p></div></div>
+  <table><thead><tr><th>Product</th><th>HSN</th><th>Price</th><th>GST</th><th>Total</th></tr></thead><tbody>${orderData.items.split(', ').map(item=>`<tr><td>${item}</td><td>4820</td><td>${fmt(orderData.sub)}</td><td>12%</td><td>${fmt(orderData.sub+orderData.gst)}</td></tr>`).join('')}</tbody></table>
+  <div class="total-section"><div class="total-row"><span>Subtotal</span><span>${fmt(orderData.sub)}</span></div><div class="total-row"><span>CGST (6%)</span><span>${fmt(orderData.gst/2)}</span></div><div class="total-row"><span>SGST (6%)</span><span>${fmt(orderData.gst/2)}</span></div><div class="total-row"><span>Shipping</span><span>${orderData.ship===0?'FREE':fmt(orderData.ship)}</span></div><div class="total-row grand"><span>GRAND TOTAL</span><span>${fmt(orderData.total)}</span></div></div>
+  <div style="margin-top:32px"><p style="font-size:12px;color:#666">Payment: ${orderData.payment} | Status: ${orderData.status}</p></div>
+  <div style="margin-top:40px;text-align:right"><p style="font-size:12px;color:#999">Authorized Signatory</p><p style="font-weight:700;margin-top:20px">Shri Shiv Enterprises</p></div>
+  <div class="footer-note">This is a computer-generated invoice and does not require a physical signature. | Thank you for your business!</div>
+  <br/><button onclick="window.print()" style="background:#0b1d3a;color:white;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;font-size:14px">🖨️ Print Invoice</button>
+  </body></html>`;
+  const w=window.open('','_blank');w.document.write(invoiceHTML);w.document.close();
+  showToast('📄 GST Invoice opened!');
 }
 
-// ===== SEARCH =====
-function handleSearch(val){
-  if(val.length<2) return;
-  const q=val.toLowerCase();
-  const all=[...products,...newArrivals];
-  const filtered=all.filter(p=>p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q));
-  if(filtered.length){
-    document.getElementById('productsGrid').innerHTML=filtered.map(renderProductCard).join('');
-    document.getElementById('shop').scrollIntoView({behavior:'smooth'});
-  }
-}
-
-// ===== CATEGORY FILTER =====
-function filterCategory(key){
-  const all=[...products,...newArrivals];
-  const filtered=all.filter(p=>p.catKey===key);
-  const grid=document.getElementById('productsGrid');
-  if(filtered.length){
-    grid.innerHTML=filtered.map(renderProductCard).join('');
-    document.getElementById('shop').scrollIntoView({behavior:'smooth'});
-  } else {
-    showToast('Coming soon! WhatsApp us for this category.');
-    openWhatsApp();
-  }
-}
-
-// ===== FAQ =====
+// ===== FAQ TOGGLE =====
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item.open').forEach(f=>f.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
 }
 
-// ===== FORMS =====
-function submitBulkForm(e){
-  e.preventDefault();
-  showToast('✅ Inquiry submitted! We\'ll call you within 2 hours.');
-  setTimeout(()=>openWhatsApp(),1000);
-  e.target.reset();
-}
+// ===== MENU =====
+function openMenu(){document.getElementById('mobileMenu').classList.add('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-function subscribeNewsletter(e){
-  e.preventDefault();
-  showToast('🎉 Subscribed successfully!');
-  e.target.reset();
-}
-
-// ===== UTILS =====
-function openWhatsApp(){
-  window.open('https://wa.me/916393539533?text=Hi%20Shri%20Shiv%20Enterprises!%20I%20am%20interested%20in%20your%20notebooks.%20Please%20share%20more%20details.','_blank');
-}
-
-function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
-
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-// ===== SCROLL ANIMATIONS =====
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
-},{threshold:0.1});
-document.querySelectorAll('.product-card,.cat-card,.testimonial-card,.bulk-stat,.factory-point').forEach(el=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(20px)';
-  el.style.transition='opacity .5s ease,transform .5s ease';
-  observer.observe(el);
-});
+// ===== NEWSLETTER =====
+function subNewsletter(e){e.preventDefault();showToast('🎉 Subscribed successfully!');e.target.reset()}
 
 // ===== INIT =====
-renderProducts();
-updateCartCount();
+updateCartBadge();
+buildHome();
 </script>
 </body>
 </html>
