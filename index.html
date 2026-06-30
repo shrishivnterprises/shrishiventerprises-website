@@ -320,10 +320,10 @@ footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
 .success-btns{display:flex;flex-direction:column;gap:10px}
 
 /* FLOATING */
-.floating-wa{position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4)}
+.floating-wa{position:fixed;bottom:96px;right:16px;z-index:9999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4)}
 .floating-wa::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2s infinite;z-index:-1}
 @keyframes waPulse{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.4);opacity:0}}
-.floating-call{position:fixed;bottom:24px;left:24px;z-index:9999;width:56px;height:56px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(11,29,58,.3)}
+.floating-call{position:fixed;bottom:32px;right:16px;z-index:9999;width:52px;height:52px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(11,29,58,.3)}
 
 /* CART DRAWER */
 .cart-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -355,7 +355,7 @@ footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
 
 
 /* STICKY CART BAR */
-.sticky-cart-bar{position:fixed;bottom:88px;left:0;right:0;z-index:998;background:var(--navy);padding:12px 20px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
+.sticky-cart-bar{position:fixed;bottom:0;left:0;right:0;z-index:996;background:var(--navy);padding:12px 20px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
 .sticky-cart-bar.show{display:flex}
 .sticky-cart-info{color:white;font-size:14px;font-weight:600}
 .sticky-cart-info span{color:var(--gold)}
