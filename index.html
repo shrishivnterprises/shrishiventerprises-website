@@ -488,34 +488,11 @@ const PRODUCTS = [
   {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 Notebooks",img:"https://images.unsplash.com/photo-1546747947-0a2cf2ef15de?w=400&q=80&auto=format",price:145,mrp:220,rating:4.9,reviews:187,badge:"New",type:"new"},
   {id:5,name:"Drawing Book A4 Top Spiral",cat:"Drawing Books",img:"https://images.unsplash.com/photo-1731765521627-a2a1112ea0b1?w=400&q=80&auto=format",price:75,mrp:110,rating:4.9,reviews:142,badge:"New",type:"new"},
   {id:6,name:"Practical Notebook with Margin 200 Pages",cat:"Practical Books",img:"https://images.pexels.com/photos/32526792/pexels-photo-32526792.jpeg?w=400&q=80&auto=format",price:85,mrp:125,rating:4.7,reviews:88,badge:"New",type:"new"},
-  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:70,mrp:105,rating:4.5,reviews:73,badge:"",type:""},
-  {id:10,name:"One Side Hindi Notebook 144 Pages",cat:"One Side Hindi",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:28,mrp:42,rating:4.6,reviews:220,badge:"",type:""},
-  {id:13,name:"One Side Hindi Notebook 168 Pages",cat:"One Side Hindi",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:35,mrp:52,rating:4.6,reviews:145,badge:"",type:""},
-  {id:14,name:"One Side Hindi Notebook 216 Pages",cat:"One Side Hindi",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:42,mrp:65,rating:4.6,reviews:98,badge:"",type:""},
-  {id:15,name:"One Side English Notebook 144 Pages",cat:"One Side English",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:28,mrp:42,rating:4.6,reviews:180,badge:"",type:""},
-  {id:16,name:"One Side English Notebook 168 Pages",cat:"One Side English",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:35,mrp:52,rating:4.6,reviews:120,badge:"",type:""},
-  {id:17,name:"One Side English Notebook 216 Pages",cat:"One Side English",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:42,mrp:65,rating:4.6,reviews:90,badge:"",type:""},
+  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"https://images.unsplash.com/photo-1621168854573-35a99ec10cf6?w=400&q=80&auto=format",price:110,mrp:160,rating:4.5,reviews:73,badge:"",type:""},
+  {id:10,name:"Double Line Exercise Book 144 Pages",cat:"Exercise Books",img:"https://images.unsplash.com/photo-1653070863899-57ab83a18a72?w=400&q=80&auto=format",price:38,mrp:55,rating:4.6,reviews:220,badge:"",type:""},
   {id:11,name:"A4 Spiral Notebook 100 Pages",cat:"A4 Notebooks",img:"https://images.unsplash.com/photo-1546747947-0a2cf2ef15de?w=400&q=80&auto=format",price:95,mrp:140,rating:4.7,reviews:115,badge:"",type:""},
   {id:12,name:"Drawing Book A3 Staple Bound",cat:"Drawing Books",img:"https://images.unsplash.com/photo-1731765521627-a2a1112ea0b1?w=400&q=80&auto=format",price:60,mrp:88,rating:4.5,reviews:99,badge:"",type:""},
 ];
-  const SPECS = {
-    "Premium School Notebook 200 Pages": {spec:"200 Pages|A5 Size|Single Line|60 GSM Paper|Durable Binding", desc:"Premium quality school notebook. Single line ruling with margin. Durable cover, smooth writing experience. Trusted by students across India."},
-    "Single Line Exercise Book 172 Pages": {spec:"172 Pages|A5 Size|Single Line|60 GSM Paper|Staple Bound", desc:"Single line exercise book perfect for school students. Quality paper with smooth writing surface and neat margin ruling."},
-    "School Notebook Bundle (Pack of 12)": {spec:"12 Notebooks|A5 Size|Assorted Ruling|60 GSM|Best Value", desc:"Value pack of 12 premium school notebooks. Best for full academic year. Mix of different rulings for all subjects."},
-    "A4 Hardbound Notebook 192 Pages": {spec:"192 Pages|A4 Size|Single Line|70 GSM|Hardbound Cover", desc:"Professional hardbound A4 notebook. Thick 70 GSM paper, premium hard cover. Ideal for college students and professionals."},
-    "Drawing Book A4 Top Spiral": {spec:"40 Pages|A4 Size|Blank Pages|90 GSM|Spiral Bound", desc:"Quality drawing book with thick blank pages. Perfect for sketching, coloring and art projects. Durable spiral binding."},
-    "Practical Notebook with Margin 200 Pages": {spec:"200 Pages|A4 Size|Ruled with Margin|65 GSM|School Practical", desc:"Science practical notebook with ruled pages and wide margin. Ideal for lab records, school practicals and project files."},
-    "Long Book 200 Pages Wide Ruled": {spec:"200 Pages|Long Size|Wide Ruled|60 GSM|Sturdy Cover", desc:"Long-size wide-ruled notebook. Popular for accounting, records and general purpose use. Sturdy cover with smooth pages."},
-    "One Side Hindi Notebook 144 Pages": {spec:"144 Pages|A5 Size|One Side Hindi+Blank|60 GSM|School Use", desc:"Unique notebook — one side Hindi ruled, one side blank for creative work. Perfect for students who write in Hindi."},
-    "One Side Hindi Notebook 168 Pages": {spec:"168 Pages|A5 Size|One Side Hindi+Blank|60 GSM|School Use", desc:"Extra-page one side Hindi notebook. Hindi ruled on one side, blank on other. Great value for school students."},
-    "One Side Hindi Notebook 216 Pages": {spec:"216 Pages|A5 Size|One Side Hindi+Blank|60 GSM|Full Year", desc:"Full-year one side Hindi notebook with 216 pages. Perfect for schools requiring dual-format writing practice."},
-    "One Side English Notebook 144 Pages": {spec:"144 Pages|A5 Size|One Side English+Blank|60 GSM|School Use", desc:"English four-line on one side, blank on other side. Ideal for creative writing, drawing and English practice."},
-    "One Side English Notebook 168 Pages": {spec:"168 Pages|A5 Size|One Side English+Blank|60 GSM|School Use", desc:"Extra-page one side English notebook. Four-line ruling combined with blank pages for versatile school use."},
-    "One Side English Notebook 216 Pages": {spec:"216 Pages|A5 Size|One Side English+Blank|60 GSM|Full Year", desc:"Full-year one side English notebook. Best for students needing both lined English and blank writing space."},
-    "A4 Spiral Notebook 100 Pages": {spec:"100 Pages|A4 Size|Single Line|70 GSM|Metal Spiral", desc:"Premium A4 spiral notebook. Lies flat when open. Smooth 70 GSM pages. Great for college notes and office work."},
-    "Drawing Book A3 Staple Bound": {spec:"40 Pages|A3 Size|Blank Pages|90 GSM|Staple Bound", desc:"Large A3 drawing book with thick blank pages. Perfect for school art projects and creative work."},
-  };
-
 
 const CATEGORIES = [
   {name:"School Notebooks",img:"https://images.unsplash.com/photo-1586188726762-b64569ad86a7?w=500&q=80&auto=format",icon:"📚"},
@@ -645,7 +622,7 @@ function toggleWish(id,btn){
 function prodCard(p){
   const d=disc(p.price,p.mrp);
   const w=wishlist.includes(p.id);
-  return`<div class="prod-card" onclick="openPdm(${p.id})">
+  return`<div class="prod-card">
     <div class="prod-img">
       <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"/>
       <div class="prod-badges">
@@ -666,7 +643,7 @@ function prodCard(p){
         <span class="prod-price-main">${fmt(p.price)}</span>
         <span class="prod-price-old">${fmt(p.mrp)}</span>
       </div>
-      <button class="add-cart-btn" onclick="event.stopPropagation();addToCart(${p.id})">
+      <button class="add-cart-btn" onclick="addToCart(${p.id})">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
         Add to Cart
       </button>
@@ -1152,45 +1129,7 @@ function buildSuccess(){
 // ===== INVOICE DOWNLOAD =====
 function downloadInvoice(){
   if(!orderData){showToast('No order found');return;}
-  const invoiceHTML=`<!DOCTYPE html><html><head><title>GST Invoice - ${orderData.orderId}</title><style>body{font-family:Arial,sans-serif;padding:40px;color:#0b1d3a;max-width:700px;margin:0 auto}h1{color:#0b1d3a;font-size:22px;margin-bottom:4px}.gold{color:#c9a227}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid #0b1d3a}.company h2{font-size:18px;margin-bottom:4px}.company p{font-size:12px;color:#666;margin:2px 0}.invoice-info{text-align:right}.invoice-info h3{font-size:16px;color:#c9a227;margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0}th{background:#0b1d3a;color:white;padding:10px;text-align:left;font-size:13px}td{padding:10px;border-bottom:1px solid #eee;font-size:13px}.total-section{margin-top:20px;max-width:300px;margin-left:auto}.total-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid #eee}.total-row.grand{font-weight:700;font-size:16px;color:#0b1d3a;border-top:2px solid #0b1d3a;border-bottom:none;margin-top:8px;padding-top:10px}.footer-note{margin-top:40px;font-size:11px;color:#999;text-align:center;border-top:1px solid #eee;padding-top:16px}@media print{button{display:none}}
-/* ===== PRODUCT DETAIL MODAL ===== */
-.pdm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;display:none;align-items:center;justify-content:center;padding:12px;backdrop-filter:blur(4px)}
-.pdm-overlay.open{display:flex}
-.pdm-box{background:#fff;border-radius:18px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.25)}
-.pdm-close{position:absolute;top:12px;right:14px;width:34px;height:34px;border-radius:50%;background:#f5f5f5;border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:#333;font-weight:700}
-.pdm-close:hover{background:#e0e0e0}
-.pdm-inner{display:grid;grid-template-columns:1fr 1fr;min-height:360px}
-.pdm-img-side{border-radius:18px 0 0 18px;overflow:hidden;background:#f8f7f3;display:flex;align-items:center;justify-content:center}
-.pdm-img-side img{width:100%;height:100%;object-fit:cover;min-height:320px}
-.pdm-info-side{padding:28px 22px 22px;display:flex;flex-direction:column}
-.pdm-cat{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.pdm-name{font-size:19px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:10px}
-.pdm-rating-row{display:flex;align-items:center;gap:6px;margin-bottom:12px}
-.pdm-stars{color:var(--gold);font-size:13px}
-.pdm-rv{font-size:12px;color:var(--muted)}
-.pdm-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:14px}
-.pdm-price{font-size:26px;font-weight:800;color:var(--navy)}
-.pdm-mrp{font-size:14px;color:var(--muted);text-decoration:line-through}
-.pdm-off{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:10px;font-weight:800;padding:3px 7px;border-radius:5px}
-.pdm-spec-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.pdm-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
-.pdm-tag{background:#f8f7f3;border:1px solid rgba(11,29,58,0.1);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:500;color:var(--navy)}
-.pdm-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;border-top:1px solid rgba(11,29,58,0.08);padding-top:12px;flex:1}
-.pdm-btns{display:flex;flex-direction:column;gap:8px}
-.pdm-add-btn{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s}
-.pdm-add-btn:hover{opacity:.88}
-.pdm-wa-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:10px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:block;text-align:center}
-.prod-card{cursor:pointer;transition:transform .18s, box-shadow .18s}
-.prod-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,29,58,0.13)}
-@media(max-width:580px){
-  .pdm-inner{grid-template-columns:1fr}
-  .pdm-img-side{border-radius:18px 18px 0 0;min-height:200px}
-  .pdm-img-side img{min-height:200px}
-  .pdm-info-side{padding:18px 16px}
-  .pdm-name{font-size:16px}
-  .pdm-price{font-size:22px}
-}
-</style></head><body>
+  const invoiceHTML=`<!DOCTYPE html><html><head><title>GST Invoice - ${orderData.orderId}</title><style>body{font-family:Arial,sans-serif;padding:40px;color:#0b1d3a;max-width:700px;margin:0 auto}h1{color:#0b1d3a;font-size:22px;margin-bottom:4px}.gold{color:#c9a227}.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid #0b1d3a}.company h2{font-size:18px;margin-bottom:4px}.company p{font-size:12px;color:#666;margin:2px 0}.invoice-info{text-align:right}.invoice-info h3{font-size:16px;color:#c9a227;margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0}th{background:#0b1d3a;color:white;padding:10px;text-align:left;font-size:13px}td{padding:10px;border-bottom:1px solid #eee;font-size:13px}.total-section{margin-top:20px;max-width:300px;margin-left:auto}.total-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid #eee}.total-row.grand{font-weight:700;font-size:16px;color:#0b1d3a;border-top:2px solid #0b1d3a;border-bottom:none;margin-top:8px;padding-top:10px}.footer-note{margin-top:40px;font-size:11px;color:#999;text-align:center;border-top:1px solid #eee;padding-top:16px}@media print{button{display:none}}</style></head><body>
   <div class="header"><div class="company"><h2>Shri Shiv Enterprises</h2><p>41/1 Bajrang Vihar, Khadepur, Kanpur, UP 208021</p><p>Phone: +91 6393539533 | Email: shrishiventerprises2025@gmail.com</p><p class="gold" style="font-weight:700;margin-top:6px">GSTIN: 09BYUPP5969E2ZF</p></div><div class="invoice-info"><h3>GST INVOICE</h3><p><strong>Invoice #:</strong> INV-${orderData.orderId}</p><p><strong>Order #:</strong> ${orderData.orderId}</p><p><strong>Date:</strong> ${new Date().toLocaleDateString('en-IN')}</p><p><strong>Customer:</strong> ${orderData.name}</p><p><strong>Phone:</strong> ${orderData.phone}</p></div></div>
   <table><thead><tr><th>Product</th><th>HSN</th><th>Price</th><th>GST</th><th>Total</th></tr></thead><tbody>${orderData.items.split(', ').map(item=>`<tr><td>${item}</td><td>4820</td><td>${fmt(orderData.sub)}</td><td>12%</td><td>${fmt(orderData.sub+orderData.gst)}</td></tr>`).join('')}</tbody></table>
   <div class="total-section"><div class="total-row"><span>Subtotal</span><span>${fmt(orderData.sub)}</span></div><div class="total-row"><span>CGST (6%)</span><span>${fmt(orderData.gst/2)}</span></div><div class="total-row"><span>SGST (6%)</span><span>${fmt(orderData.gst/2)}</span></div><div class="total-row"><span>Shipping</span><span>${orderData.ship===0?'FREE':fmt(orderData.ship)}</span></div><div class="total-row grand"><span>GRAND TOTAL</span><span>${fmt(orderData.total)}</span></div></div>
@@ -1221,68 +1160,6 @@ function subNewsletter(e){e.preventDefault();showToast('🎉 Subscribed successf
 // ===== INIT =====
 updateCartBadge();
 buildHome();
-
-// ===== PRODUCT DETAIL MODAL =====
-function openPdm(id){
-  const p = PRODUCTS.find(x=>x.id===id);
-  if(!p) return;
-  const s = (typeof SPECS !== 'undefined' && SPECS[p.name]) ? SPECS[p.name] : {spec:'',desc:''};
-  const discPct = Math.round((1 - p.price/p.mrp)*100);
-  document.getElementById('pdmImg').src = p.img;
-  document.getElementById('pdmImg').alt = p.name;
-  document.getElementById('pdmCat').textContent = p.cat;
-  document.getElementById('pdmName').textContent = p.name;
-  const stars = Math.round(p.rating);
-  document.getElementById('pdmStars').textContent = '★'.repeat(stars) + '☆'.repeat(5-stars);
-  document.getElementById('pdmRv').textContent = p.rating + ' (' + p.reviews + ' reviews)';
-  document.getElementById('pdmPrice').textContent = '₹' + p.price;
-  document.getElementById('pdmMrp').textContent = '₹' + p.mrp;
-  document.getElementById('pdmOff').textContent = discPct + '% OFF';
-  document.getElementById('pdmTags').innerHTML = s.spec
-    ? s.spec.split('|').map(t=>'<span class="pdm-tag">'+t.trim()+'</span>').join('')
-    : '<span class="pdm-tag">Premium Quality</span>';
-  document.getElementById('pdmDesc').textContent = s.desc || 'Premium quality notebook by Shri Shiv Enterprises, Kanpur.';
-  document.getElementById('pdmAddBtn').onclick = function(){ addToCart(id); closePdm(); };
-  const waMsg = encodeURIComponent('Hello! I want to order: ' + p.name + ' (₹' + p.price + '). Please confirm.');
-  document.getElementById('pdmWaBtn').href = 'https://wa.me/916393539533?text=' + waMsg;
-  document.getElementById('pdmOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closePdm(){
-  document.getElementById('pdmOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closePdm(); });
 </script>
-
-<!-- PRODUCT DETAIL MODAL -->
-<div class="pdm-overlay" id="pdmOverlay" onclick="if(event.target===this)closePdm()">
-  <div class="pdm-box">
-    <button class="pdm-close" onclick="closePdm()">✕</button>
-    <div class="pdm-inner">
-      <div class="pdm-img-side"><img id="pdmImg" src="" alt=""/></div>
-      <div class="pdm-info-side">
-        <div class="pdm-cat" id="pdmCat"></div>
-        <div class="pdm-name" id="pdmName"></div>
-        <div class="pdm-rating-row">
-          <span class="pdm-stars" id="pdmStars"></span>
-          <span class="pdm-rv" id="pdmRv"></span>
-        </div>
-        <div class="pdm-price-row">
-          <span class="pdm-price" id="pdmPrice"></span>
-          <span class="pdm-mrp" id="pdmMrp"></span>
-          <span class="pdm-off" id="pdmOff"></span>
-        </div>
-        <div class="pdm-spec-lbl">Specifications</div>
-        <div class="pdm-tags" id="pdmTags"></div>
-        <div class="pdm-desc" id="pdmDesc"></div>
-        <div class="pdm-btns">
-          <button class="pdm-add-btn" id="pdmAddBtn">🛒 Add to Cart</button>
-          <a class="pdm-wa-btn" id="pdmWaBtn" href="#" target="_blank">💬 Order on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>
