@@ -688,7 +688,7 @@ function toggleWish(id,btn){
 function prodCard(p){
   const d=disc(p.price,p.mrp);
   const w=wishlist.includes(p.id);
-  return`<div class="prod-card" onclick="openProdModal(${p.id})" style="cursor:pointer">
+  return`<div class="prod-card" onclick="openPdm(${p.id})" style="cursor:pointer">
     <div class="prod-img">
       <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"/>
       <div class="prod-badges">
@@ -1386,6 +1386,44 @@ function downloadInvoice(){
   .prod-modal-name{font-size:17px}
   .prod-modal-price{font-size:24px}
 }
+
+/* ===== PRODUCT DETAIL MODAL ===== */
+.pdm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;display:none;align-items:center;justify-content:center;padding:12px;backdrop-filter:blur(4px)}
+.pdm-overlay.open{display:flex}
+.pdm-box{background:#fff;border-radius:18px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.25)}
+.pdm-close{position:absolute;top:12px;right:14px;width:34px;height:34px;border-radius:50%;background:#f5f5f5;border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:#333;font-weight:700}
+.pdm-close:hover{background:#e0e0e0}
+.pdm-inner{display:grid;grid-template-columns:1fr 1fr;min-height:360px}
+.pdm-img-side{border-radius:18px 0 0 18px;overflow:hidden;background:#f8f7f3;display:flex;align-items:center;justify-content:center}
+.pdm-img-side img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.pdm-info-side{padding:28px 22px 22px;display:flex;flex-direction:column}
+.pdm-cat{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.pdm-name{font-size:19px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:10px}
+.pdm-rating-row{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.pdm-stars{color:var(--gold);font-size:13px}
+.pdm-rv{font-size:12px;color:var(--muted)}
+.pdm-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:14px}
+.pdm-price{font-size:26px;font-weight:800;color:var(--navy)}
+.pdm-mrp{font-size:14px;color:var(--muted);text-decoration:line-through}
+.pdm-off{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:10px;font-weight:800;padding:3px 7px;border-radius:5px}
+.pdm-spec-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pdm-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.pdm-tag{background:#f8f7f3;border:1px solid rgba(11,29,58,0.1);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:500;color:var(--navy)}
+.pdm-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;border-top:1px solid rgba(11,29,58,0.08);padding-top:12px;flex:1}
+.pdm-btns{display:flex;flex-direction:column;gap:8px}
+.pdm-add-btn{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.pdm-add-btn:hover{opacity:.88}
+.pdm-wa-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:10px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:block;text-align:center}
+.prod-card{cursor:pointer;transition:transform .18s,box-shadow .18s}
+.prod-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,29,58,0.13)}
+@media(max-width:580px){
+  .pdm-inner{grid-template-columns:1fr}
+  .pdm-img-side{border-radius:18px 18px 0 0;min-height:200px}
+  .pdm-img-side img{min-height:200px}
+  .pdm-info-side{padding:18px 16px}
+  .pdm-name{font-size:16px}
+  .pdm-price{font-size:22px}
+}
 </style></head><body>'
 
   // Header
@@ -1504,7 +1542,7 @@ updateCartBadge();
 updateStickyBar();
 buildHome();
 
-// ===== PRODUCT DETAIL MODAL =====
+
 function openProdModal(id){
   const p = PRODUCTS.find(x=>x.id===id);
   if(!p) return;
@@ -1534,6 +1572,38 @@ function closeProdModal(){
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeProdModal(); });
+
+// ===== PRODUCT DETAIL MODAL =====
+function openPdm(id){
+  var p = PRODUCTS.find(function(x){return x.id===id;});
+  if(!p) return;
+  var s = (typeof SPECS !== 'undefined' && SPECS[p.name]) ? SPECS[p.name] : {spec:'',desc:''};
+  var discPct = Math.round((1 - p.price/p.mrp)*100);
+  document.getElementById('pdmImg').src = p.img;
+  document.getElementById('pdmImg').alt = p.name;
+  document.getElementById('pdmCat').textContent = p.cat;
+  document.getElementById('pdmName').textContent = p.name;
+  var stars = Math.round(p.rating);
+  document.getElementById('pdmStars').textContent = '★'.repeat(stars) + '☆'.repeat(5-stars);
+  document.getElementById('pdmRv').textContent = p.rating + ' (' + p.reviews + ' reviews)';
+  document.getElementById('pdmPrice').textContent = '₹' + p.price;
+  document.getElementById('pdmMrp').textContent = '₹' + p.mrp;
+  document.getElementById('pdmOff').textContent = discPct + '% OFF';
+  document.getElementById('pdmTags').innerHTML = s.spec
+    ? s.spec.split('|').map(function(t){return '<span class="pdm-tag">'+t.trim()+'</span>';}).join('')
+    : '<span class="pdm-tag">Premium Quality</span>';
+  document.getElementById('pdmDesc').textContent = s.desc || 'Premium quality notebook by Shri Shiv Enterprises, Kanpur.';
+  document.getElementById('pdmAddBtn').onclick = function(){ addToCart(id); closePdm(); };
+  var waMsg = encodeURIComponent('Hello! I want to order: ' + p.name + ' (Rs.' + p.price + '). Please confirm.');
+  document.getElementById('pdmWaBtn').href = 'https://wa.me/916393539533?text=' + waMsg;
+  document.getElementById('pdmOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePdm(){
+  document.getElementById('pdmOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closePdm(); });
 </script>
 
 <!-- PRODUCT DETAIL MODAL -->
@@ -1560,6 +1630,36 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeProd
         <div class="prod-modal-btns">
           <button class="prod-modal-add" id="modalAddBtn">🛒 Add to Cart</button>
           <a class="prod-modal-wa" id="modalWaBtn" href="#" target="_blank">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="pdm-overlay" id="pdmOverlay" onclick="if(event.target===this)closePdm()">
+  <div class="pdm-box">
+    <button class="pdm-close" onclick="closePdm()">✕</button>
+    <div class="pdm-inner">
+      <div class="pdm-img-side"><img id="pdmImg" src="" alt=""/></div>
+      <div class="pdm-info-side">
+        <div class="pdm-cat" id="pdmCat"></div>
+        <div class="pdm-name" id="pdmName"></div>
+        <div class="pdm-rating-row">
+          <span class="pdm-stars" id="pdmStars"></span>
+          <span class="pdm-rv" id="pdmRv"></span>
+        </div>
+        <div class="pdm-price-row">
+          <span class="pdm-price" id="pdmPrice"></span>
+          <span class="pdm-mrp" id="pdmMrp"></span>
+          <span class="pdm-off" id="pdmOff"></span>
+        </div>
+        <div class="pdm-spec-lbl">Specifications</div>
+        <div class="pdm-tags" id="pdmTags"></div>
+        <div class="pdm-desc" id="pdmDesc"></div>
+        <div class="pdm-btns">
+          <button class="pdm-add-btn" id="pdmAddBtn">🛒 Add to Cart</button>
+          <a class="pdm-wa-btn" id="pdmWaBtn" href="#" target="_blank">💬 Order on WhatsApp</a>
         </div>
       </div>
     </div>
