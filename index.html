@@ -59,7 +59,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 60%,#1a3866 100%);color:white;padding:80px 20px;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
-.hero::before{content:'';position:absolute;inset:0;background:url('images/notebooks-a4-collection.jpg') center/cover;opacity:.15}
+.hero::before{content:'';position:absolute;inset:0;background:url('images/notebooks-a4-collection.jpg?v=2') center/cover;opacity:.15}
 .hero-glow1{position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.2),transparent 70%)}
 .hero-glow2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.1),transparent 70%)}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:48px}
@@ -502,27 +502,27 @@ footer{background:var(--navy2);color:rgba(255,255,255,.75);padding:56px 20px 0}
 <script>
 // ===== DATA =====
 const PRODUCTS = [
-  {id:1,name:"Hindi Notebook 144 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg",price:28,mrp:42,rating:4.8,reviews:312,badge:"Bestseller",type:"bestseller"},
-  {id:15,name:"Hindi Notebook 168 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg",price:35,mrp:52,rating:4.8,reviews:210,badge:"Bestseller",type:"bestseller"},
-  {id:16,name:"Hindi Notebook 216 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg",price:42,mrp:65,rating:4.8,reviews:178,badge:"Bestseller",type:"bestseller"},
-  {id:2,name:"English Notebook 144 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg",price:28,mrp:42,rating:4.7,reviews:540,badge:"Bestseller",type:"bestseller"},
-  {id:17,name:"English Notebook 168 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg",price:35,mrp:52,rating:4.7,reviews:320,badge:"Bestseller",type:"bestseller"},
-  {id:18,name:"English Notebook 216 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg",price:42,mrp:65,rating:4.7,reviews:210,badge:"Bestseller",type:"bestseller"},
-  {id:3,name:"School Notebook Bundle (Pack of 12)",cat:"School Notebooks",img:"images/notebooks-a4-collection.jpg",price:599,mrp:960,rating:4.9,reviews:410,badge:"Bestseller",type:"bestseller"},
-  {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg",price:145,mrp:220,rating:4.9,reviews:187,badge:"New",type:"new"},
-  {id:5,name:"Drawing Book 40 Pages",cat:"Drawing Books",img:"images/drawing-book-kids.jpg",price:35,mrp:55,rating:4.9,reviews:142,badge:"New",type:"new"},
-  {id:6,name:"Practical Notebook with Margin 200 Pages",cat:"Practical Books",img:"images/lifestyle-harsh.jpg",price:85,mrp:125,rating:4.7,reviews:88,badge:"New",type:"new"},
-  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"images/long-register-lake.png",price:70,mrp:105,rating:4.5,reviews:73,badge:"",type:""},
-  {id:10,name:"One Side Hindi Notebook 144 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg",price:28,mrp:42,rating:4.6,reviews:220,badge:"",type:""},
-  {id:19,name:"One Side Hindi Notebook 168 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg",price:35,mrp:52,rating:4.6,reviews:145,badge:"",type:""},
-  {id:20,name:"One Side Hindi Notebook 216 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg",price:42,mrp:65,rating:4.6,reviews:98,badge:"",type:""},
-  {id:21,name:"One Side English Notebook 144 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg",price:28,mrp:42,rating:4.6,reviews:180,badge:"",type:""},
-  {id:22,name:"One Side English Notebook 168 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg",price:35,mrp:52,rating:4.6,reviews:120,badge:"",type:""},
-  {id:23,name:"One Side English Notebook 216 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg",price:42,mrp:65,rating:4.6,reviews:90,badge:"",type:""},
-  {id:11,name:"A4 Spiral Notebook 200 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg",price:60,mrp:90,rating:4.7,reviews:115,badge:"",type:""},
-  {id:13,name:"A4 Spiral Notebook 300 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg",price:90,mrp:130,rating:4.7,reviews:98,badge:"",type:""},
-  {id:14,name:"A4 Spiral Notebook 400 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg",price:120,mrp:175,rating:4.7,reviews:76,badge:"",type:""},
-  {id:12,name:"Drawing Book 40 Pages A3",cat:"Drawing Books",img:"images/drawing-book-kids.jpg",price:35,mrp:55,rating:4.5,reviews:99,badge:"",type:""},
+  {id:1,name:"Hindi Notebook 144 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg?v=2",price:28,mrp:42,rating:4.8,reviews:312,badge:"Bestseller",type:"bestseller"},
+  {id:15,name:"Hindi Notebook 168 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg?v=2",price:35,mrp:52,rating:4.8,reviews:210,badge:"Bestseller",type:"bestseller"},
+  {id:16,name:"Hindi Notebook 216 Pages",cat:"School Notebooks",img:"images/lifestyle-anshika.jpg?v=2",price:42,mrp:65,rating:4.8,reviews:178,badge:"Bestseller",type:"bestseller"},
+  {id:2,name:"English Notebook 144 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg?v=2",price:28,mrp:42,rating:4.7,reviews:540,badge:"Bestseller",type:"bestseller"},
+  {id:17,name:"English Notebook 168 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg?v=2",price:35,mrp:52,rating:4.7,reviews:320,badge:"Bestseller",type:"bestseller"},
+  {id:18,name:"English Notebook 216 Pages",cat:"Exercise Books",img:"images/lifestyle-harsh.jpg?v=2",price:42,mrp:65,rating:4.7,reviews:210,badge:"Bestseller",type:"bestseller"},
+  {id:3,name:"School Notebook Bundle (Pack of 12)",cat:"School Notebooks",img:"images/notebooks-a4-collection.jpg?v=2",price:599,mrp:960,rating:4.9,reviews:410,badge:"Bestseller",type:"bestseller"},
+  {id:4,name:"A4 Hardbound Notebook 192 Pages",cat:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg?v=2",price:145,mrp:220,rating:4.9,reviews:187,badge:"New",type:"new"},
+  {id:5,name:"Drawing Book 40 Pages",cat:"Drawing Books",img:"images/drawing-book-kids.jpg?v=2",price:35,mrp:55,rating:4.9,reviews:142,badge:"New",type:"new"},
+  {id:6,name:"Practical Notebook with Margin 200 Pages",cat:"Practical Books",img:"images/lifestyle-harsh.jpg?v=2",price:85,mrp:125,rating:4.7,reviews:88,badge:"New",type:"new"},
+  {id:9,name:"Long Book 200 Pages Wide Ruled",cat:"Long Books",img:"images/long-register-lake.png?v=2",price:70,mrp:105,rating:4.5,reviews:73,badge:"",type:""},
+  {id:10,name:"One Side Hindi Notebook 144 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg?v=2",price:28,mrp:42,rating:4.6,reviews:220,badge:"",type:""},
+  {id:19,name:"One Side Hindi Notebook 168 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg?v=2",price:35,mrp:52,rating:4.6,reviews:145,badge:"",type:""},
+  {id:20,name:"One Side Hindi Notebook 216 Pages",cat:"One Side Hindi",img:"images/lifestyle-anshika.jpg?v=2",price:42,mrp:65,rating:4.6,reviews:98,badge:"",type:""},
+  {id:21,name:"One Side English Notebook 144 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg?v=2",price:28,mrp:42,rating:4.6,reviews:180,badge:"",type:""},
+  {id:22,name:"One Side English Notebook 168 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg?v=2",price:35,mrp:52,rating:4.6,reviews:120,badge:"",type:""},
+  {id:23,name:"One Side English Notebook 216 Pages",cat:"One Side English",img:"images/lifestyle-harsh.jpg?v=2",price:42,mrp:65,rating:4.6,reviews:90,badge:"",type:""},
+  {id:11,name:"A4 Spiral Notebook 200 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg?v=2",price:60,mrp:90,rating:4.7,reviews:115,badge:"",type:""},
+  {id:13,name:"A4 Spiral Notebook 300 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg?v=2",price:90,mrp:130,rating:4.7,reviews:98,badge:"",type:""},
+  {id:14,name:"A4 Spiral Notebook 400 Pages",cat:"A4 Notebooks",img:"images/spiral-notebook-a4.jpg?v=2",price:120,mrp:175,rating:4.7,reviews:76,badge:"",type:""},
+  {id:12,name:"Drawing Book 40 Pages A3",cat:"Drawing Books",img:"images/drawing-book-kids.jpg?v=2",price:35,mrp:55,rating:4.5,reviews:99,badge:"",type:""},
 ];
   const SPECS = {
     "Hindi Notebook 144 Pages": {spec: "144 Pages | A5 Size | Single Line | 60 GSM Paper", desc: "Premium quality Hindi notebook ideal for school students. Single line ruling with margin. Durable cover, smooth writing experience."},
@@ -550,13 +550,14 @@ const PRODUCTS = [
 
 
 const CATEGORIES = [
-  {name:"School Notebooks",img:"images/notebook-vaishnavi-skating.jpg",icon:"📚"},
-  {name:"Exercise Books",img:"images/lifestyle-harsh.jpg",icon:"📓"},
-  {name:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg",icon:"📋"},
-  {name:"Practical Books",img:"images/lifestyle-anshika2.jpg",icon:"🔬"},
-  {name:"Drawing Books",img:"images/lifestyle-piyus.jpg",icon:"🎨"},
-  {name:"Registers",img:"images/long-register-flowers.png",icon:"📒"},
-  {name:"Long Books",img:"images/long-register-flowers.png",icon:"📔"},
+  {name:"School Notebooks",img:"images/notebook-vaishnavi-skating.jpg?v=2",icon:"📚"},
+  {name:"Exercise Books",img:"images/lifestyle-harsh.jpg?v=2",icon:"📓"},
+  {name:"A4 Notebooks",img:"images/notebook-anshika-horse.jpg?v=2",icon:"📋"},
+  {name:"Practical Books",img:"images/lifestyle-anshika2.jpg?v=2",icon:"🔬"},
+  {name:"Drawing Books",img:"images/drawing-book-kids.jpg?v=2",icon:"🎨"},
+  {name:"Long Books",img:"images/long-register-lake.png?v=2",icon:"📔"},
+  {name:"One Side Hindi",img:"images/lifestyle-anshika.jpg?v=2",icon:"📝"},
+  {name:"One Side English",img:"images/lifestyle-harsh.jpg?v=2",icon:"📖"},
 ];
 
 // ===== STATE =====
@@ -744,7 +745,7 @@ function buildHome(){
       </div>
       <div class="hero-visual">
         <div class="hero-img-wrap">
-          <img src="images/notebooks-a4-collection.jpg" alt="Premium notebook"/>
+          <img src="images/notebooks-a4-collection.jpg?v=2" alt="Premium notebook"/>
         </div>
         <div class="hero-float hero-float-1">
           <div class="hero-float-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
@@ -811,7 +812,7 @@ function buildHome(){
   <section class="factory-section" id="aboutSection">
     <div class="factory-grid">
       <div class="factory-img">
-        <img src="images/lifestyle-piyus.jpg" alt="Factory"/>
+        <img src="images/lifestyle-piyus.jpg?v=2" alt="Factory"/>
         <div class="factory-label">
           <div class="fl-tag">OUR FACTORY</div>
           <div class="fl-name">Khadepur, Kanpur</div>
@@ -1398,7 +1399,7 @@ function downloadInvoice(){
   +'<span class="co-gstin">GSTIN : 09BYUPP5969E2ZF</span><br>'
   +'State: 09-Uttar Pradesh'
   +'</div></div>'
-  +'<img src="https://shrishivnterprises.github.io/shrishiventerprises-website/images/logo.jpg" style="width:90px;height:90px;object-fit:contain;border-radius:8px" alt="Shri Shiv Enterprises"/>'
+  +'<img src="https://shrishivnterprises.github.io/shrishiventerprises-website/images/logo.jpg?v=2" style="width:90px;height:90px;object-fit:contain;border-radius:8px" alt="Shri Shiv Enterprises"/>'
   +'</div>'
 
   +'<div class="divider"></div>'
